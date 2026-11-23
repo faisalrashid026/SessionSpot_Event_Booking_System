@@ -1,0 +1,2428 @@
+/* Measured from live Figma nodes 2:2, 2:238, 2:240, 2:242, 2:307 and 2:372.
+   See qa/figma/*-context.txt for the original inspected properties.
+   Responsive rules extend the six desktop-only designs; no mobile frame exists. */
+@font-face {
+  font-family: Inter;
+  src: url("../assets/fonts/InterVariable.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --primary: #6554c0;
+  --primary-dark: #5443aa;
+  --plum: #3d315d;
+  --lavender: #f0edfa;
+  --lavender-light: #f7f5fb;
+  --bg: #f8f9fa;
+  --text: #25243b;
+  --muted: #716c81;
+  --border: #e2deec;
+  --success: #43815f;
+  --success-bg: #eaf4ee;
+  --font: Inter, Arial, Helvetica, sans-serif;
+  --shadow: none;
+}
+body {
+  font-optical-sizing: none;
+  font-synthesis: none;
+}
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  letter-spacing: 0;
+}
+h1 {
+  font-size: 28px;
+  line-height: 34px;
+}
+h2 {
+  font-size: 21px;
+  line-height: 25px;
+}
+h3 {
+  font-size: 17px;
+  line-height: 21px;
+}
+.subtitle {
+  font-size: 13px;
+  line-height: 16px;
+}
+.brand-tile {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  background: #6554c0;
+  border-radius: 9px;
+}
+.brand-tile img {
+  display: block;
+}
+.logo {
+  font-size: 25px;
+  line-height: 32px;
+  letter-spacing: 0;
+  gap: 10px;
+  font-weight: 700;
+}
+.figma-icon {
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: middle;
+  object-fit: contain;
+}
+.btn {
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: none;
+}
+.pill {
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: 7px;
+  min-height: 34px;
+  padding: 8px 14px;
+}
+.nav-link {
+  font-size: 13px;
+  gap: 12px;
+  font-weight: 500;
+  line-height: 16px;
+}
+.nav-link.active {
+  background: #f0edfc;
+  color: #6554c0;
+  font-weight: 600;
+}
+.card {
+  border-color: #e2deec;
+  box-shadow: none;
+}
+.field {
+  font-size: 12px;
+  line-height: 15px;
+  gap: 10px;
+}
+.field input,
+.field select,
+.field textarea {
+  font-size: 13px;
+  border-color: #dfdce9;
+  border-radius: 8px;
+}
+.status {
+  font-size: 9px;
+  line-height: 11px;
+  padding: 6px 10px;
+  border-radius: 5px;
+}
+.badge {
+  display: inline-grid;
+  place-items: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  font-size: 11px;
+  line-height: 13px;
+  background: #f0f0f5;
+}
+.account {
+  font-size: 12px;
+  line-height: 15px;
+  gap: 0;
+  padding-left: 20px;
+  border-color: #ececf2;
+}
+.account small {
+  font-size: 10px;
+  line-height: 12px;
+  margin-top: 4px;
+}
+.topbar {
+  border-color: #ececf2;
+  height: 88px;
+}
+.searchbox {
+  background: #f7f7fa;
+  border-radius: 8px;
+  padding: 0 14px;
+  gap: 10px;
+}
+.searchbox input {
+  font-size: 12px;
+  height: 42px;
+}
+.searchbox input::placeholder {
+  color: #797c8c;
+}
+.top-actions [data-notifications] {
+  position: relative;
+}
+.top-actions [data-notifications]::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #6554c0;
+  right: 8px;
+  top: 6px;
+}
+.sidebar {
+  border-color: #ececf2;
+}
+.sidebar .logo {
+  font-size: 25px;
+  line-height: 32px;
+  gap: 10px;
+}
+.sidebar .nav-link {
+  font-size: 13px;
+  line-height: 16px;
+  min-height: 44px;
+  height: 44px;
+  padding: 12px 13px;
+  gap: 12px;
+}
+.nav-label {
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 600;
+}
+.side-promo {
+  background: #f7f5fb;
+}
+.side-promo h3 {
+  font-size: 13px;
+  line-height: 16px;
+}
+.side-promo p {
+  font-size: 12px;
+  line-height: 15px;
+}
+.side-promo .btn {
+  min-height: 36px;
+  font-size: 12px;
+}
+.two-col {
+  grid-template-columns: minmax(0, 704fr) minmax(0, 408fr);
+  gap: 24px;
+}
+.page-heading h1 {
+  margin-bottom: 8px;
+}
+.page-heading {
+  margin-bottom: 32px;
+}
+.card-heading h2 {
+  font-size: 18px;
+  line-height: 22px;
+}
+.card-heading p {
+  font-size: 12px;
+  line-height: 15px;
+}
+.summary-cover {
+  height: 152px;
+  min-height: 152px;
+  padding: 22px 24px;
+}
+.summary-cover .eyebrow {
+  font-size: 9px;
+  line-height: 11px;
+  color: #d7cfee;
+}
+.summary-cover h2 {
+  font-size: 25px;
+  line-height: 30px;
+  margin: 16px 0 29px;
+}
+.summary-cover p {
+  font-size: 10px;
+  line-height: 12px;
+  color: #ded5ee;
+}
+.card-pad {
+  padding: 23px;
+}
+.booking-details h2 {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+}
+.booking-details > h3 {
+  font-size: 14px;
+  line-height: 17px;
+}
+.detail-list {
+  font-size: 11px;
+  line-height: 13px;
+  gap: 20px 16px;
+}
+.detail-list dd {
+  font-size: 11px;
+  line-height: 13px;
+}
+.booking-details .btn {
+  height: 40px;
+  min-height: 40px;
+  font-size: 12px;
+}
+.booking-details .total-line {
+  font-size: 13px;
+  line-height: 16px;
+  padding-top: 20px;
+  margin-top: 30px;
+  margin-bottom: 24px;
+}
+.booking-details .total-line strong {
+  font-size: 20px;
+  line-height: 24px;
+}
+.booking-details .cancel-area {
+  margin-top: 25px;
+  font-size: 10px;
+  line-height: 12px;
+}
+.booking-details .cancel-area p {
+  margin: 0;
+  font-size: 10px;
+  line-height: 12px;
+}
+.booking-details .cancel-area button {
+  margin: 15px 0 21px;
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 500;
+}
+.booking-details .cancel-area a {
+  font-size: 12px;
+  line-height: 15px;
+}
+.booking-details .btn {
+  margin: 0 0 11px;
+}
+.notice {
+  background: #f0edfa;
+  color: #51416f;
+}
+.notice.success {
+  background: #eaf4ee;
+  color: #347a52;
+}
+.booking-success {
+  min-height: 64px;
+  padding: 13px 20px;
+  gap: 8px;
+}
+.booking-success > svg.icon {
+  width: 12px;
+  height: 16px;
+}
+.booking-success strong {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 600;
+}
+.booking-success p {
+  font-size: 11px;
+  line-height: 13px;
+  margin: 8px 0 0;
+}
+.booking-success .booking-ref {
+  font-size: 11px;
+  line-height: 13px;
+}
+.tabs-toolbar .search {
+  width: 392px;
+  max-width: 392px;
+  height: 37px;
+  min-height: 37px;
+  font-size: 11px;
+}
+.tabs-toolbar {
+  margin: 26px 0;
+}
+.tabs-toolbar .pill {
+  height: 37px;
+  font-size: 12px;
+  padding: 10px 17px;
+}
+.tabs-toolbar [data-booking-tab="Upcoming"] {
+  min-width: 126px;
+}
+.tabs-toolbar [data-booking-tab="Past"] {
+  min-width: 90px;
+}
+.tabs-toolbar [data-booking-tab="Cancelled"] {
+  min-width: 121px;
+}
+.booking-cover {
+  height: 67px;
+  padding: 15px 20px;
+  background: #eae5fa;
+}
+.booking-cover .eyebrow {
+  font-size: 8px;
+  line-height: 10px;
+  color: #7d6b9c;
+}
+.booking-cover h3 {
+  font-size: 18px;
+  line-height: 22px;
+  margin: 7px 0 0;
+}
+.booking-cover .status {
+  background: white;
+  font-size: 10px;
+  line-height: 12px;
+  padding: 6px 12px;
+}
+.booking-card.selected {
+  border-color: #c1b2ec;
+}
+.booking-card-body {
+  padding: 20px 20px 27px;
+}
+.booking-card-body > p {
+  font-size: 12px;
+  line-height: 15px;
+  margin-bottom: 10px;
+}
+.booking-card-body > p.muted {
+  font-size: 12px;
+  line-height: 15px;
+  margin-bottom: 19px;
+}
+.booking-card-body .row > p {
+  font-size: 11px;
+  line-height: 13px;
+  margin: 0 !important;
+}
+.booking-actions {
+  font-size: 10px;
+  line-height: 15px;
+  margin-top: 18px;
+  padding-top: 23px;
+}
+.booking-actions .text-button {
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 500;
+}
+.booking-compact {
+  gap: 20px;
+  min-height: 72px;
+  margin-bottom: 24px;
+}
+.booking-compact h3 {
+  font-size: 17px;
+  line-height: 21px;
+  margin: 0;
+}
+.booking-compact p {
+  font-size: 12px;
+  line-height: 15px;
+  margin: 9px 0 0;
+}
+.booking-compact p + p {
+  margin-top: 10px;
+}
+.booking-compact .calendar-tile {
+  width: 67px;
+  min-width: 67px;
+  height: 72px;
+  padding: 10px 8px;
+  font-size: 9px;
+  line-height: 11px;
+}
+.booking-compact .calendar-tile strong {
+  font-size: 28px;
+  line-height: 33px;
+  margin-top: 8px;
+}
+.booking-compact .weekday {
+  display: none;
+}
+.booking-card:not(:has(.booking-cover)) .booking-card-body {
+  padding: 22px 20px 23px;
+}
+.booking-card:not(:has(.booking-cover)) .row.between {
+  min-height: 24px;
+}
+.booking-card:not(:has(.booking-cover)) .booking-actions {
+  margin-top: 14px;
+  padding-top: 24px;
+}
+.bookings-banner {
+  min-height: 91px;
+  padding: 20px 22px;
+  background: #f0edfa;
+}
+.bookings-banner h3 {
+  font-size: 16px;
+  line-height: 19px;
+}
+.bookings-banner p {
+  font-size: 12px;
+  line-height: 15px;
+  margin-top: 12px;
+}
+.bookings-banner .btn {
+  width: 158px;
+  height: 40px;
+}
+.metrics {
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.metric {
+  height: 124px;
+  padding: 18px 20px;
+}
+.metric p {
+  font-size: 12px;
+  line-height: 15px;
+  margin: 0 0 12px;
+}
+.metric strong {
+  font-size: 30px;
+  line-height: 36px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+.metric small {
+  font-size: 10px;
+  line-height: 12px;
+}
+.chart-card {
+  height: 286px;
+  min-height: 286px;
+  padding: 23px;
+}
+.chart-heading h2 {
+  font-size: 18px;
+  line-height: 22px;
+  margin-bottom: 6px;
+}
+.chart-heading p {
+  font-size: 11px;
+  line-height: 13px;
+  margin: 0;
+}
+.chart-heading .chip {
+  height: 32px;
+  min-width: 123px;
+  font-size: 11px;
+  font-weight: 400;
+  justify-content: center;
+}
+.bar-chart {
+  height: 178px;
+  margin-top: 20px;
+  padding-top: 0;
+  padding-bottom: 24px;
+  gap: 30px;
+  padding-left: 40px;
+  padding-right: 0;
+}
+.chart-column .bar {
+  max-width: 37px;
+}
+.chart-column .bar-value,
+.chart-column .bar-date {
+  font-size: 9px;
+  line-height: 11px;
+}
+.chart-column .bar {
+  background: #d9d0ef;
+}
+.chart-column:last-child .bar {
+  background: #6554c0;
+}
+.up-next {
+  height: 286px;
+  min-height: 286px;
+  padding: 24px;
+  background: #eeeaf8;
+}
+.up-next .eyebrow {
+  font-size: 9px;
+  line-height: 12px;
+  color: #7a6a9b;
+}
+.up-next h2 {
+  font-size: 24px;
+  line-height: 29px;
+  max-width: 280px;
+  margin: 18px 0 10px;
+}
+.up-next p {
+  font-size: 12px;
+  line-height: 15px;
+  margin: 10px 0 0;
+}
+.up-next .capacity {
+  font-size: 12px;
+  line-height: 15px;
+  margin: 22px 0 26px;
+}
+.progress-track {
+  background: #e0d8ef;
+}
+.progress-track span {
+  background: #9179b8;
+}
+.up-next .text-button {
+  font-size: 12px;
+  font-weight: 500;
+}
+.manage-card {
+  margin-top: 24px;
+  padding-bottom: 16px;
+}
+.manage-card .table-toolbar:first-child {
+  padding: 16px 24px 0;
+  height: 56px;
+  min-height: 56px;
+}
+.manage-card .table-toolbar + .table-toolbar {
+  padding: 5px 24px 16px;
+  height: 53px;
+}
+.table-toolbar h2 {
+  font-size: 18px;
+  line-height: 22px;
+}
+.table-toolbar .btn {
+  height: 40px;
+  min-height: 40px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.manage-card .pill {
+  height: 32px;
+  min-height: 32px;
+  font-size: 11px;
+  padding: 9px 15px;
+  border-color: transparent;
+}
+.manage-card .pill.active {
+  background: #f0edfa;
+  color: #6554c0;
+}
+.manage-card .table-search {
+  width: 376px;
+  min-width: 220px;
+}
+.manage-card .table-search input {
+  height: 32px;
+  font-size: 11px;
+}
+.manage-card th {
+  height: 36px;
+  padding: 12px 24px;
+  font-size: 9px;
+  line-height: 11px;
+  font-weight: 500;
+  background: #f8f7fb;
+}
+.manage-card td {
+  height: 61px;
+  padding: 13px 24px;
+  font-size: 11px;
+  line-height: 13px;
+}
+.manage-card td strong {
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 500;
+}
+.manage-card td small {
+  font-size: 10px;
+  line-height: 12px;
+  margin-top: 6px;
+}
+.manage-card td .text-button {
+  font-size: 11px;
+  line-height: 13px;
+  font-weight: 500;
+}
+.manage-card th:nth-child(1) {
+  width: 36.7%;
+}
+.manage-card th:nth-child(2) {
+  width: 15.3%;
+}
+.manage-card th:nth-child(3) {
+  width: 17.9%;
+}
+.manage-card th:nth-child(4) {
+  width: 16.9%;
+}
+/* Auth forms retain normal flow so validation can reveal additional fields. */
+.auth-layout {
+  grid-template-columns: 39.583333% 60.416667%;
+  min-height: 1160px;
+}
+.auth-marketing {
+  position: relative;
+  padding: 44px 48px 86px;
+}
+.auth-marketing .logo {
+  font-size: 27px;
+  line-height: 33px;
+}
+.marketing-copy {
+  margin-top: 125px;
+}
+.marketing-copy .eyebrow {
+  font-size: 11px;
+  line-height: 13px;
+  font-weight: 600;
+  color: #d1c6ea;
+}
+.marketing-copy h2 {
+  font-size: 48px;
+  line-height: 58px;
+  font-weight: 600;
+  letter-spacing: 0;
+  margin: 32px 0 27px;
+  max-width: 474px;
+}
+.marketing-copy p {
+  font-size: 16px;
+  line-height: 19px;
+  color: #ded5ee;
+  max-width: 440px;
+}
+.ticket-art {
+  width: 310px;
+  min-height: 166px;
+  height: 166px;
+  position: relative;
+  padding: 0;
+  background: #3d315d;
+  border-radius: 12px;
+  transform: rotate(3deg);
+}
+.ticket-art .art-label {
+  position: absolute;
+  left: 20px;
+  top: 16px;
+  font-size: 9px;
+  line-height: 11px;
+  font-weight: 600;
+  color: #d7cfee;
+}
+.ticket-art h3 {
+  position: absolute;
+  left: 20px;
+  top: 42px;
+  font-size: 25px;
+  line-height: 30px;
+  font-style: normal;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0;
+}
+.ticket-art .art-footer {
+  position: absolute;
+  left: 20px;
+  top: 127px;
+  font-size: 9px;
+  line-height: 11px;
+  font-weight: 500;
+  color: #cdc0e8;
+}
+.ticket-art .date-block {
+  left: 233px;
+  right: auto;
+  top: 14px;
+  width: 60px;
+  height: 69px;
+  padding: 10px 0 0;
+  background: #d9cbf7;
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 600;
+  color: #4e3c6d;
+}
+.date-block strong {
+  font-size: 26px;
+  line-height: 31px;
+  margin-top: 6px;
+  color: #3d315d;
+}
+.ticket-art .admit {
+  left: 245px;
+  right: auto;
+  top: 115px;
+  bottom: auto;
+  padding: 0;
+  border: 0;
+  font-size: 11px;
+  line-height: 13px;
+  font-weight: 600;
+  color: #e7def8;
+}
+.ticket-art .admit::before {
+  content: "";
+  position: absolute;
+  left: -16px;
+  top: -23px;
+  height: 58px;
+  width: 1px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #8e7fab 0 2px,
+    transparent 2px 4px
+  );
+}
+.auth-marketing .ticket-art {
+  position: absolute;
+  left: 110px;
+  top: 625px;
+  width: 350px;
+  height: 166px;
+  min-height: 166px;
+  margin: 0;
+  max-width: none;
+  background: #3d315d;
+  transform: rotate(3deg);
+  padding: 0;
+}
+.auth-marketing .ticket-art h3 {
+  font-size: 25px;
+  line-height: 30px;
+  margin: 0;
+}
+.auth-marketing .ticket-art .date-block {
+  left: 233px;
+  right: auto;
+  top: 14px;
+}
+.auth-marketing .ticket-art .art-footer {
+  margin: 0;
+}
+.marketing-footer {
+  margin-top: auto;
+  padding-top: 320px;
+}
+.marketing-footer .eyebrow {
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 600;
+  color: #d1c6ea;
+}
+.marketing-footer p {
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 500;
+  margin: 15px 0 0;
+}
+.auth-right {
+  padding: 44px 0 55px;
+  min-width: 0;
+}
+.auth-top {
+  width: 480px;
+  max-width: calc(100% - 48px);
+  margin: 0 auto;
+  font-size: 12px;
+  line-height: 15px;
+  gap: 44px;
+}
+.auth-content {
+  width: 480px;
+  max-width: calc(100% - 48px);
+  margin: 114px auto 0;
+}
+.auth-content.register {
+  margin-top: 114px;
+}
+.auth-content.login,
+.auth-content.recovery {
+  margin-top: 192px;
+}
+.auth-content h1 {
+  font-size: 32px;
+  line-height: 39px;
+  font-weight: 600;
+  letter-spacing: 0;
+  margin-bottom: 10px;
+}
+.auth-content .subtitle {
+  font-size: 14px;
+  line-height: 17px;
+  margin-bottom: 32px;
+}
+.auth-content .stack {
+  gap: 25px;
+}
+.auth-content .field {
+  font-size: 12px;
+  line-height: 15px;
+  gap: 10px;
+}
+.auth-content .field input {
+  height: 48px;
+  min-height: 48px;
+  font-size: 13px;
+  padding: 14px;
+}
+.auth-content .field .hint {
+  font-size: 11px;
+  line-height: 13px;
+}
+.segmented-fieldset {
+  margin-bottom: 5px;
+}
+.segmented-fieldset legend {
+  font-size: 12px;
+  line-height: 15px;
+  margin-bottom: 11px;
+}
+.segmented {
+  height: 48px;
+  background: #f5f3fa;
+  gap: 4px;
+}
+.segmented span {
+  height: 40px;
+  font-size: 13px;
+  line-height: 16px;
+  padding: 12px 8px;
+  font-weight: 500;
+}
+.segmented input:checked + span {
+  font-weight: 600;
+}
+.auth-content .btn {
+  height: 46px;
+  min-height: 46px;
+  font-size: 13px;
+}
+.auth-content .check-label {
+  font-size: 12px;
+  line-height: 16px;
+}
+.auth-content.register .check-label {
+  margin-top: 3px;
+}
+.auth-content.register .btn[type="submit"] {
+  margin-top: 8px;
+}
+.auth-content.register .prototype {
+  margin-top: -6px;
+}
+.auth-content .prototype {
+  font-size: 11px;
+  line-height: 13px;
+  padding: 0;
+}
+.auth-content .check-label input {
+  margin-top: 0;
+  width: 16px;
+  height: 16px;
+}
+.auth-content .auth-small {
+  font-size: 11px;
+  line-height: 13px;
+}
+.auth-content.login .subtitle {
+  margin-bottom: 44px;
+}
+.auth-content.login .stack {
+  gap: 30px;
+}
+.auth-content.login .row.between {
+  margin-top: -6px;
+  height: 18px;
+}
+.auth-content.login .row.between a {
+  font-size: 12px;
+  line-height: 15px;
+}
+.auth-content.login .btn[type="submit"] {
+  margin-top: 5px;
+}
+.auth-content .auth-subsection {
+  margin-top: 10px;
+  padding-top: 28px;
+  gap: 20px;
+}
+.auth-subsection .auth-small:first-child {
+  font-size: 12px;
+  line-height: 15px;
+}
+.auth-content .auth-subsection .btn {
+  margin: 0;
+}
+.auth-footer {
+  width: 480px;
+  max-width: calc(100% - 48px);
+  margin: auto auto 0;
+  padding-top: 60px;
+  font-size: 11px;
+  line-height: 13px;
+}
+.auth-footer a {
+  font-size: 11px;
+  line-height: 13px;
+}
+.auth-footer .row {
+  gap: 20px;
+}
+@media (min-width: 1200px) {
+  .topbar.discover-header {
+    display: grid;
+    grid-template-columns: 240px minmax(280px, 600px) 1fr;
+    gap: 40px;
+    padding: 0 40px;
+  }
+  .discover-header .logo {
+    margin: 0;
+  }
+  .topbar .searchbox {
+    margin: 0;
+    max-width: none;
+  }
+  .topbar .top-actions {
+    justify-self: end;
+    gap: 0;
+  }
+  .discover-header .top-actions > .btn {
+    width: 188px;
+    height: 42px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .discover-header .top-actions > [data-notifications] {
+    margin-left: 37px;
+  }
+  .topbar .top-actions .account {
+    margin-left: 13px;
+  }
+  .workspace .topbar {
+    display: grid;
+    grid-template-columns: 230px minmax(200px, 420px) 1fr;
+    gap: 40px;
+    padding: 0 40px;
+  }
+  .workspace .topbar .searchbox {
+    max-width: none;
+  }
+  .workspace .topbar .top-title {
+    min-width: 0;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 600;
+  }
+  .workspace .topbar .top-actions {
+    gap: 0;
+  }
+  .workspace-main {
+    padding: 32px 40px 40px;
+  }
+  .discover-nav {
+    height: 60px;
+    padding: 8px 40px;
+    gap: 16px;
+  }
+  .discover-nav .nav-link {
+    height: 44px;
+    padding: 12px;
+    font-size: 13px;
+  }
+  .discover-nav .nav-link:nth-of-type(1) {
+    width: 174px;
+  }
+  .discover-nav .nav-link:nth-of-type(2) {
+    width: 150px;
+  }
+  .discover-nav .nav-link:nth-of-type(3) {
+    width: 160px;
+  }
+  .discover-nav .nav-link:nth-of-type(4) {
+    width: 132px;
+  }
+  .discover-nav .nav-link:nth-of-type(5) {
+    width: 174px;
+  }
+  .discover-nav .nav-link:nth-last-child(2) {
+    width: 160px;
+  }
+  .discover-nav .nav-link:last-child {
+    width: 130px;
+  }
+  .discover-nav {
+    gap: 16px;
+  }
+  .discover-nav .push {
+    flex: 1;
+    margin-left: 0;
+  }
+  .discover-nav .nav-link:nth-last-child(2) {
+    margin-left: auto;
+  }
+  .discover-nav .nav-link:last-child {
+    margin-left: -6px;
+  }
+  .discover-main {
+    padding: 36px 40px 32px;
+  }
+  .greeting {
+    height: 58px;
+    margin-bottom: 24px;
+  }
+  .greeting h1 {
+    margin: 0;
+    line-height: 34px;
+  }
+  .greeting .subtitle {
+    margin-top: 8px;
+  }
+  .greeting-date {
+    font-size: 10px;
+    line-height: 12px;
+    margin-right: 80px;
+  }
+  .feature {
+    height: 208px;
+    min-height: 208px;
+    grid-template-columns: 1fr 334px;
+    gap: 24px;
+    padding: 23px 28px 19px;
+    margin-bottom: 34px;
+  }
+  .feature .eyebrow {
+    font-size: 10px;
+    line-height: 12px;
+    color: #6554a7;
+  }
+  .feature h2 {
+    font-size: 30px;
+    line-height: 36px;
+    color: #30254e;
+    margin: 14px 0 6px;
+  }
+  .feature p {
+    font-size: 13px;
+    line-height: 16px;
+    color: #6d6186;
+    margin-bottom: 14px;
+  }
+  .feature .feature-meta {
+    font-size: 12px;
+    line-height: 15px;
+    color: #5e5277;
+    margin-bottom: 17px;
+  }
+  .feature .btn {
+    width: 144px;
+    height: 36px;
+    min-height: 36px;
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+  .feature .row {
+    gap: 15px;
+  }
+  .feature .small {
+    font-size: 11px;
+    color: #65587d;
+  }
+  .feature > .ticket-art {
+    margin-right: 24px;
+    justify-self: end;
+  }
+  .section-heading {
+    height: 25px;
+    margin-bottom: 18px;
+  }
+  .section-heading h2 {
+    font-size: 21px;
+    line-height: 25px;
+  }
+  .section-heading a,
+  .section-heading .text-button {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .filterbar {
+    height: 34px;
+    margin-bottom: 22px;
+    flex-wrap: nowrap;
+  }
+  .filterbar .pills {
+    gap: 8px;
+    flex-wrap: nowrap;
+  }
+  .filterbar .pill {
+    height: 34px;
+    min-height: 34px;
+    white-space: nowrap;
+  }
+  .filterbar [data-category=""] {
+    width: 96px;
+  }
+  .filterbar [data-category="Education"] {
+    width: 100px;
+  }
+  .filterbar [data-category="Business"] {
+    width: 94px;
+  }
+  .filterbar [data-category="Community"] {
+    width: 109px;
+  }
+  .filterbar [data-category="Arts & culture"] {
+    width: 124px;
+  }
+  .filterbar .right {
+    gap: 10px;
+  }
+  .date-wrap {
+    height: 34px;
+    min-height: 34px;
+    padding: 0 11px;
+    gap: 9px;
+  }
+  .date-wrap > img {
+    display: block;
+  }
+  .date-wrap input {
+    font-size: 11px;
+    width: 90px;
+    height: 32px;
+    padding: 0;
+    min-height: 32px;
+  }
+  .date-wrap > svg {
+    width: 15px;
+    height: 15px;
+  }
+  .filterbar #filter-toggle {
+    width: 102px;
+  }
+  .filterbar #filter-toggle > svg {
+    width: 15px;
+    height: 15px;
+  }
+  .event-grid {
+    gap: 16px;
+  }
+  .event-card {
+    height: 319px;
+    border-color: #e7e7ef;
+    border-radius: 11px;
+  }
+  .event-card .poster {
+    height: 127px;
+    min-height: 127px;
+    padding: 15px 18px 12px;
+    display: grid;
+    grid-template-rows: 10px 58px 10px;
+    gap: 11px;
+  }
+  .event-card .poster h3 {
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 700;
+    margin: 0;
+  }
+  .event-card .poster .eyebrow {
+    font-size: 8px;
+    line-height: 10px;
+    margin: 0;
+    font-weight: 600;
+  }
+  .event-card .poster-footer {
+    font-size: 7px;
+    line-height: 8px;
+    align-self: end;
+    margin: 0 20px 0 0;
+  }
+  .event-card .poster-footer span:last-child {
+    font-size: 8px;
+    line-height: 10px;
+    font-weight: 600;
+  }
+  .poster.sage {
+    background: #dceae4;
+    color: #2c554b;
+  }
+  .poster.peach {
+    background: #f2e3d3;
+    color: #71462f;
+  }
+  .poster.blue {
+    background: #dfe6f5;
+    color: #3e5282;
+  }
+  .save-event {
+    right: 18px;
+    top: 14px;
+    width: 30px;
+    height: 30px;
+    min-height: 30px;
+  }
+  .event-body {
+    height: 192px;
+    padding: 16px 18px;
+  }
+  .category {
+    font-size: 9px;
+    line-height: 11px;
+    margin-bottom: 10px;
+  }
+  .event-body h3 {
+    font-size: 15px;
+    line-height: 18px;
+    margin-bottom: 5px;
+  }
+  .event-body .byline {
+    font-size: 10px;
+    line-height: 12px;
+    color: #8b8898;
+    margin-bottom: 12px;
+  }
+  .event-body .meta {
+    font-size: 11px;
+    line-height: 13px;
+    height: 15px;
+    margin: 0 0 10px;
+    gap: 7px;
+    color: #777484;
+  }
+  .event-body .meta:last-of-type {
+    margin-bottom: 0;
+  }
+  .event-bottom {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-color: #f0eff4;
+  }
+  .event-bottom strong {
+    font-size: 17px;
+    line-height: 21px;
+    font-weight: 600;
+  }
+  .event-bottom span {
+    font-size: 10px;
+    line-height: 12px;
+  }
+  .event-bottom a {
+    font-size: 10px;
+    line-height: 12px;
+  }
+  .discovery-bottom {
+    grid-template-columns: minmax(0, 936fr) minmax(0, 400fr);
+    gap: 24px;
+    margin-top: 40px;
+  }
+  .discovery-bottom .section-heading {
+    height: 24px;
+    margin-bottom: 18px;
+  }
+  .discovery-bottom .section-heading h2 {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .discovery-bottom .section-heading a {
+    font-size: 11px;
+  }
+  .booking-preview {
+    display: grid;
+    grid-template-columns: 72px minmax(0, 1fr) 162px;
+    gap: 20px;
+    align-items: start;
+    height: 176px;
+    min-height: 176px;
+    padding: 21px 20px 20px;
+    position: relative;
+  }
+  .calendar-tile {
+    width: 72px;
+    height: 85px;
+    min-width: 72px;
+    padding: 14px 8px 0;
+    font-size: 10px;
+    line-height: 12px;
+    background: #f1eefb;
+  }
+  .calendar-tile strong {
+    font-size: 30px;
+    line-height: 36px;
+    margin-top: 7px;
+    margin-bottom: 0;
+    font-weight: 600;
+  }
+  .calendar-tile .weekday {
+    font-size: 8px;
+    line-height: 10px;
+  }
+  .preview-main h3 {
+    font-size: 17px;
+    line-height: 21px;
+    margin-bottom: 8px;
+  }
+  .preview-main > p.small {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .preview-main .meta {
+    font-size: 11px;
+    line-height: 13px;
+    margin: 10px 0 18px;
+  }
+  .preview-main .row {
+    gap: 10px;
+  }
+  .preview-main .row .small {
+    font-size: 10px;
+  }
+  .preview-main .booking-reference {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    font-size: 9px !important;
+    line-height: 11px;
+    margin: 0 !important;
+  }
+  .preview-cta {
+    border-left: 1px dashed #e4e1ec;
+    padding: 5px 0 0 20px;
+    min-width: 0;
+    width: 162px;
+    height: 152px;
+  }
+  .preview-cta .eyebrow {
+    font-size: 9px;
+    line-height: 11px;
+  }
+  .preview-cta h3 {
+    font-size: 15px;
+    line-height: 18px;
+    margin: 12px 0 17px;
+  }
+  .preview-cta .btn {
+    font-size: 11px;
+    line-height: 13px;
+    height: 35px;
+    min-height: 35px;
+    width: 137px;
+    padding: 10px;
+  }
+  .preview-cta .small {
+    font-size: 9px !important;
+    line-height: 11px;
+    margin-top: 14px !important;
+    white-space: nowrap;
+  }
+  .organizer-cta {
+    height: 218px;
+    padding: 24px;
+    background: #efeef7;
+    border-radius: 11px;
+  }
+  .organizer-cta .eyebrow {
+    font-size: 9px;
+    line-height: 11px;
+    color: #7a6a9b;
+  }
+  .organizer-cta h2 {
+    font-size: 23px;
+    line-height: 28px;
+    margin: 14px 0 9px;
+    color: #3c3454;
+  }
+  .organizer-cta p {
+    font-size: 11px;
+    line-height: 13px;
+    margin: 0;
+    color: #81768f;
+  }
+  .organizer-cta .btn {
+    height: 33px;
+    min-height: 33px;
+    width: 156px;
+    font-size: 11px;
+    line-height: 13px;
+    padding: 10px;
+    margin-top: 25px;
+  }
+  .discover-main > .bottom-banner {
+    height: 76px;
+    padding: 16px 20px;
+    margin-top: 28px;
+    border-radius: 12px;
+    background: #f7f5fc;
+  }
+  .discover-main > .bottom-banner h3 {
+    font-size: 13px;
+    line-height: 16px;
+  }
+  .discover-main > .bottom-banner p {
+    font-size: 12px;
+    line-height: 15px;
+    margin-top: 10px;
+  }
+  .discover-main > .bottom-banner .btn {
+    width: 160px;
+    height: 36px;
+    min-height: 36px;
+    font-size: 12px;
+  }
+  .discover-main > .page-footer {
+    margin-top: 32px;
+  }
+  .sidebar {
+    padding: 28px 16px 60px;
+  }
+  .sidebar .logo {
+    margin: 0 8px 50px;
+  }
+  .sidebar .nav-label {
+    margin: 0 8px 18px;
+  }
+  .side-nav {
+    gap: 6px;
+  }
+  .sidebar .organizer-label {
+    margin-top: 60px;
+    margin-bottom: 18px;
+  }
+  .sidebar-spacer {
+    min-height: 24px;
+  }
+  .side-promo {
+    height: 160px;
+    min-height: 160px;
+    padding: 20px 16px;
+    margin-bottom: 26px;
+  }
+  .side-promo h3 {
+    margin-bottom: 12px;
+  }
+  .side-promo p {
+    margin-bottom: 26px;
+  }
+  .side-promo .btn {
+    height: 36px;
+    font-size: 12px;
+  }
+  .side-bottom {
+    gap: 0;
+  }
+  .side-bottom .nav-link {
+    height: 44px;
+    min-height: 44px;
+    font-weight: 400;
+  }
+  .sidebar .side-nav .badge {
+    margin-left: auto;
+  }
+  .workspace-main > .page-footer {
+    margin-top: 40px;
+  }
+  .back-link {
+    display: flex;
+    width: fit-content;
+    font-size: 12px;
+    line-height: 15px;
+    margin-bottom: 21px;
+  }
+  .stepper {
+    height: 52px;
+    padding: 18px 20px;
+    gap: 0;
+    margin: 0 0 24px;
+    grid-template-columns: 282px 286px 1fr;
+  }
+  .stepper span {
+    font-size: 12px;
+    line-height: 15px;
+    gap: 10px;
+  }
+  .stepper .icon {
+    margin-right: 45px;
+    width: 12px;
+    height: 12px;
+    color: #9c93b4;
+  }
+  .stepper li:nth-child(2) {
+    font-weight: 500;
+  }
+  body[data-page="reserve"] .page-heading {
+    margin-bottom: 25px;
+  }
+  #reservation-form > .two-col > .stack {
+    gap: 20px;
+  }
+  #reservation-form .card-pad {
+    padding: 22px 23px 26px;
+  }
+  #reservation-form .card-heading h2 {
+    margin-bottom: 7px;
+  }
+  #reservation-form .card-heading {
+    margin-bottom: 23px;
+  }
+  #reservation-form .ticket-options {
+    margin: 0 -8px;
+    gap: 7px;
+  }
+  #reservation-form .ticket-row {
+    height: 64px;
+    min-height: 64px;
+    padding: 10px 14px;
+    gap: 14px;
+    grid-template-columns: 1fr 58px 117px;
+  }
+  #reservation-form .ticket-row.chosen {
+    background: #f5f2fe;
+  }
+  #reservation-form .ticket-name {
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 600;
+  }
+  #reservation-form .ticket-desc {
+    font-size: 10px;
+    line-height: 12px;
+    margin-top: 8px;
+  }
+  #reservation-form .ticket-price {
+    font-size: 15px;
+    line-height: 18px;
+  }
+  .quantity {
+    width: 117px;
+    height: 35px;
+    padding: 0 3px;
+  }
+  .quantity button {
+    width: 32px;
+    height: 33px;
+    font-size: 12px;
+  }
+  .quantity input {
+    width: 41px;
+    font-size: 12px;
+  }
+  #reservation-form .stack > .card-pad:nth-child(2) {
+    min-height: 315px;
+    padding-bottom: 22px;
+  }
+  #reservation-form .stack > .card-pad:nth-child(2) .card-heading {
+    margin-bottom: 26px;
+  }
+  #reservation-form .form-grid {
+    gap: 23px 16px;
+  }
+  #reservation-form .field {
+    font-size: 11px;
+    line-height: 13px;
+    gap: 10px;
+  }
+  #reservation-form .field input {
+    height: 44px;
+    min-height: 44px;
+    font-size: 12px;
+    padding: 12px;
+  }
+  #reservation-form .stack > .card-pad:nth-child(2) > p {
+    font-size: 10px;
+    line-height: 12px;
+    margin: 23px 0 8px !important;
+  }
+  .policy {
+    min-height: 105px;
+    padding: 19px 20px;
+    font-size: 13px;
+    line-height: 16px;
+  }
+  .policy p {
+    font-size: 12px;
+    line-height: 14px;
+    margin-top: 12px;
+  }
+  .summary-content {
+    padding: 23px 23px 28px;
+  }
+  .summary-content > strong {
+    display: block;
+    font-size: 13px;
+    line-height: 16px;
+    margin-bottom: 10px;
+  }
+  .summary-content > .muted {
+    font-size: 12px;
+    line-height: 15px;
+    margin: 0 0 9px;
+  }
+  .summary-content > .muted:last-of-type {
+    margin-bottom: 0;
+  }
+  .summary-content > .divider {
+    margin: 24px 0 22px;
+  }
+  .summary-content > h3 {
+    font-size: 16px;
+    line-height: 19px;
+    margin: 0 0 22px;
+  }
+  .order-summary .order-line {
+    font-size: 12px;
+    line-height: 15px;
+    margin: 0 0 14px;
+  }
+  .summary-content > .order-line {
+    font-size: 12px;
+    line-height: 15px;
+    margin: 0;
+  }
+  .summary-content > .total-line {
+    margin: 17px 0 18px;
+    padding-top: 20px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .summary-content > .total-line span:last-child {
+    font-size: 20px;
+  }
+  .payment-note {
+    font-size: 11px;
+    line-height: 14px;
+    height: 46px;
+    min-height: 46px;
+    padding: 16px 14px;
+    margin-bottom: 22px;
+    white-space: nowrap;
+  }
+  .summary-content > .btn {
+    height: 44px;
+    min-height: 44px;
+    font-size: 12px;
+  }
+  .summary-legal {
+    font-size: 10px;
+    line-height: 12px;
+    margin: 22px 0 0;
+  }
+  .contact-link {
+    font-size: 12px;
+    line-height: 15px;
+    margin: 30px 22px;
+  }
+  body[data-page="my-bookings"] #booking-list > .booking-card {
+    margin-bottom: 20px;
+  }
+  body[data-page="my-bookings"] .booking-details {
+    min-height: 612px;
+  }
+  body[data-page="my-bookings"] .bookings-banner {
+    margin-top: 28px;
+  }
+}
+/* Fluid extension of the measured desktop system. */
+@media (min-width: 901px) and (max-width: 1199px) {
+  .auth-marketing .ticket-art {
+    left: 48px;
+    width: calc(100% - 72px);
+  }
+  .marketing-copy h2 {
+    font-size: 38px;
+    line-height: 46px;
+  }
+  .auth-layout {
+    min-height: 1160px;
+  }
+  .topbar .top-actions .account {
+    margin-left: 0;
+  }
+  .metrics {
+    gap: 12px;
+  }
+  .metric {
+    padding: 16px 14px;
+    height: auto;
+    min-height: 124px;
+  }
+  .metric strong {
+    font-size: 28px;
+  }
+  .up-next {
+    height: auto;
+    min-height: 286px;
+  }
+  .two-col {
+    grid-template-columns: minmax(0, 1.4fr) minmax(255px, 1fr);
+    gap: 18px;
+  }
+  .table-toolbar + .table-toolbar {
+    height: auto !important;
+  }
+  .manage-card .table-toolbar {
+    height: auto !important;
+  }
+  .manage-card .table-search {
+    width: 45%;
+    min-width: 180px;
+  }
+  .manage-card table {
+    min-width: 680px;
+  }
+  .tabs-toolbar .search {
+    max-width: 360px;
+  }
+  .ticket-art {
+    max-width: 100%;
+  }
+  .payment-note {
+    white-space: normal;
+    height: auto;
+  }
+  .auth-top {
+    gap: 20px;
+  }
+}
+@media (min-width: 701px) and (max-width: 900px) {
+  .auth-marketing {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+  .marketing-copy h2 {
+    font-size: 34px;
+    line-height: 42px;
+  }
+  .marketing-copy p {
+    font-size: 14px;
+  }
+  .auth-marketing .ticket-art {
+    left: 32px;
+    width: calc(100% - 48px);
+  }
+  .auth-marketing .ticket-art .date-block {
+    left: auto;
+    right: 8px;
+  }
+  .auth-marketing .ticket-art .admit {
+    left: auto;
+    right: 12px;
+  }
+  .auth-content {
+    max-width: calc(100% - 48px);
+  }
+  .auth-content h1 {
+    font-size: 29px;
+  }
+  .auth-top {
+    font-size: 11px;
+    gap: 18px;
+  }
+  .metrics {
+    gap: 14px;
+  }
+  .metric {
+    padding: 16px;
+    min-height: 124px;
+    height: auto;
+  }
+  .two-col {
+    grid-template-columns: minmax(0, 1.5fr) minmax(255px, 1fr);
+    gap: 18px;
+  }
+  .table-toolbar + .table-toolbar {
+    height: auto !important;
+  }
+  .manage-card .table-toolbar {
+    height: auto !important;
+  }
+  .manage-card .table-search {
+    width: 45%;
+    min-width: 180px;
+  }
+  .manage-card table {
+    min-width: 680px;
+  }
+  .tabs-toolbar .search {
+    max-width: 320px;
+  }
+  .payment-note {
+    white-space: normal;
+    height: auto;
+  }
+  .feature .ticket-art {
+    max-width: 100%;
+  }
+  .event-body h3 {
+    font-size: 14px;
+  }
+  .booking-details .detail-list {
+    gap: 16px 12px;
+  }
+}
+@media (max-width: 700px) {
+  .logo,
+  .sidebar .logo {
+    font-size: 23px;
+    gap: 9px;
+  }
+  .auth-layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .auth-marketing {
+    padding: 24px;
+    min-height: 0;
+  }
+  .auth-marketing .logo {
+    font-size: 25px;
+  }
+  .auth-marketing .ticket-art,
+  .marketing-footer {
+    display: none;
+  }
+  .marketing-copy {
+    margin-top: 28px;
+  }
+  .marketing-copy h2 {
+    font-size: 30px;
+    line-height: 36px;
+    margin: 0 0 12px;
+  }
+  .marketing-copy p {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .auth-right {
+    padding: 24px 0 30px;
+  }
+  .auth-top {
+    max-width: calc(100% - 48px);
+    gap: 16px;
+    font-size: 12px;
+    line-height: 16px;
+    white-space: normal;
+  }
+  .auth-content,
+  .auth-content.register,
+  .auth-content.login,
+  .auth-content.recovery {
+    margin-top: 40px;
+    max-width: calc(100% - 48px);
+  }
+  .auth-content h1 {
+    font-size: 29px;
+    line-height: 35px;
+  }
+  .auth-content .subtitle {
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 28px;
+  }
+  .auth-content .stack,
+  .auth-content.login .stack {
+    gap: 22px;
+  }
+  .auth-content.login .row.between {
+    height: auto;
+    margin: 0;
+  }
+  .auth-content .auth-subsection {
+    margin-top: 8px;
+  }
+  .auth-content.register .btn[type="submit"] {
+    margin-top: 0;
+  }
+  .auth-content.register .check-label {
+    margin-top: 0;
+  }
+  .auth-footer {
+    max-width: calc(100% - 48px);
+    padding-top: 46px;
+    flex-wrap: wrap;
+  }
+  .auth-content .field input {
+    font-size: 16px;
+  }
+  .two-col {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .page-heading h1 {
+    font-size: 26px;
+    line-height: 32px;
+  }
+  .page-heading {
+    margin-bottom: 24px;
+  }
+  .subtitle {
+    font-size: 13px;
+    line-height: 18px;
+  }
+  .workspace .topbar {
+    height: 76px;
+  }
+  .workspace-main {
+    padding: 26px 18px;
+  }
+  .workspace .topbar .top-title {
+    font-size: 14px;
+  }
+  .metrics {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .metric {
+    padding: 16px;
+    height: auto;
+    min-height: 124px;
+  }
+  .metric strong {
+    font-size: 28px;
+  }
+  .metric small {
+    font-size: 10px;
+  }
+  .chart-card {
+    padding: 20px;
+    height: 286px;
+  }
+  .chart-heading .chip {
+    min-width: 92px;
+    font-size: 10px;
+  }
+  .bar-chart {
+    gap: 16px;
+    padding-left: 30px;
+    height: 178px;
+  }
+  .up-next {
+    height: auto;
+    min-height: 286px;
+  }
+  .table-toolbar,
+  .manage-card .table-toolbar,
+  .manage-card .table-toolbar + .table-toolbar {
+    height: auto;
+    min-height: 0;
+    padding: 16px 20px;
+    gap: 16px;
+  }
+  .manage-card .table-toolbar + .table-toolbar {
+    padding-top: 0;
+  }
+  .manage-card .table-search {
+    width: 100%;
+    min-width: 0;
+  }
+  .manage-card table {
+    min-width: 680px;
+  }
+  .manage-card th,
+  .manage-card td {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .table-toolbar h2 {
+    font-size: 19px;
+  }
+  .tabs-toolbar {
+    gap: 16px;
+    margin: 22px 0;
+  }
+  .tabs-toolbar .search {
+    width: 100%;
+    max-width: none;
+    min-height: 42px;
+  }
+  .tabs-toolbar .pill {
+    min-width: 0;
+    height: 38px;
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+  .tabs-toolbar [data-booking-tab] {
+    min-width: 0;
+  }
+  .booking-card-body {
+    padding: 20px;
+  }
+  .booking-cover {
+    padding: 16px;
+    min-height: 67px;
+    height: auto;
+  }
+  .booking-cover h3 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .booking-compact {
+    gap: 14px;
+  }
+  .booking-compact h3 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .booking-compact p {
+    font-size: 12px;
+    line-height: 17px;
+  }
+  .booking-details {
+    padding: 22px;
+  }
+  .booking-details .detail-list {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .booking-details .detail-list dd {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .booking-success {
+    font-size: 13px;
+    padding: 16px;
+  }
+  .booking-success p {
+    font-size: 11px;
+    line-height: 16px;
+  }
+  .booking-success .booking-ref {
+    margin-left: 20px;
+  }
+  .booking-actions {
+    padding-top: 18px;
+  }
+  .bookings-banner {
+    padding: 22px;
+    gap: 18px;
+  }
+  .ticket-art {
+    width: min(310px, 100%);
+    max-width: 100%;
+  }
+  .feature {
+    padding: 24px;
+    gap: 28px;
+  }
+  .feature .ticket-art {
+    margin-right: 0;
+  }
+  .feature .small {
+    font-size: 11px;
+  }
+  .feature h2 {
+    font-size: 28px;
+    line-height: 34px;
+  }
+  .event-card .poster {
+    min-height: 154px;
+  }
+  .poster.sage {
+    background: #dceae4;
+    color: #2c554b;
+  }
+  .poster.peach {
+    background: #f2e3d3;
+    color: #71462f;
+  }
+  .poster.blue {
+    background: #dfe6f5;
+    color: #3e5282;
+  }
+  .event-body h3 {
+    font-size: 17px;
+    line-height: 22px;
+  }
+  .event-body .meta {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .event-bottom a {
+    font-size: 12px;
+  }
+  .booking-preview {
+    flex-wrap: wrap;
+  }
+  .preview-cta {
+    height: auto;
+  }
+  .organizer-cta h2 {
+    font-size: 25px;
+    line-height: 30px;
+  }
+  .summary-content {
+    padding: 22px;
+  }
+  .summary-cover h2 {
+    font-size: 25px;
+    line-height: 30px;
+  }
+  .ticket-row {
+    grid-template-columns: 1fr 46px 106px;
+  }
+  .ticket-name {
+    font-size: 13px;
+  }
+  .ticket-price {
+    font-size: 14px;
+  }
+  .quantity {
+    width: 106px;
+  }
+  .payment-note {
+    white-space: normal;
+    height: auto;
+  }
+  .stepper {
+    padding: 14px 12px;
+    gap: 8px;
+  }
+  .stepper span {
+    font-size: 10px;
+  }
+  .field input,
+  .field select,
+  .field textarea {
+    font-size: 16px;
+  }
+  .field .hint {
+    font-size: 12px;
+  }
+  .bottom-banner .btn {
+    min-width: 0;
+  }
+  .page-footer .row {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 390px) {
+  .ticket-row {
+    grid-template-columns: minmax(0, 1fr) 100px;
+  }
+  .ticket-price {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .ticket-row .quantity {
+    grid-column: 2;
+    grid-row: 1/3;
+    width: 100px;
+  }
+  .stepper span {
+    font-size: 9px;
+  }
+  .tabs-toolbar .pill {
+    padding: 10px 12px;
+    font-size: 11px;
+  }
+  .marketing-copy h2 {
+    font-size: 28px;
+    line-height: 34px;
+  }
+  .auth-top {
+    font-size: 11px;
+  }
+  .booking-compact {
+    align-items: flex-start;
+  }
+  .booking-card-body .row > p {
+    line-height: 17px;
+  }
+  .event-bottom {
+    gap: 14px;
+  }
+  .feature .row {
+    flex-wrap: wrap;
+  }
+  .date-wrap input {
+    width: 125px;
+  }
+  .filterbar .right {
+    flex-wrap: wrap;
+  }
+}
+@media print {
+  .auth-marketing {
+    background: #3d315d !important;
+  }
+  .figma-icon {
+    display: inline-block;
+  }
+}
+/* Final measured offsets from the browser/Figma geometry comparison. */
+@media (min-width: 1200px) {
+  .back-link svg.icon {
+    width: 14px;
+    height: 14px;
+  }
+  .page-heading {
+    margin-bottom: 33px;
+  }
+  body[data-page="reserve"] .page-heading {
+    margin-bottom: 25px;
+  }
+  body[data-page="dashboard"] .metrics {
+    margin-bottom: 23px;
+  }
+  .booking-success {
+    padding-bottom: 14px;
+    height: 64px;
+    min-height: 64px;
+  }
+  .booking-success > div {
+    line-height: 16px;
+  }
+  body[data-page="my-bookings"] .booking-details {
+    padding-bottom: 21px;
+    min-height: 612px;
+  }
+  body[data-page="my-bookings"] .bookings-banner {
+    margin-top: 29px;
+  }
+  .auth-marketing .ticket-art {
+    left: 105.42px;
+    top: 634.06px;
+  }
+}
+.date-display {
+  display: none;
+}
+.direction-arrow {
+  display: inline-block;
+  margin-left: 5px;
+  color: inherit !important;
+  font-size: inherit !important;
+  font-weight: inherit;
+  white-space: nowrap;
+}
+.btn .direction-arrow {
+  margin-left: 0;
+}
+@media (min-width: 1200px) {
+  .date-wrap {
+    position: relative;
+    width: 122px;
+    padding: 0 11px;
+    gap: 9px;
+  }
+  .date-display {
+    display: inline;
+    font-size: 11px;
+    line-height: 13px;
+    color: #747181;
+    white-space: nowrap;
+  }
+  .date-wrap .date-filter {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    cursor: pointer;
+    padding: 0;
+  }
+  .date-wrap:focus-within {
+    outline: 3px solid #9788df;
+    outline-offset: 3px;
+  }
+  body[data-page="dashboard"] .page-heading > .btn {
+    width: 154px;
+    height: 40px;
+    min-height: 40px;
+    font-size: 12px;
+  }
+  body[data-page="my-bookings"] .page-heading > .btn {
+    width: 167px;
+    height: 40px;
+    min-height: 40px;
+    font-size: 12px;
+  }
+}
+@media (min-width: 1200px) {
+  .bar-chart {
+    height: 172px;
+    padding: 10px 59px 24px 62px;
+    gap: 46px;
+    border: 0;
+    background: none;
+    isolation: isolate;
+  }
+  .bar-chart::before {
+    content: "";
+    position: absolute;
+    left: 34px;
+    right: 0;
+    top: 10px;
+    bottom: 24px;
+    border-bottom: 1px solid #ece9f3;
+    background: repeating-linear-gradient(
+      to top,
+      transparent 0,
+      transparent 45px,
+      #f0eef8 46px,
+      #f0eef8 47px
+    );
+    z-index: -1;
+  }
+  .chart-column {
+    gap: 6px;
+  }
+  .chart-column .bar-date {
+    bottom: -27px;
+  }
+  .chart-scale {
+    top: 10px;
+    bottom: 19px;
+  }
+  #reservation-form .ticket-row {
+    padding-right: 17px;
+  }
+}
+@media (min-width: 1200px) {
+  .chart-column .bar,
+  .chart-column .bar-value {
+    flex-shrink: 0;
+  }
+}
+/* Final accessibility review: slightly deeper secondary text preserves the
+   measured layout while making small labels readable on pale panels. */
+:root {
+  --muted: #686276;
+  --success: #37734f;
+}
+.event-body .byline,
+.organizer-cta p,
+.organizer-cta .eyebrow,
+.up-next p,
+.up-next .eyebrow,
+.booking-cover .eyebrow,
+.policy p,
+.payment-note {
+  color: var(--muted);
+}
+input::placeholder,
+textarea::placeholder,
+.searchbox input::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+.sr-only:focus-visible {
+  position: absolute;
+  width: auto;
+  height: auto;
+  clip: auto;
+  clip-path: none;
+  padding: 8px;
+  z-index: 100;
+  background: white;
+  color: var(--text);
+}

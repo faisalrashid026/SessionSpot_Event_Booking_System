@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="SessionSpot — discover events and try a browser-local university ticket booking prototype."
+    />
+    <title>Demo administration | SessionSpot</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
+    <link
+      rel="preload"
+      href="assets/fonts/InterVariable.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/figma.css?v=b4d6a79280" />
+    <script defer src="js/form-guard.js?v=d79fb3a354"></script>
+    <script type="module" src="js/app.js?v=08b46b5db8"></script>
+  </head>
+  <body data-figma-node="extension" data-page="admin">
+    <a class="skip" href="#main">Skip to main content</a>
+    <button
+      class="drawer-backdrop"
+      type="button"
+      aria-label="Close navigation"
+      tabindex="-1"
+    ></button>
+    <aside
+      class="sidebar"
+      id="workspace-sidebar"
+      aria-label="Workspace navigation"
+    >
+      <a class="logo" href="index.html" aria-label="SessionSpot home"
+        ><span class="brand-tile"
+          ><img
+            src="assets/figma/e0a44.svg"
+            alt=""
+            width="22"
+            height="22" /></span
+        >SessionSpot</a
+      ><button
+        class="icon-btn drawer-close"
+        type="button"
+        aria-label="Close navigation"
+      >
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m6 6 12 12M6 18 18 6" />
+        </svg>
+      </button>
+      <p class="nav-label">Your workspace</p>
+      <nav class="side-nav" aria-label="Your workspace">
+        <a class="nav-link" href="index.html"
+          ><img
+            class="icon figma-icon"
+            src="assets/figma/12b0c.svg"
+            alt=""
+            width="20"
+            height="20"
+            aria-hidden="true"
+          /><span>Discover events</span></a
+        ><a class="nav-link" href="my-bookings.html"
+          ><img
+            class="icon figma-icon"
+            src="assets/figma/bbef8.svg"
+            alt=""
+            width="20"
+            height="20"
+            aria-hidden="true"
+          /><span>My bookings</span
+          ><span class="badge" data-booking-count>2</span></a
+        ><a class="nav-link" href="index.html?view=saved"
+          ><img
+            class="icon figma-icon"
+            src="assets/figma/31764.svg"
+            alt=""
+            width="20"
+            height="20"
+            aria-hidden="true"
+          /><span>Saved events</span></a
+        ><a class="nav-link" href="index.html?view=calendar"
+          ><img
+            class="icon figma-icon"
+            src="assets/figma/52c20.svg"
+            alt=""
+            width="20"
+            height="20"
+            aria-hidden="true"
+          /><span>Calendar</span></a
+        >
+      </nav>
+      <p class="nav-label organizer-label">Organizer</p>
+      <nav class="side-nav" aria-label="Organizer">
+        <a class="nav-link" href="dashboard.html"
+          ><img
+            class="icon figma-icon"
+            src="assets/figma/52c20.svg"
+            alt=""
+            width="20"
+            height="20"
+            aria-hidden="true"
+          /><span>Manage events</span></a
+        ><a class="nav-link" href="create-event.html"
+          ><img
+            class="icon figma-icon"
+            src="assets/figma/8f002.svg"
+            alt=""
+            width="20"
+            height="20"
+            aria-hidden="true"
+          /><span>Create an event</span></a
+        >
+      </nav>
+      <nav class="side-nav" aria-label="Administration">
+        <a class="nav-link active" href="admin.html" aria-current="page"
+          ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3 3 7v5c0 5 9 9 9 9s9-4 9-9V7z" />
+            <path d="m8 12 3 3 5-6" /></svg
+          ><span>Admin panel</span></a
+        >
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <div class="side-promo">
+        <h3>Bring people together.</h3>
+        <p>Your next great event<br />starts right here.</p>
+        <a class="btn secondary" href="create-event.html">Create an event</a>
+      </div>
+      <nav class="side-bottom" aria-label="Support">
+        <a class="nav-link" href="help.html"
+          ><img
+            class="icon figma-icon"
+            src="assets/figma/ae7b9.svg"
+            alt=""
+            width="20"
+            height="20"
+            aria-hidden="true"
+          /><span>Help & support</span></a
+        ><a class="nav-link" href="profile.html"
+          ><img
+            class="icon figma-icon"
+            src="assets/figma/98517.svg"
+            alt=""
+            width="20"
+            height="20"
+            aria-hidden="true"
+          /><span>Settings</span></a
+        >
+      </nav>
+    </aside>
+    <div class="workspace">
+      <header class="topbar">
+        <button
+          class="icon-btn menu-toggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="workspace-sidebar"
+        >
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg></button
+        ><span class="top-title">Demo administration</span>
+        <form class="searchbox" action="index.html" role="search">
+          <img
+            class="icon figma-icon"
+            src="assets/figma/db137.svg"
+            alt=""
+            width="20"
+            height="20"
+            aria-hidden="true"
+          /><label class="sr-only" for="global-search"
+            >Search events, topics, or organizers</label
+          ><input
+            id="global-search"
+            name="q"
+            type="search"
+            placeholder="Search events, topics, or organizers"
+          /><button class="sr-only" type="submit">Search events</button>
+        </form>
+        <div class="top-actions">
+          <button
+            class="icon-btn"
+            type="button"
+            data-notifications
+            aria-label="Notifications"
+          >
+            <img
+              class="icon figma-icon"
+              src="assets/figma/16298.svg"
+              alt=""
+              width="20"
+              height="20"
+              aria-hidden="true"
+            /></button
+          ><a class="account" href="profile.html"
+            ><span class="avatar" aria-hidden="true">AM</span
+            ><span class="account-text"
+              ><strong data-profile-name>Alex Morgan</strong
+              ><small>Personal account</small></span
+            ><span class="sr-only">My profile</span></a
+          >
+        </div>
+      </header>
+      <main id="main" tabindex="-1" class="workspace-main">
+        <div class="page-heading">
+          <div>
+            <h1>A little oversight. A better experience.</h1>
+            <p class="subtitle">
+              Manage sample users and events in the Part 2 prototype.
+            </p>
+          </div>
+        </div>
+        <div class="notice" style="margin-bottom: 24px">
+          Demo administration · Role changes and removals affect browser-local
+          sample data only. No secure authorization is implemented.
+        </div>
+        <div class="metrics" id="admin-metrics"></div>
+        <section class="card manage-card">
+          <div class="table-toolbar">
+            <h2>Users & roles</h2>
+            <label class="searchbox table-search"
+              ><span class="sr-only">Search users</span
+              ><input
+                id="user-search"
+                type="search"
+                placeholder="Search sample users..."
+            /></label>
+          </div>
+          <div
+            class="table-scroll"
+            tabindex="0"
+            role="region"
+            aria-label="Users and roles"
+          >
+            <table>
+              <caption class="sr-only">
+                Sample user role controls
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Role</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="user-rows"></tbody>
+            </table>
+          </div>
+        </section>
+        <section class="card manage-card">
+          <div class="table-toolbar">
+            <h2>Event oversight</h2>
+            <a href="create-event.html" class="btn secondary sm"
+              >Create event</a
+            >
+          </div>
+          <div
+            class="table-scroll"
+            tabindex="0"
+            role="region"
+            aria-label="Event oversight"
+          >
+            <table>
+              <caption class="sr-only">
+                Sample event administration
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Event</th>
+                  <th scope="col">Organizer</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="admin-event-rows"></tbody>
+            </table>
+          </div>
+        </section>
+        <footer class="page-footer">
+          <div class="row between">
+            <span>SessionSpot · COMP 3540 · Team G13</span
+            ><span
+              ><a href="admin.html">Demo admin</a
+              ><a href="login.html">Demo sign in</a
+              ><a href="help.html">Help</a></span
+            >
+          </div>
+          <p class="prototype">
+            Part 2 prototype · Browser-local sample data · Demo date: November
+            10, 2026 · No real payments, email or authentication.
+          </p>
+        </footer>
+      </main>
+    </div>
+    <noscript
+      ><p class="noscript">
+        Enable JavaScript to use the sample event and booking interactions. Page
+        navigation remains available.
+      </p></noscript
+    >
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+    <dialog class="dialog" id="action-dialog" aria-labelledby="dialog-title">
+      <h2 id="dialog-title"></h2>
+      <p id="dialog-message"></p>
+      <div class="row">
+        <button class="btn secondary" type="button" id="dialog-dismiss">
+          Keep it</button
+        ><button class="btn" type="button" id="dialog-confirm">Continue</button>
+      </div>
+    </dialog>
+  </body>
+</html>

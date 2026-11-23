@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="SessionSpot — discover events and try a browser-local university ticket booking prototype."
+    />
+    <title>Discover events | SessionSpot</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
+    <link
+      rel="preload"
+      href="assets/fonts/InterVariable.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/figma.css?v=b4d6a79280" />
+    <script defer src="js/form-guard.js?v=d79fb3a354"></script>
+    <script type="module" src="js/app.js?v=08b46b5db8"></script>
+  </head>
+  <body data-figma-node="2:2" data-page="index">
+    <a class="skip" href="#main">Skip to main content</a>
+    <header class="topbar discover-header">
+      <a class="logo" href="index.html" aria-label="SessionSpot home"
+        ><span class="brand-tile"
+          ><img
+            src="assets/figma/e0a44.svg"
+            alt=""
+            width="22"
+            height="22" /></span
+        >SessionSpot</a
+      >
+      <form class="searchbox" action="index.html" role="search">
+        <img
+          class="icon figma-icon"
+          src="assets/figma/db137.svg"
+          alt=""
+          width="20"
+          height="20"
+          aria-hidden="true"
+        /><label class="sr-only" for="global-search"
+          >Search events, topics, or organizers</label
+        ><input
+          id="global-search"
+          name="q"
+          type="search"
+          placeholder="Search events, topics, or organizers"
+        /><button class="sr-only" type="submit">Search events</button>
+      </form>
+      <div class="top-actions">
+        <a class="btn" href="create-event.html"
+          ><img
+            class="icon figma-icon"
+            src="assets/figma/8f002.svg"
+            alt=""
+            width="20"
+            height="20"
+            aria-hidden="true"
+          />Create an event</a
+        ><button
+          class="icon-btn"
+          type="button"
+          data-notifications
+          aria-label="Notifications"
+        >
+          <img
+            class="icon figma-icon"
+            src="assets/figma/16298.svg"
+            alt=""
+            width="20"
+            height="20"
+            aria-hidden="true"
+          /></button
+        ><a class="account" href="profile.html"
+          ><span class="avatar" aria-hidden="true">AM</span
+          ><span class="account-text"
+            ><strong data-profile-name>Alex Morgan</strong
+            ><small>Personal account</small></span
+          ><span class="sr-only">My profile</span></a
+        >
+      </div>
+    </header>
+    <nav class="discover-nav" aria-label="Main navigation">
+      <a class="nav-link active" href="index.html" aria-current="page"
+        ><img
+          class="icon figma-icon"
+          src="assets/figma/12b0c.svg"
+          alt=""
+          width="20"
+          height="20"
+          aria-hidden="true"
+        /><span
+          >Discover events
+          <span class="direction-arrow" aria-hidden="true">→</span></span
+        ></a
+      ><a class="nav-link" href="my-bookings.html"
+        ><img
+          class="icon figma-icon"
+          src="assets/figma/bbef8.svg"
+          alt=""
+          width="20"
+          height="20"
+          aria-hidden="true"
+        /><span>My bookings</span
+        ><span class="badge" data-booking-count>2</span></a
+      ><a class="nav-link" href="index.html?view=saved"
+        ><img
+          class="icon figma-icon"
+          src="assets/figma/31764.svg"
+          alt=""
+          width="20"
+          height="20"
+          aria-hidden="true"
+        /><span>Saved events</span></a
+      ><a class="nav-link" href="index.html?view=calendar"
+        ><img
+          class="icon figma-icon"
+          src="assets/figma/52c20.svg"
+          alt=""
+          width="20"
+          height="20"
+          aria-hidden="true"
+        /><span>Calendar</span></a
+      ><a class="nav-link" href="dashboard.html"
+        ><img
+          class="icon figma-icon"
+          src="assets/figma/52c20.svg"
+          alt=""
+          width="20"
+          height="20"
+          aria-hidden="true"
+        /><span>Manage events</span></a
+      ><span class="push"></span
+      ><a class="nav-link" href="help.html"
+        ><img
+          class="icon figma-icon"
+          src="assets/figma/ae7b9.svg"
+          alt=""
+          width="20"
+          height="20"
+          aria-hidden="true"
+        /><span>Help & support</span></a
+      ><a class="nav-link" href="profile.html"
+        ><img
+          class="icon figma-icon"
+          src="assets/figma/98517.svg"
+          alt=""
+          width="20"
+          height="20"
+          aria-hidden="true"
+        /><span>Settings</span></a
+      >
+    </nav>
+    <main id="main" tabindex="-1" class="discover-main">
+      <div class="row between greeting">
+        <div>
+          <h1>Good morning, <span data-first-name>Alex</span></h1>
+          <p class="subtitle">
+            Find your next connection, big idea, or unforgettable experience.
+          </p>
+        </div>
+        <span class="greeting-date">Tuesday, November 10</span>
+      </div>
+      <section class="feature" aria-labelledby="featured-heading">
+        <div>
+          <div class="eyebrow">Featured event / Community & innovation</div>
+          <h2 id="featured-heading">Big ideas. Real connections.</h2>
+          <p>Join the people shaping what comes next.</p>
+          <p class="feature-meta">
+            Nov 21, 2026 &nbsp; · &nbsp; 9:00 AM &nbsp; · &nbsp; City Convention
+            Center
+          </p>
+          <div class="row">
+            <a class="btn" href="reserve.html?event=summit"
+              >Reserve a spot
+              <span class="direction-arrow" aria-hidden="true">→</span></a
+            ><span class="small muted">From $15 / person</span>
+          </div>
+        </div>
+        <div
+          class="ticket-art"
+          role="img"
+          aria-label="Illustrated Innovation Summit ticket, November 21"
+        >
+          <div class="art-label">SESSIONSPOT PRESENTS</div>
+          <h3>Innovation<br />Summit ’26</h3>
+          <div class="date-block">NOV<strong>21</strong></div>
+          <div class="art-footer">LEARN. CONNECT. BUILD.</div>
+          <div class="admit">ADMIT<br />ONE</div>
+        </div>
+      </section>
+      <section id="explore" aria-labelledby="explore-heading">
+        <div class="section-heading">
+          <h2 id="explore-heading">Explore upcoming events</h2>
+          <button class="text-button" type="button" id="view-all-events">
+            View all events
+          </button>
+        </div>
+        <div class="filterbar">
+          <div class="pills" role="group" aria-label="Event category">
+            <button
+              class="pill active"
+              type="button"
+              data-category=""
+              aria-pressed="true"
+            >
+              All events</button
+            ><button
+              class="pill"
+              type="button"
+              data-category="Education"
+              aria-pressed="false"
+            >
+              Education</button
+            ><button
+              class="pill"
+              type="button"
+              data-category="Business"
+              aria-pressed="false"
+            >
+              Business</button
+            ><button
+              class="pill"
+              type="button"
+              data-category="Community"
+              aria-pressed="false"
+            >
+              Community</button
+            ><button
+              class="pill"
+              type="button"
+              data-category="Arts & culture"
+              aria-pressed="false"
+            >
+              Arts & culture
+            </button>
+          </div>
+          <div class="right">
+            <label class="date-wrap"
+              ><img
+                class="icon figma-icon"
+                src="assets/figma/8cd04.svg"
+                alt=""
+                width="15"
+                height="15"
+                aria-hidden="true" /><span
+                class="date-display"
+                aria-hidden="true"
+                >Any date ⌄</span
+              ><span class="sr-only">Event date</span
+              ><input
+                class="date-filter"
+                type="date"
+                id="event-date"
+                aria-label="Event date" /></label
+            ><button
+              class="pill row"
+              id="filter-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="extra-filters"
+            >
+              <img
+                class="icon figma-icon"
+                src="assets/figma/96e02.svg"
+                alt=""
+                width="15"
+                height="15"
+                aria-hidden="true"
+              />Filters
+            </button>
+          </div>
+        </div>
+        <div id="extra-filters" class="notice row between" hidden>
+          <label class="row small"
+            >Price<select id="price-filter" class="filter-select">
+              <option value="all">Any price</option>
+              <option value="free">Free events</option>
+              <option value="paid">Paid events</option>
+            </select></label
+          ><button type="button" class="text-button" id="reset-filters">
+            Reset filters
+          </button>
+        </div>
+        <p
+          id="results-count"
+          class="sr-only"
+          role="status"
+          aria-live="polite"
+        ></p>
+        <div class="event-grid" id="event-grid"></div>
+        <div class="empty card" id="events-empty" hidden>
+          <h3>No events found</h3>
+          <p>Try another search, date or category.</p>
+          <button class="btn secondary" id="empty-reset" type="button">
+            Reset filters
+          </button>
+        </div>
+      </section>
+      <div class="discovery-bottom">
+        <section>
+          <div class="section-heading">
+            <h2>You’re on the list</h2>
+            <a href="my-bookings.html">View my bookings</a>
+          </div>
+          <div id="booking-preview"></div>
+        </section>
+        <aside class="organizer-cta">
+          <div class="eyebrow">Made for organizers</div>
+          <h2>Great events start<br />with a simple idea.</h2>
+          <p>
+            Create your event, manage registrations,<br />and bring your
+            community together.
+          </p>
+          <a class="btn secondary" href="create-event.html">Create an event</a>
+        </aside>
+      </div>
+      <div class="bottom-banner">
+        <div>
+          <h3>Bring people together.</h3>
+          <p>Your next great event starts right here.</p>
+        </div>
+        <a class="btn secondary" href="create-event.html">Create an event</a>
+      </div>
+      <footer class="page-footer">
+        <div class="row between">
+          <span>SessionSpot · COMP 3540 · Team G13</span
+          ><span
+            ><a href="admin.html">Demo admin</a
+            ><a href="login.html">Demo sign in</a
+            ><a href="help.html">Help</a></span
+          >
+        </div>
+        <p class="prototype">
+          Part 2 prototype · Browser-local sample data · Demo date: November 10,
+          2026 · No real payments, email or authentication.
+        </p>
+      </footer>
+    </main>
+    <noscript
+      ><p class="noscript">
+        Enable JavaScript to use the sample event and booking interactions. Page
+        navigation remains available.
+      </p></noscript
+    >
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+    <dialog class="dialog" id="action-dialog" aria-labelledby="dialog-title">
+      <h2 id="dialog-title"></h2>
+      <p id="dialog-message"></p>
+      <div class="row">
+        <button class="btn secondary" type="button" id="dialog-dismiss">
+          Keep it</button
+        ><button class="btn" type="button" id="dialog-confirm">Continue</button>
+      </div>
+    </dialog>
+  </body>
+</html>

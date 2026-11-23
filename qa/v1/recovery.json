@@ -1,0 +1,9 @@
+{
+  "sourceCheckpoint": "checkpoints/SessionSpot-before-fullstack-v1.zip",
+  "checkpointSha256": "5516060d6aba3a00dc79b76531ac75bc4840fe59f611844d8a275f0ae78c81c8",
+  "previousZipSha256": {
+    "submission/SessionSpot-Part2-Submission.zip": "9c2902107dec53efd79422ade512a7054f0a152bd6f4b8737f0cc8b45f4aa070",
+    "submission/SessionSpot-Part2-Functional-v3.zip": "a600303965ed2ec9a29a07b7b370c366929f813ae3cc82f137b7c42406d355ae",
+    "submission/SessionSpot-Part2-Functional-v2.zip": "305bcd26159197282ae9aa2a1b22d2f5b3faf1f9bc4109fc9d106c2f55a316ca"
+  }
+}

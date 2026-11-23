@@ -1,0 +1,298 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/1a7c5051-0e4a-4f21-ac1d-53a7e79807df";
+const imgTicketIcon = `${assetPathPrefix}/e0a44.svg`;
+const imgGridIcon = `${assetPathPrefix}/12b0c.svg`;
+const imgTicketIcon1 = `${assetPathPrefix}/bbef8.svg`;
+const imgHeartIcon = `${assetPathPrefix}/31764.svg`;
+const imgCalIcon = `${assetPathPrefix}/52c20.svg`;
+const imgPlusIcon = `${assetPathPrefix}/ba683.svg`;
+const imgHelpIcon = `${assetPathPrefix}/ae7b9.svg`;
+const imgSettingsIcon = `${assetPathPrefix}/98517.svg`;
+const imgSearchIcon = `${assetPathPrefix}/db137.svg`;
+const imgBellIcon = `${assetPathPrefix}/16298.svg`;
+
+export default function GatherMyBookings() {
+  return (
+    <div className="bg-[#f8f9fa] relative size-full" data-node-id="2:372" data-name="Gather — My bookings">
+      <div className="absolute bg-white h-[1160px] left-0 overflow-clip top-0 w-[224px]" data-node-id="2:373" data-name="Sidebar">
+        <div className="absolute bg-[#ececf2] h-[1160px] left-[223px] top-0 w-px" data-node-id="2:374" data-name="Sidebar divider" />
+        <div className="absolute bg-[#6554c0] left-[24px] overflow-clip rounded-[9px] size-[32px] top-[28px]" data-node-id="2:375" data-name="Brand tile">
+          <div className="absolute left-[5px] size-[22px] top-[5px]" data-node-id="2:376" data-name="ticket icon">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgTicketIcon} />
+          </div>
+        </div>
+        <p className="[word-break:break-word] absolute font-['Inter:Bold'] font-bold leading-[normal] left-[66px] not-italic text-[#222438] text-[25px] top-[27px] whitespace-nowrap" data-node-id="2:379">
+          gather
+        </p>
+        <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[normal] left-[24px] not-italic text-[#797c8c] text-[10px] top-[110px] whitespace-nowrap" data-node-id="2:380">
+          YOUR WORKSPACE
+        </p>
+        <div className="absolute bg-[#f0edfc] h-[44px] left-[16px] rounded-[8px] top-[190px] w-[192px]" data-node-id="2:381" data-name="Selected navigation" />
+        <div className="absolute left-[29px] size-[20px] top-[152px]" data-node-id="2:382" data-name="grid icon">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgGridIcon} />
+        </div>
+        <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[normal] left-[61px] not-italic text-[#797c8c] text-[13px] top-[153px] whitespace-nowrap" data-node-id="2:387">
+          Discover events
+        </p>
+        <div className="absolute left-[29px] size-[20px] top-[202px]" data-node-id="2:388" data-name="ticket icon">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgTicketIcon1} />
+        </div>
+        <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[normal] left-[61px] not-italic text-[#6554c0] text-[13px] top-[203px] whitespace-nowrap" data-node-id="2:391">
+          My bookings
+        </p>
+        <div className="absolute bg-[#f0f0f5] left-[174px] rounded-[5px] size-[20px] top-[203px]" data-node-id="2:392" data-name="Ticket count" />
+        <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[normal] left-[180px] not-italic text-[#797c8c] text-[11px] top-[205px] whitespace-nowrap" data-node-id="2:393">
+          2
+        </p>
+        <div className="absolute left-[29px] size-[20px] top-[252px]" data-node-id="2:394" data-name="heart icon">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgHeartIcon} />
+        </div>
+        <p className="[word-break:break-word] absolute font-['Inter:Medium'] font-medium leading-[normal] left-[61px] not-italic text-[#797c8c] text-[13px] top-[253px] whitespace-nowrap" data-node-id="2:396">
+          Saved events
+        </p>
+        <div className="absolute left-[29px] size-[20px] top-[302px]" data-node-id="2:397" data-name="cal icon">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgCalIcon} />
+        </div>
+        <p className="[word-break:break-word] absolute font-['Inter:Medium'] font-medium leading-[normal] left-[61px] not-italic text-[#797c8c] text-[13px] top-[303px] whitespace-nowrap" data-node-id="2:400">
+          Calendar
+        </p>
+        <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[normal] left-[24px] not-italic text-[#797c8c] text-[10px] top-[382px] whitespace-nowrap" data-node-id="2:401">
+          ORGANIZER
+        </p>
+        <div className="absolute left-[29px] size-[20px] top-[421px]" data-node-id="2:402" data-name="cal icon">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgCalIcon} />
+        </div>
+        <p className="[word-break:break-word] absolute font-['Inter:Medium'] font-medium leading-[normal] left-[61px] not-italic text-[#797c8c] text-[13px] top-[422px] whitespace-nowrap" data-node-id="2:405">
+          Manage events
+        </p>
+        <div className="absolute left-[29px] size-[20px] top-[471px]" data-node-id="2:406" data-name="plus icon">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgPlusIcon} />
+        </div>
+        <p className="[word-break:break-word] absolute font-['Inter:Medium'] font-medium leading-[normal] left-[61px] not-italic text-[#797c8c] text-[13px] top-[472px] whitespace-nowrap" data-node-id="2:408">
+          Create an event
+        </p>
+        <div className="absolute bg-[#f7f5fc] h-[160px] left-[16px] overflow-clip rounded-[12px] top-[838px] w-[192px]" data-node-id="2:409" data-name="Organizer upgrade">
+          <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[normal] left-[16px] not-italic text-[#222438] text-[13px] top-[20px] whitespace-nowrap" data-node-id="2:410">
+            Bring people together.
+          </p>
+          <div className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[0] left-[16px] not-italic text-[#797c8c] text-[12px] top-[48px] whitespace-nowrap" data-node-id="2:411">
+            <p className="leading-[normal] mb-0">Your next great event</p>
+            <p className="leading-[normal]">starts right here.</p>
+          </div>
+          <div className="absolute bg-white h-[36px] left-[16px] overflow-clip rounded-[7px] top-[104px] w-[160px]" data-node-id="2:412" data-name="Create event">
+            <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[normal] left-[21px] not-italic text-[#6554c0] text-[12px] top-[10px] whitespace-pre" data-node-id="2:413">{`Create an event   ↗`}</p>
+          </div>
+        </div>
+        <div className="absolute left-[29px] size-[20px] top-[1036px]" data-node-id="2:414" data-name="help icon">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgHelpIcon} />
+        </div>
+        <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[normal] left-[61px] not-italic text-[#797c8c] text-[13px] top-[1038px] whitespace-nowrap" data-node-id="2:417">{`Help & support`}</p>
+        <div className="absolute left-[29px] size-[20px] top-[1080px]" data-node-id="2:418" data-name="settings icon">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgSettingsIcon} />
+        </div>
+        <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[normal] left-[61px] not-italic text-[#797c8c] text-[13px] top-[1082px] whitespace-nowrap" data-node-id="2:421">
+          Settings
+        </p>
+      </div>
+      <div className="absolute bg-white h-[88px] left-[224px] overflow-clip top-0 w-[1216px]" data-node-id="2:422" data-name="Top bar">
+        <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[normal] left-[40px] not-italic text-[#222438] text-[17px] top-[33px] whitespace-nowrap" data-node-id="2:423">
+          Booking management
+        </p>
+        <div className="absolute bg-[#f7f7fa] h-[42px] left-[310px] overflow-clip rounded-[8px] top-[23px] w-[420px]" data-node-id="2:424" data-name="Search events">
+          <div className="absolute left-[14px] size-[20px] top-[11px]" data-node-id="2:425" data-name="search icon">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgSearchIcon} />
+          </div>
+          <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[normal] left-[44px] not-italic text-[#797c8c] text-[12px] top-[13px] whitespace-nowrap" data-node-id="2:428">
+            Search events, topics, or organizers
+          </p>
+        </div>
+        <div className="absolute left-[1032px] size-[20px] top-[33px]" data-node-id="2:429" data-name="bell icon">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgBellIcon} />
+        </div>
+        <div className="absolute bg-[#6554c0] left-[1046px] rounded-[3px] size-[5px] top-[30px]" data-node-id="2:431" data-name="Notification dot" />
+        <div className="absolute bg-[#ececf2] h-[34px] left-[1074px] top-[27px] w-px" data-node-id="2:432" data-name="Header divider" />
+        <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[normal] left-[1094px] not-italic text-[#222438] text-[12px] top-[28px] whitespace-nowrap" data-node-id="2:433">
+          Alex Morgan
+        </p>
+        <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[normal] left-[1094px] not-italic text-[#797c8c] text-[10px] top-[47px] whitespace-nowrap" data-node-id="2:434">
+          Personal account
+        </p>
+        <div className="absolute bg-[#ececf2] h-px left-0 top-[87px] w-[1216px]" data-node-id="2:435" data-name="Bottom divider" />
+      </div>
+      <div className="absolute h-[1000px] left-[264px] overflow-clip top-[120px] w-[1136px]" data-node-id="2:436" data-name="Page content">
+        <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[normal] left-0 not-italic text-[#25243b] text-[28px] top-0 whitespace-nowrap" data-node-id="2:736">
+          My bookings
+        </p>
+        <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[normal] left-0 not-italic text-[#716c81] text-[13px] top-[43px] whitespace-nowrap" data-node-id="2:737">
+          All your plans, tickets, and event details in one place.
+        </p>
+        <div className="absolute bg-white border border-[#e4dfed] border-solid h-[40px] left-[969px] overflow-clip rounded-[7px] top-[4px] w-[167px]" data-node-id="2:738" data-name="Discover events  →">
+          <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[normal] left-[27px] not-italic text-[#6554c0] text-[12px] top-[12px] whitespace-pre" data-node-id="2:739">{`Discover events  →`}</p>
+        </div>
+        <div className="[word-break:break-word] absolute bg-[#eaf4ee] h-[64px] leading-[normal] left-0 not-italic overflow-clip rounded-[8px] top-[91px] w-[1136px]" data-node-id="2:740" data-name="Reservation confirmation">
+          <p className="absolute font-['Inter:Semi_Bold'] font-semibold left-[20px] text-[#39714f] text-[13px] top-[13px] whitespace-pre" data-node-id="2:741">{`✓  You’re booked for Innovation Summit ’26!`}</p>
+          <p className="absolute font-['Inter:Regular'] font-normal left-[40px] text-[#52765c] text-[11px] top-[37px] whitespace-nowrap" data-node-id="2:742">
+            2 tickets reserved. A confirmation has been sent to alex@example.com.
+          </p>
+          <p className="absolute font-['Inter:Medium'] font-medium left-[952px] text-[#39714f] text-[11px] top-[27px] whitespace-nowrap" data-node-id="2:743">
+            Booking #GT-20512
+          </p>
+        </div>
+        <div className="absolute bg-[#6554c0] h-[37px] left-0 overflow-clip rounded-[7px] top-[181px] w-[126px]" data-node-id="2:744" data-name="Upcoming  2">
+          <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[normal] left-[17px] not-italic text-[12px] text-white top-[12px] whitespace-pre" data-node-id="2:745">{`Upcoming  2`}</p>
+        </div>
+        <div className="absolute bg-white border border-[#e4dfed] border-solid h-[37px] left-[134px] overflow-clip rounded-[7px] top-[181px] w-[90px]" data-node-id="2:746" data-name="Past  1">
+          <p className="[word-break:break-word] absolute font-['Inter:Medium'] font-medium leading-[normal] left-[16px] not-italic text-[#716c81] text-[12px] top-[11px] whitespace-pre" data-node-id="2:747">{`Past  1`}</p>
+        </div>
+        <div className="absolute bg-white border border-[#e4dfed] border-solid h-[37px] left-[232px] overflow-clip rounded-[7px] top-[181px] w-[121px]" data-node-id="2:748" data-name="Cancelled  1">
+          <p className="[word-break:break-word] absolute font-['Inter:Medium'] font-medium leading-[normal] left-[16px] not-italic text-[#716c81] text-[12px] top-[11px] whitespace-pre" data-node-id="2:749">{`Cancelled  1`}</p>
+        </div>
+        <div className="absolute bg-white border border-[#e4dfed] border-solid h-[37px] left-[744px] overflow-clip rounded-[7px] top-[181px] w-[392px]" data-node-id="2:750" data-name="Search bookings">
+          <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[normal] left-[13px] not-italic text-[#716c81] text-[11px] top-[11px] whitespace-nowrap" data-node-id="2:751">
+            Search event name or booking reference…
+          </p>
+        </div>
+        <div className="absolute bg-white border border-[#afa0d8] border-solid h-[243px] left-0 overflow-clip rounded-[10px] top-[244px] w-[704px]" data-node-id="2:752" data-name="Innovation summit booking selected">
+          <div className="absolute bg-[#eae5fa] h-[67px] left-[-1px] overflow-clip rounded-tl-[10px] rounded-tr-[10px] top-[-1px] w-[704px]" data-node-id="2:753" data-name="Summit identity">
+            <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[normal] left-[20px] not-italic text-[#786699] text-[8px] top-[15px] whitespace-nowrap" data-node-id="2:754">
+              GATHER PRESENTS
+            </p>
+            <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[normal] left-[20px] not-italic text-[#3d315d] text-[18px] top-[32px] whitespace-nowrap" data-node-id="2:755">
+              Innovation Summit ’26
+            </p>
+            <div className="absolute bg-white h-[24px] left-[592px] overflow-clip rounded-[5px] top-[23px] w-[92px]" data-node-id="2:756" data-name="Confirmed status">
+              <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[normal] left-[12px] not-italic text-[#39714f] text-[10px] top-[7px] whitespace-nowrap" data-node-id="2:757">
+                ✓ Confirmed
+              </p>
+            </div>
+          </div>
+          <p className="[word-break:break-word] absolute font-['Inter:Medium'] font-medium leading-[normal] left-[19px] not-italic text-[#51465f] text-[12px] top-[87px] whitespace-nowrap" data-node-id="2:758">
+            Saturday, Nov 21, 2026 · 9:00 AM – 5:00 PM
+          </p>
+          <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[normal] left-[19px] not-italic text-[#716c81] text-[12px] top-[112px] whitespace-nowrap" data-node-id="2:759">
+            City Convention Center
+          </p>
+          <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[normal] left-[19px] not-italic text-[#716c81] text-[11px] top-[146px] whitespace-nowrap" data-node-id="2:760">
+            2 tickets · General admission · $50.00 due at venue
+          </p>
+          <div className="absolute bg-[#eeebf3] h-px left-[19px] top-[176px] w-[664px]" data-node-id="2:761" data-name="Booking divider" />
+          <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[normal] left-[19px] not-italic text-[#81778f] text-[10px] top-[201px] whitespace-nowrap" data-node-id="2:762">
+            #GT-20512
+          </p>
+          <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[normal] left-[569px] not-italic text-[#6554c0] text-[12px] top-[201px] whitespace-pre" data-node-id="2:763">{`View details  →`}</p>
+        </div>
+        <div className="absolute bg-white border border-[#e4dfed] border-solid h-[221px] left-0 overflow-clip rounded-[10px] top-[507px] w-[704px]" data-node-id="2:764" data-name="Speaking workshop booking">
+          <div className="[word-break:break-word] absolute bg-[#f0edfa] font-['Inter:Semi_Bold'] font-semibold h-[72px] leading-[normal] left-[19px] not-italic overflow-clip rounded-[7px] text-[#6554c0] top-[21px] w-[67px] whitespace-nowrap" data-node-id="2:765" data-name="Workshop date">
+            <p className="absolute left-[22px] text-[9px] top-[11px]" data-node-id="2:766">
+              NOV
+            </p>
+            <p className="absolute left-[16px] text-[27px] top-[30px]" data-node-id="2:767">
+              14
+            </p>
+          </div>
+          <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[normal] left-[107px] not-italic text-[#383046] text-[17px] top-[22px] whitespace-nowrap" data-node-id="2:768">
+            Public Speaking Workshop
+          </p>
+          <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[normal] left-[107px] not-italic text-[#716c81] text-[12px] top-[52px] whitespace-nowrap" data-node-id="2:769">
+            Sat, Nov 14 · 2:00 PM – 4:00 PM
+          </p>
+          <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[normal] left-[107px] not-italic text-[#716c81] text-[12px] top-[77px] whitespace-nowrap" data-node-id="2:770">
+            Westbridge Learning Center
+          </p>
+          <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[normal] left-[19px] not-italic text-[#716c81] text-[11px] top-[120px] whitespace-nowrap" data-node-id="2:771">
+            1 ticket · General admission · Free
+          </p>
+          <div className="absolute bg-[#eaf4ee] h-[24px] left-[581px] overflow-clip rounded-[5px] top-[118px] w-[102px]" data-node-id="2:772" data-name="Confirmed status">
+            <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[normal] left-[16px] not-italic text-[#39714f] text-[10px] top-[7px] whitespace-nowrap" data-node-id="2:773">
+              ✓ Confirmed
+            </p>
+          </div>
+          <div className="absolute bg-[#eeebf3] h-px left-[19px] top-[156px] w-[664px]" data-node-id="2:774" data-name="Booking divider" />
+          <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[normal] left-[19px] not-italic text-[#81778f] text-[10px] top-[183px] whitespace-nowrap" data-node-id="2:775">
+            #GT-20481
+          </p>
+          <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[normal] left-[569px] not-italic text-[#6554c0] text-[12px] top-[183px] whitespace-pre" data-node-id="2:776">{`View details  →`}</p>
+        </div>
+        <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[normal] left-0 not-italic text-[#716c81] text-[11px] top-[751px] whitespace-nowrap" data-node-id="2:777">
+          Showing 2 upcoming bookings
+        </p>
+        <div className="absolute bg-white border border-[#e4dfed] border-solid h-[612px] left-[728px] overflow-clip rounded-[10px] top-[244px] w-[408px]" data-node-id="2:778" data-name="Selected booking details">
+          <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[normal] left-[23px] not-italic text-[#383046] text-[19px] top-[22px] whitespace-nowrap" data-node-id="2:779">
+            Booking details
+          </p>
+          <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[normal] left-[23px] not-italic text-[#51465f] text-[14px] top-[62px] whitespace-nowrap" data-node-id="2:780">
+            Innovation Summit ’26
+          </p>
+          <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[normal] left-[23px] not-italic text-[#81778f] text-[11px] top-[107px] whitespace-nowrap" data-node-id="2:781">
+            Booking reference
+          </p>
+          <p className="[word-break:break-word] absolute font-['Inter:Medium'] font-medium leading-[normal] left-[324px] not-italic text-[#51465f] text-[11px] top-[107px] whitespace-nowrap" data-node-id="2:782">
+            #GT-20512
+          </p>
+          <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[normal] left-[23px] not-italic text-[#81778f] text-[11px] top-[140px] whitespace-nowrap" data-node-id="2:783">
+            Booked by
+          </p>
+          <p className="[word-break:break-word] absolute font-['Inter:Medium'] font-medium leading-[normal] left-[317px] not-italic text-[#51465f] text-[11px] top-[140px] whitespace-nowrap" data-node-id="2:784">
+            Alex Morgan
+          </p>
+          <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[normal] left-[23px] not-italic text-[#81778f] text-[11px] top-[173px] whitespace-nowrap" data-node-id="2:785">
+            Booking date
+          </p>
+          <p className="[word-break:break-word] absolute font-['Inter:Medium'] font-medium leading-[normal] left-[313px] not-italic text-[#51465f] text-[11px] top-[173px] whitespace-nowrap" data-node-id="2:786">
+            Nov 10, 2026
+          </p>
+          <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[normal] left-[23px] not-italic text-[#81778f] text-[11px] top-[206px] whitespace-nowrap" data-node-id="2:787">
+            Ticket type
+          </p>
+          <p className="[word-break:break-word] absolute font-['Inter:Medium'] font-medium leading-[normal] left-[285px] not-italic text-[#51465f] text-[11px] top-[206px] whitespace-nowrap" data-node-id="2:788">
+            General admission
+          </p>
+          <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[normal] left-[23px] not-italic text-[#81778f] text-[11px] top-[239px] whitespace-nowrap" data-node-id="2:789">
+            Quantity
+          </p>
+          <p className="[word-break:break-word] absolute font-['Inter:Medium'] font-medium leading-[normal] left-[338px] not-italic text-[#51465f] text-[11px] top-[239px] whitespace-nowrap" data-node-id="2:790">
+            2 tickets
+          </p>
+          <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[normal] left-[23px] not-italic text-[#81778f] text-[11px] top-[272px] whitespace-nowrap" data-node-id="2:791">
+            Reservation status
+          </p>
+          <p className="[word-break:break-word] absolute font-['Inter:Medium'] font-medium leading-[normal] left-[327px] not-italic text-[#51465f] text-[11px] top-[272px] whitespace-nowrap" data-node-id="2:792">
+            Confirmed
+          </p>
+          <div className="absolute bg-[#eeebf3] h-px left-[23px] top-[316px] w-[360px]" data-node-id="2:793" data-name="Details divider" />
+          <p className="[word-break:break-word] absolute font-['Inter:Medium'] font-medium leading-[normal] left-[23px] not-italic text-[#51465f] text-[13px] top-[339px] whitespace-nowrap" data-node-id="2:794">
+            Amount due at venue
+          </p>
+          <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[normal] left-[312px] not-italic text-[#383046] text-[19px] top-[336px] whitespace-nowrap" data-node-id="2:795">
+            $50.00
+          </p>
+          <div className="absolute bg-[#6554c0] h-[40px] left-[23px] overflow-clip rounded-[7px] top-[384px] w-[360px]" data-node-id="2:796" data-name="View tickets  →">
+            <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[normal] left-[135.5px] not-italic text-[12px] text-white top-[13px] whitespace-pre" data-node-id="2:797">{`View tickets  →`}</p>
+          </div>
+          <div className="absolute bg-white border border-[#e4dfed] border-solid h-[40px] left-[23px] overflow-clip rounded-[7px] top-[435px] w-[360px]" data-node-id="2:798" data-name="Download confirmation ↓">
+            <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[normal] left-[104px] not-italic text-[#6554c0] text-[12px] top-[12px] whitespace-nowrap" data-node-id="2:799">
+              Download confirmation ↓
+            </p>
+          </div>
+          <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[normal] left-[23px] not-italic text-[#716c81] text-[10px] top-[501px] whitespace-nowrap" data-node-id="2:800">
+            Cancellation available until Nov 19, 2026.
+          </p>
+          <p className="[word-break:break-word] absolute font-['Inter:Medium'] font-medium leading-[normal] left-[23px] not-italic text-[#9b4f60] text-[12px] top-[528px] whitespace-nowrap" data-node-id="2:801">
+            Cancel reservation
+          </p>
+          <p className="[word-break:break-word] absolute font-['Inter:Medium'] font-medium leading-[normal] left-[23px] not-italic text-[#6554c0] text-[12px] top-[564px] whitespace-pre" data-node-id="2:802">{`Contact organizer  ↗`}</p>
+        </div>
+        <div className="absolute bg-[#f0edfa] h-[91px] left-0 overflow-clip rounded-[10px] top-[885px] w-[1136px]" data-node-id="2:803" data-name="Booking support">
+          <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[normal] left-[22px] not-italic text-[#51416f] text-[16px] top-[20px] whitespace-nowrap" data-node-id="2:804">
+            A change of plans?
+          </p>
+          <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[normal] left-[22px] not-italic text-[#716384] text-[12px] top-[50px] whitespace-nowrap" data-node-id="2:805">
+            Check your event’s cancellation policy or reach out to the organizer for help.
+          </p>
+          <div className="absolute bg-white border border-[#e4dfed] border-solid h-[40px] left-[956px] overflow-clip rounded-[7px] top-[25px] w-[158px]" data-node-id="2:806" data-name="Booking help  ↗">
+            <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[normal] left-[31.5px] not-italic text-[#6554c0] text-[12px] top-[12px] whitespace-pre" data-node-id="2:807">{`Booking help  ↗`}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

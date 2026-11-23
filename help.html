@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="SessionSpot — discover events and try a browser-local university ticket booking prototype."
+    />
+    <title>Help & support | SessionSpot</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
+    <link
+      rel="preload"
+      href="assets/fonts/InterVariable.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/figma.css?v=b4d6a79280" />
+    <script defer src="js/form-guard.js?v=d79fb3a354"></script>
+    <script type="module" src="js/app.js?v=08b46b5db8"></script>
+  </head>
+  <body data-figma-node="extension" data-page="help">
+    <a class="skip" href="#main">Skip to main content</a>
+    <button
+      class="drawer-backdrop"
+      type="button"
+      aria-label="Close navigation"
+      tabindex="-1"
+    ></button>
+    <aside
+      class="sidebar"
+      id="workspace-sidebar"
+      aria-label="Workspace navigation"
+    >
+      <a class="logo" href="index.html" aria-label="SessionSpot home"
+        ><span class="brand-tile"
+          ><img
+            src="assets/figma/e0a44.svg"
+            alt=""
+            width="22"
+            height="22" /></span
+        >SessionSpot</a
+      ><button
+        class="icon-btn drawer-close"
+        type="button"
+        aria-label="Close navigation"
+      >
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m6 6 12 12M6 18 18 6" />
+        </svg>
+      </button>
+      <p class="nav-label">Your workspace</p>
+      <nav class="side-nav" aria-label="Your workspace">
+        <a class="nav-link" href="index.html"
+          ><img
+            class="icon figma-icon"
+            src="assets/figma/12b0c.svg"
+            alt=""
+            width="20"
+            height="20"
+            aria-hidden="true"
+          /><span>Discover events</span></a
+        ><a class="nav-link" href="my-bookings.html"
+          ><img
+            class="icon figma-icon"
+            src="assets/figma/bbef8.svg"
+            alt=""
+            width="20"
+            height="20"
+            aria-hidden="true"
+          /><span>My bookings</span
+          ><span class="badge" data-booking-count>2</span></a
+        ><a class="nav-link" href="index.html?view=saved"
+          ><img
+            class="icon figma-icon"
+            src="assets/figma/31764.svg"
+            alt=""
+            width="20"
+            height="20"
+            aria-hidden="true"
+          /><span>Saved events</span></a
+        ><a class="nav-link" href="index.html?view=calendar"
+          ><img
+            class="icon figma-icon"
+            src="assets/figma/52c20.svg"
+            alt=""
+            width="20"
+            height="20"
+            aria-hidden="true"
+          /><span>Calendar</span></a
+        >
+      </nav>
+      <p class="nav-label organizer-label">Organizer</p>
+      <nav class="side-nav" aria-label="Organizer">
+        <a class="nav-link" href="dashboard.html"
+          ><img
+            class="icon figma-icon"
+            src="assets/figma/52c20.svg"
+            alt=""
+            width="20"
+            height="20"
+            aria-hidden="true"
+          /><span>Manage events</span></a
+        ><a class="nav-link" href="create-event.html"
+          ><img
+            class="icon figma-icon"
+            src="assets/figma/8f002.svg"
+            alt=""
+            width="20"
+            height="20"
+            aria-hidden="true"
+          /><span>Create an event</span></a
+        >
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <div class="side-promo">
+        <h3>Bring people together.</h3>
+        <p>Your next great event<br />starts right here.</p>
+        <a class="btn secondary" href="create-event.html">Create an event</a>
+      </div>
+      <nav class="side-bottom" aria-label="Support">
+        <a class="nav-link active" href="help.html" aria-current="page"
+          ><img
+            class="icon figma-icon"
+            src="assets/figma/ae7b9.svg"
+            alt=""
+            width="20"
+            height="20"
+            aria-hidden="true"
+          /><span>Help & support</span></a
+        ><a class="nav-link" href="profile.html"
+          ><img
+            class="icon figma-icon"
+            src="assets/figma/98517.svg"
+            alt=""
+            width="20"
+            height="20"
+            aria-hidden="true"
+          /><span>Settings</span></a
+        >
+      </nav>
+    </aside>
+    <div class="workspace">
+      <header class="topbar">
+        <button
+          class="icon-btn menu-toggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="workspace-sidebar"
+        >
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg></button
+        ><span class="top-title">Help & support</span>
+        <form class="searchbox" action="index.html" role="search">
+          <img
+            class="icon figma-icon"
+            src="assets/figma/db137.svg"
+            alt=""
+            width="20"
+            height="20"
+            aria-hidden="true"
+          /><label class="sr-only" for="global-search"
+            >Search events, topics, or organizers</label
+          ><input
+            id="global-search"
+            name="q"
+            type="search"
+            placeholder="Search events, topics, or organizers"
+          /><button class="sr-only" type="submit">Search events</button>
+        </form>
+        <div class="top-actions">
+          <button
+            class="icon-btn"
+            type="button"
+            data-notifications
+            aria-label="Notifications"
+          >
+            <img
+              class="icon figma-icon"
+              src="assets/figma/16298.svg"
+              alt=""
+              width="20"
+              height="20"
+              aria-hidden="true"
+            /></button
+          ><a class="account" href="profile.html"
+            ><span class="avatar" aria-hidden="true">AM</span
+            ><span class="account-text"
+              ><strong data-profile-name>Alex Morgan</strong
+              ><small>Personal account</small></span
+            ><span class="sr-only">My profile</span></a
+          >
+        </div>
+      </header>
+      <main id="main" tabindex="-1" class="workspace-main">
+        <div class="page-heading">
+          <div>
+            <h1>We’re here to help</h1>
+            <p class="subtitle">
+              A little guidance for your next great experience.
+            </p>
+          </div>
+        </div>
+        <div class="two-col">
+          <section class="card card-pad faq">
+            <h2>Good questions. Simple answers.</h2>
+            <details open>
+              <summary>How do I reserve tickets?</summary>
+              <p>
+                Find an event, choose your ticket quantities, enter sample
+                attendee details and confirm your demo reservation. You’ll see
+                the same reference in My bookings.
+              </p>
+            </details>
+            <details>
+              <summary>Can I cancel a reservation?</summary>
+              <p>
+                Open My bookings, select a confirmed upcoming booking and choose
+                Cancel reservation. The sample availability updates locally.
+                Past bookings cannot be cancelled.
+              </p>
+            </details>
+            <details>
+              <summary>Do I pay online?</summary>
+              <p>
+                No. This prototype does not collect payment or hold real
+                tickets. Prices are sample amounts in Canadian dollars.
+              </p>
+            </details>
+            <details>
+              <summary>How do I create or manage an event?</summary>
+              <p>
+                Open Manage events or Create an event. Save a sample event, edit
+                its ticket categories and review local sample attendees. All
+                changes stay in your browser.
+              </p>
+            </details>
+            <details>
+              <summary>Are login, SSO and email working services?</summary>
+              <p>
+                No. Account access, institution SSO, contact and password reset
+                are clearly labelled demonstrations. No real email is sent and
+                no password is stored.
+              </p>
+            </details>
+            <details id="terms">
+              <summary>Demo terms</summary>
+              <p>
+                This is a university UI prototype, not an event ticketing
+                service. Demo checkboxes are interaction examples, not a service
+                agreement. Use fictional details and do not rely on sample
+                availability.
+              </p>
+            </details>
+            <details id="privacy">
+              <summary>Demo privacy</summary>
+              <p>
+                Sample events, bookings, roles and profile data stay in this
+                browser’s local storage. Passwords are never stored. Use
+                Settings → Reset sample data to restore the fixtures.
+              </p>
+            </details>
+          </section>
+          <aside class="card card-pad">
+            <div class="card-heading">
+              <h2>Let’s talk</h2>
+              <p>Try the contact form. No message leaves this prototype.</p>
+            </div>
+            <form class="stack" id="contact-form" method="dialog" data-demo-form>
+              <label class="field"
+                >Your email<input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="alex@example.com"
+                  autocomplete="email" /></label
+              ><label class="field"
+                >What can we help with?<textarea
+                  name="message"
+                  required
+                  minlength="10"
+                  maxlength="2000"
+                  rows="5"
+                  placeholder="Tell us a little more..."
+                ></textarea></label
+              ><button class="btn" type="submit">Preview message</button>
+              <p class="feedback" role="alert" data-feedback></p>
+            </form>
+          </aside>
+        </div>
+        <footer class="page-footer">
+          <div class="row between">
+            <span>SessionSpot · COMP 3540 · Team G13</span
+            ><span
+              ><a href="admin.html">Demo admin</a
+              ><a href="login.html">Demo sign in</a
+              ><a href="help.html">Help</a></span
+            >
+          </div>
+          <p class="prototype">
+            Part 2 prototype · Browser-local sample data · Demo date: November
+            10, 2026 · No real payments, email or authentication.
+          </p>
+        </footer>
+      </main>
+    </div>
+    <noscript
+      ><p class="noscript">
+        Enable JavaScript to use the sample event and booking interactions. Page
+        navigation remains available.
+      </p></noscript
+    >
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+    <dialog class="dialog" id="action-dialog" aria-labelledby="dialog-title">
+      <h2 id="dialog-title"></h2>
+      <p id="dialog-message"></p>
+      <div class="row">
+        <button class="btn secondary" type="button" id="dialog-dismiss">
+          Keep it</button
+        ><button class="btn" type="button" id="dialog-confirm">Continue</button>
+      </div>
+    </dialog>
+  </body>
+</html>

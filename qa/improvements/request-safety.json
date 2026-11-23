@@ -1,0 +1,13 @@
+{
+  "pass": true,
+  "requestsInspected": 6183,
+  "sensitiveQueryRequests": 0,
+  "postRequests": 0,
+  "scenarios": [
+    "all page scripts blocked by CSP",
+    "controller intentionally throws before initialization"
+  ],
+  "forms": 6,
+  "scenarioCases": 12,
+  "validMouseAndEnterPaths": 24
+}

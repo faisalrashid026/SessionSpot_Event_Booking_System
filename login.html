@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="SessionSpot — discover events and try a browser-local university ticket booking prototype."
+    />
+    <title>Sign in | SessionSpot</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
+    <link
+      rel="preload"
+      href="assets/fonts/InterVariable.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/figma.css?v=b4d6a79280" />
+    <script defer src="js/form-guard.js?v=d79fb3a354"></script>
+    <script type="module" src="js/app.js?v=08b46b5db8"></script>
+  </head>
+  <body data-figma-node="2:240" data-page="login">
+    <a class="skip" href="#main">Skip to main content</a>
+    <main class="auth-layout" id="main" tabindex="-1">
+      <aside class="auth-marketing" aria-label="Welcome to SessionSpot">
+        <a class="logo" href="index.html" aria-label="SessionSpot home"
+          ><span class="brand-tile"
+            ><img
+              src="assets/figma/e0a44.svg"
+              alt=""
+              width="22"
+              height="22" /></span
+          >SessionSpot</a
+        >
+        <div class="marketing-copy">
+          <div class="eyebrow">Good things happen<br />when people gather.</div>
+          <h2>Your next <br />great experience <br />starts here.</h2>
+          <p>
+            Discover something new. Meet your people. <br />Make every event
+            worth being there.
+          </p>
+        </div>
+        <div
+          class="ticket-art"
+          role="img"
+          aria-label="Illustrated Innovation Summit ticket, November 21"
+        >
+          <div class="art-label">SESSIONSPOT PRESENTS</div>
+          <h3>Innovation<br />Summit ’26</h3>
+          <div class="date-block">NOV<strong>21</strong></div>
+          <div class="art-footer">LEARN. CONNECT. BUILD.</div>
+          <div class="admit">ADMIT<br />ONE</div>
+        </div>
+        <div class="marketing-footer">
+          <div class="eyebrow">For campuses. Companies. Communities.</div>
+          <p>A little connection goes a long way.</p>
+        </div>
+      </aside>
+      <section class="auth-right" aria-label="Account access">
+        <div class="auth-top">
+          <span>New to SessionSpot?</span
+          ><a href="register.html">Create an account</a>
+        </div>
+        <div class="auth-content login">
+          <h1>Welcome back</h1>
+          <p class="subtitle">
+            Sign in to manage your tickets and upcoming events.
+          </p>
+          <form id="login-form" class="stack" method="dialog" data-demo-form>
+            <label class="field"
+              >Email address<input
+                type="email"
+                name="email"
+                required
+                placeholder="alex@example.com"
+                autocomplete="username" /></label
+            ><label class="field"
+              >Password<input
+                type="password"
+                name="password"
+                required
+                minlength="8"
+                placeholder="Enter your demo password"
+                autocomplete="current-password"
+             maxlength="72" /></label>
+            <div class="row between">
+              <label class="check-label"
+                ><input type="checkbox" name="remember" />Keep demo mode
+                selected</label
+              ><a href="forgot-password.html">Forgot password?</a>
+            </div>
+            <button class="btn wide" type="submit">
+              Sign in to demo
+              <span class="direction-arrow" aria-hidden="true">→</span>
+            </button>
+            <p class="feedback" role="alert" data-feedback></p>
+            <div class="auth-subsection">
+              <p class="auth-small">Using a campus or company account?</p>
+              <button class="btn secondary wide" type="button" data-sso>
+                Institution SSO · demo only
+              </button>
+              <p class="auth-small">
+                SSO is a preview. No institution connection is configured.
+              </p>
+            </div>
+            <p class="prototype">
+              Prototype only. Use sample details. No real account is created and
+              no password is stored.
+            </p>
+          </form>
+        </div>
+        <footer class="auth-footer">
+          <span>© 2026 SessionSpot</span>
+          <div class="row">
+            <a href="help.html#privacy">Privacy</a
+            ><a href="help.html#terms">Terms</a
+            ><a href="help.html">Help & support</a>
+          </div>
+        </footer>
+      </section>
+    </main>
+    <noscript
+      ><p class="noscript">
+        Enable JavaScript to use the sample event and booking interactions. Page
+        navigation remains available.
+      </p></noscript
+    >
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+    <dialog class="dialog" id="action-dialog" aria-labelledby="dialog-title">
+      <h2 id="dialog-title"></h2>
+      <p id="dialog-message"></p>
+      <div class="row">
+        <button class="btn secondary" type="button" id="dialog-dismiss">
+          Keep it</button
+        ><button class="btn" type="button" id="dialog-confirm">Continue</button>
+      </div>
+    </dialog>
+  </body>
+</html>

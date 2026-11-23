@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="SessionSpot — discover events and try a browser-local university ticket booking prototype."
+    />
+    <title>Ticket reservation | SessionSpot</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
+    <link
+      rel="preload"
+      href="assets/fonts/InterVariable.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/figma.css?v=b4d6a79280" />
+    <script defer src="js/form-guard.js?v=d79fb3a354"></script>
+    <script type="module" src="js/app.js?v=08b46b5db8"></script>
+  </head>
+  <body data-figma-node="2:242" data-page="reserve">
+    <a class="skip" href="#main">Skip to main content</a>
+    <button
+      class="drawer-backdrop"
+      type="button"
+      aria-label="Close navigation"
+      tabindex="-1"
+    ></button>
+    <aside
+      class="sidebar"
+      id="workspace-sidebar"
+      aria-label="Workspace navigation"
+    >
+      <a class="logo" href="index.html" aria-label="SessionSpot home"
+        ><span class="brand-tile"
+          ><img
+            src="assets/figma/e0a44.svg"
+            alt=""
+            width="22"
+            height="22" /></span
+        >SessionSpot</a
+      ><button
+        class="icon-btn drawer-close"
+        type="button"
+        aria-label="Close navigation"
+      >
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m6 6 12 12M6 18 18 6" />
+        </svg>
+      </button>
+      <p class="nav-label">Your workspace</p>
+      <nav class="side-nav" aria-label="Your workspace">
+        <a class="nav-link active" href="index.html" aria-current="page"
+          ><img
+            class="icon figma-icon"
+            src="assets/figma/12b0c.svg"
+            alt=""
+            width="20"
+            height="20"
+            aria-hidden="true"
+          /><span
+            >Discover events
+            <span class="direction-arrow" aria-hidden="true">→</span></span
+          ></a
+        ><a class="nav-link" href="my-bookings.html"
+          ><img
+            class="icon figma-icon"
+            src="assets/figma/bbef8.svg"
+            alt=""
+            width="20"
+            height="20"
+            aria-hidden="true"
+          /><span>My bookings</span
+          ><span class="badge" data-booking-count>2</span></a
+        ><a class="nav-link" href="index.html?view=saved"
+          ><img
+            class="icon figma-icon"
+            src="assets/figma/31764.svg"
+            alt=""
+            width="20"
+            height="20"
+            aria-hidden="true"
+          /><span>Saved events</span></a
+        ><a class="nav-link" href="index.html?view=calendar"
+          ><img
+            class="icon figma-icon"
+            src="assets/figma/52c20.svg"
+            alt=""
+            width="20"
+            height="20"
+            aria-hidden="true"
+          /><span>Calendar</span></a
+        >
+      </nav>
+      <p class="nav-label organizer-label">Organizer</p>
+      <nav class="side-nav" aria-label="Organizer">
+        <a class="nav-link" href="dashboard.html"
+          ><img
+            class="icon figma-icon"
+            src="assets/figma/52c20.svg"
+            alt=""
+            width="20"
+            height="20"
+            aria-hidden="true"
+          /><span>Manage events</span></a
+        ><a class="nav-link" href="create-event.html"
+          ><img
+            class="icon figma-icon"
+            src="assets/figma/8f002.svg"
+            alt=""
+            width="20"
+            height="20"
+            aria-hidden="true"
+          /><span>Create an event</span></a
+        >
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <div class="side-promo">
+        <h3>Bring people together.</h3>
+        <p>Your next great event<br />starts right here.</p>
+        <a class="btn secondary" href="create-event.html">Create an event</a>
+      </div>
+      <nav class="side-bottom" aria-label="Support">
+        <a class="nav-link" href="help.html"
+          ><img
+            class="icon figma-icon"
+            src="assets/figma/ae7b9.svg"
+            alt=""
+            width="20"
+            height="20"
+            aria-hidden="true"
+          /><span>Help & support</span></a
+        ><a class="nav-link" href="profile.html"
+          ><img
+            class="icon figma-icon"
+            src="assets/figma/98517.svg"
+            alt=""
+            width="20"
+            height="20"
+            aria-hidden="true"
+          /><span>Settings</span></a
+        >
+      </nav>
+    </aside>
+    <div class="workspace">
+      <header class="topbar">
+        <button
+          class="icon-btn menu-toggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="workspace-sidebar"
+        >
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg></button
+        ><span class="top-title">Ticket reservation</span>
+        <form class="searchbox" action="index.html" role="search">
+          <img
+            class="icon figma-icon"
+            src="assets/figma/db137.svg"
+            alt=""
+            width="20"
+            height="20"
+            aria-hidden="true"
+          /><label class="sr-only" for="global-search"
+            >Search events, topics, or organizers</label
+          ><input
+            id="global-search"
+            name="q"
+            type="search"
+            placeholder="Search events, topics, or organizers"
+          /><button class="sr-only" type="submit">Search events</button>
+        </form>
+        <div class="top-actions">
+          <button
+            class="icon-btn"
+            type="button"
+            data-notifications
+            aria-label="Notifications"
+          >
+            <img
+              class="icon figma-icon"
+              src="assets/figma/16298.svg"
+              alt=""
+              width="20"
+              height="20"
+              aria-hidden="true"
+            /></button
+          ><a class="account" href="profile.html"
+            ><span class="avatar" aria-hidden="true">AM</span
+            ><span class="account-text"
+              ><strong data-profile-name>Alex Morgan</strong
+              ><small>Personal account</small></span
+            ><span class="sr-only">My profile</span></a
+          >
+        </div>
+      </header>
+      <main id="main" tabindex="-1" class="workspace-main">
+        <a class="back-link" id="back-to-event" href="event.html?event=summit"
+          ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 12H4m6-6-6 6 6 6" /></svg
+          >Back to event</a
+        >
+        <div class="page-heading">
+          <div>
+            <h1>Reserve your place</h1>
+            <p class="subtitle">
+              You’re a few details away from your next great experience.
+            </p>
+          </div>
+        </div>
+        <ol
+          class="stepper"
+          aria-label="Reservation steps"
+          style="list-style: none"
+        >
+          <li class="current">
+            <span
+              ><b>01</b> Select tickets
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 12h16m-6-6 6 6-6 6" /></svg
+            ></span>
+          </li>
+          <li class="current">
+            <span
+              ><b>02</b> Attendee details
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 12h16m-6-6 6 6-6 6" /></svg
+            ></span>
+          </li>
+          <li>
+            <span><b>03</b> Confirmation</span>
+          </li>
+        </ol>
+        <form id="reservation-form" method="dialog" data-demo-form>
+          <div class="two-col">
+            <div class="stack">
+              <section class="card card-pad">
+                <div class="card-heading">
+                  <h2>1. Choose your tickets</h2>
+                  <p>Sample availability updates in this browser only.</p>
+                </div>
+                <div class="ticket-options" id="ticket-options"></div>
+                <p class="feedback" id="quantity-error" role="alert"></p>
+              </section>
+              <section class="card card-pad">
+                <div class="card-heading">
+                  <h2>2. Your details</h2>
+                  <p>Use sample details to try the reservation flow.</p>
+                </div>
+                <div class="form-grid">
+                  <label class="field"
+                    >First name<input
+                      type="text"
+                      name="first"
+                      required
+                      maxlength="50"
+                      value="Alex"
+                      autocomplete="given-name" /></label
+                  ><label class="field"
+                    >Last name<input
+                      type="text"
+                      name="last"
+                      required
+                      maxlength="50"
+                      value="Morgan"
+                      autocomplete="family-name"
+                  /></label>
+                  <div class="full">
+                    <label class="field"
+                      >Email address<input
+                        type="email"
+                        name="email"
+                        required
+                        value="alex@example.com"
+                        autocomplete="email"
+                    /></label>
+                  </div>
+                </div>
+                <p class="small muted" style="margin: 22px 0 4px">
+                  Booking for a friend? Share your sample confirmation after
+                  reserving.
+                </p>
+              </section>
+              <div class="notice policy">
+                <strong>Plans change. We understand.</strong>
+                <p>
+                  Cancel your demo reservation from My bookings before the
+                  event.<br />No real tickets are held and no email is sent.
+                </p>
+              </div>
+            </div>
+            <aside>
+              <section
+                class="card ticket-summary"
+                id="reservation-summary"
+              ></section>
+              <a class="contact-link" href="help.html"
+                >Need a hand? Contact the organizer</a
+              >
+            </aside>
+          </div>
+        </form>
+        <footer class="page-footer">
+          <div class="row between">
+            <span>SessionSpot · COMP 3540 · Team G13</span
+            ><span
+              ><a href="admin.html">Demo admin</a
+              ><a href="login.html">Demo sign in</a
+              ><a href="help.html">Help</a></span
+            >
+          </div>
+          <p class="prototype">
+            Part 2 prototype · Browser-local sample data · Demo date: November
+            10, 2026 · No real payments, email or authentication.
+          </p>
+        </footer>
+      </main>
+    </div>
+    <noscript
+      ><p class="noscript">
+        Enable JavaScript to use the sample event and booking interactions. Page
+        navigation remains available.
+      </p></noscript
+    >
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+    <dialog class="dialog" id="action-dialog" aria-labelledby="dialog-title">
+      <h2 id="dialog-title"></h2>
+      <p id="dialog-message"></p>
+      <div class="row">
+        <button class="btn secondary" type="button" id="dialog-dismiss">
+          Keep it</button
+        ><button class="btn" type="button" id="dialog-confirm">Continue</button>
+      </div>
+    </dialog>
+  </body>
+</html>

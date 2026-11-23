@@ -1,0 +1,872 @@
+<canvas id="0:1" name="Page 1" x="0" y="0" width="0" height="0">
+  <frame id="2:2" name="Gather — Discover events" x="-700" y="-430" width="1440" height="1320">
+    <frame id="2:3" name="Top navigation" x="0" y="88" width="1440" height="60">
+      <frame id="7:2" name="Discover events" x="40" y="8" width="174" height="44">
+        <frame id="2:15" name="Selected navigation" x="0" y="0" width="174" height="44" />
+        <frame id="2:16" name="grid icon" x="12" y="12" width="20" height="20" />
+        <text id="2:21" name="Discover events" x="42" y="14" width="101" height="16" />
+      </frame>
+      <frame id="7:3" name="My tickets" x="230" y="8" width="150" height="44">
+        <frame id="2:22" name="ticket icon" x="12" y="12" width="20" height="20" />
+        <text id="2:25" name="My tickets" x="42" y="14" width="65" height="16" />
+        <frame id="2:26" name="Ticket count" x="118" y="12" width="20" height="20" />
+        <text id="2:27" name="2" x="124" y="15" width="7" height="13" />
+      </frame>
+      <frame id="7:4" name="Saved events" x="396" y="8" width="160" height="44">
+        <frame id="2:28" name="heart icon" x="12" y="12" width="20" height="20" />
+        <text id="2:30" name="Saved events" x="42" y="14" width="84" height="16" />
+      </frame>
+      <frame id="7:5" name="Calendar" x="572" y="8" width="132" height="44">
+        <frame id="2:31" name="cal icon" x="12" y="12" width="20" height="20" />
+        <text id="2:34" name="Calendar" x="42" y="14" width="57" height="16" />
+      </frame>
+      <frame id="7:6" name="Manage events" x="720" y="8" width="174" height="44">
+        <frame id="2:36" name="cal icon" x="12" y="12" width="20" height="20" />
+        <text id="2:39" name="Manage events" x="42" y="14" width="95" height="16" />
+      </frame>
+      <frame id="7:7" name="Help &amp; support" x="1100" y="8" width="160" height="44">
+        <frame id="2:48" name="help icon" x="12" y="12" width="20" height="20" />
+        <text id="2:51" name="Help &amp; support" x="42" y="14" width="92" height="16" />
+      </frame>
+      <frame id="7:8" name="Settings" x="1270" y="8" width="130" height="44">
+        <frame id="2:52" name="settings icon" x="12" y="12" width="20" height="20" />
+        <text id="2:55" name="Settings" x="42" y="14" width="51" height="16" />
+      </frame>
+      <frame id="7:10" name="Navigation divider" x="0" y="59" width="1440" height="1" />
+    </frame>
+    <frame id="2:4" name="Top bar" x="0" y="0" width="1440" height="88">
+      <frame id="2:57" name="Search events" x="320" y="23" width="600" height="42">
+        <frame id="2:58" name="search icon" x="14" y="11" width="20" height="20" />
+        <text id="2:61" name="Search events, topics, or organizers" x="44" y="13" width="204" height="15" />
+      </frame>
+      <frame id="2:62" name="bell icon" x="1256" y="33" width="20" height="20" />
+      <frame id="2:64" name="Notification dot" x="1270" y="30" width="5" height="5" />
+      <frame id="2:65" name="Header divider" x="1298" y="27" width="1" height="34" />
+      <text id="2:66" name="Alex Morgan" x="1318" y="28" width="73" height="15" />
+      <text id="2:67" name="Personal account" x="1318" y="47" width="82" height="12" />
+      <frame id="2:68" name="Bottom divider" x="0" y="87" width="1440" height="1" />
+      <frame id="2:9" name="Brand tile" x="40" y="28" width="32" height="32">
+        <frame id="2:10" name="ticket icon" x="5" y="5" width="22" height="22" />
+      </frame>
+      <text id="2:13" name="gather" x="82" y="27" width="82" height="30" />
+      <frame id="7:9" name="Create an event" x="1022" y="23" width="188" height="42">
+        <frame id="2:40" name="plus icon" x="17" y="11" width="20" height="20" />
+        <text id="2:42" name="Create an event" x="49" y="13" width="99" height="16" />
+      </frame>
+    </frame>
+    <frame id="2:5" name="Welcome and featured event" x="40" y="184" width="1360" height="290">
+      <text id="2:69" name="Good morning, Alex" x="0" y="0" width="267" height="34" />
+      <text id="2:70" name="Find your next connection, big idea, or unforgettable experience." x="0" y="42" width="398" height="16" />
+      <text id="2:71" name="TUESDAY, NOVEMBER 10" x="1159" y="15" width="121" height="12" />
+      <frame id="2:72" name="Featured event" x="0" y="82" width="1360" height="208">
+        <text id="2:73" name="FEATURED EVENT  /  COMMUNITY &amp; INNOVATION" x="28" y="23" width="240" height="12" />
+        <text id="2:74" name="Big ideas. Real connections." x="28" y="49" width="406" height="36" />
+        <text id="2:75" name="Join the people shaping what comes next." x="28" y="91" width="259" height="16" />
+        <text id="2:76" name="Nov 21, 2026   ·   9:00 AM   ·   City Convention Center" x="28" y="121" width="303" height="15" />
+        <frame id="2:77" name="Book featured event" x="28" y="153" width="144" height="36">
+          <text id="2:78" name="Reserve a spot  ↗" x="17" y="10" width="104" height="15" />
+        </frame>
+        <text id="2:79" name="From $25 / person" x="187" y="164" width="96" height="13" />
+        <frame id="2:80" name="Innovation summit event pass" x="1007" y="21" width="318.2629167884588" height="181.99664483964443">
+          <text id="2:81" name="GATHER PRESENTS" x="20" y="16" width="86.4578334018588" height="15.48581676185131" />
+          <text id="2:82" name="Innovation
+Summit ’26" x="20" y="42" width="140.95102974772453" height="67.14013244211674" />
+          <text id="2:83" name="LEARN. CONNECT. BUILD." x="20" y="127" width="113.42083018273115" height="16.898887552320957" />
+          <frame id="2:84" name="Summit date" x="233" y="14" width="63.52895153313875" height="72.04559352993965">
+            <text id="2:85" name="NOV" x="18" y="10" width="23.59651020169258" height="13.187281094491482" />
+            <text id="2:86" name="21" x="12" y="28" width="31.581299923360348" height="32.52759347856045" />
+          </frame>
+          <frame id="2:87" name="Perforation" x="229" y="92" width="1.1032989151108268" height="2.049592470311012" />
+          <frame id="2:88" name="Perforation" x="229" y="96" width="1.1032989151108268" height="2.049592470311012" />
+          <frame id="2:89" name="Perforation" x="229" y="100" width="1.1032989151108268" height="2.0495924703110084" />
+          <frame id="2:90" name="Perforation" x="229" y="104" width="1.1032989151108268" height="2.0495924703110084" />
+          <frame id="2:91" name="Perforation" x="229" y="108" width="1.1032989151108268" height="2.0495924703110084" />
+          <frame id="2:92" name="Perforation" x="229" y="112" width="1.1032989151108268" height="2.0495924703110084" />
+          <frame id="2:93" name="Perforation" x="229" y="116" width="1.1032989151108268" height="2.0495924703110084" />
+          <frame id="2:94" name="Perforation" x="229" y="120" width="1.1032989151108268" height="2.0495924703110084" />
+          <frame id="2:95" name="Perforation" x="229" y="124" width="1.1032989151108268" height="2.0495924703110084" />
+          <frame id="2:96" name="Perforation" x="229" y="128" width="1.1032989151108268" height="2.0495924703110084" />
+          <frame id="2:97" name="Perforation" x="229" y="132" width="1.1032989151108268" height="2.0495924703110084" />
+          <frame id="2:98" name="Perforation" x="229" y="136" width="1.1032989151108268" height="2.0495924703110084" />
+          <frame id="2:99" name="Perforation" x="229" y="140" width="1.1032989151108268" height="2.0495924703110084" />
+          <frame id="2:100" name="Perforation" x="229" y="144" width="1.1032989151108268" height="2.0495924703110084" />
+          <frame id="2:101" name="Perforation" x="229" y="148" width="1.1032989151108268" height="2.0495924703110084" />
+          <text id="2:102" name="ADMIT
+ONE" x="245" y="115" width="38.310026720166206" height="27.900797612965107" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="2:6" name="Explore upcoming events" x="40" y="508" width="1360" height="418">
+      <text id="2:103" name="Explore upcoming events" x="0" y="0" width="257" height="25" />
+      <text id="2:104" name="View all events  →" x="1244" y="5" width="105" height="15" />
+      <frame id="2:105" name="All events filter" x="0" y="43" width="96" height="34">
+        <text id="2:106" name="All events" x="14" y="10" width="53" height="13" />
+      </frame>
+      <frame id="2:107" name="Education filter" x="104" y="43" width="100" height="34">
+        <text id="2:108" name="Education" x="14" y="10" width="53" height="13" />
+      </frame>
+      <frame id="2:109" name="Business filter" x="212" y="43" width="94" height="34">
+        <text id="2:110" name="Business" x="14" y="10" width="48" height="13" />
+      </frame>
+      <frame id="2:111" name="Community filter" x="314" y="43" width="109" height="34">
+        <text id="2:112" name="Community" x="14" y="10" width="61" height="13" />
+      </frame>
+      <frame id="2:113" name="Arts &amp; culture filter" x="431" y="43" width="124" height="34">
+        <text id="2:114" name="Arts &amp; culture" x="14" y="10" width="72" height="13" />
+      </frame>
+      <frame id="2:115" name="Date filter" x="1126" y="43" width="122" height="34">
+        <frame id="2:116" name="Event detail icon" x="11" y="9" width="15" height="15" />
+        <text id="2:119" name="Any date  ⌄" x="35" y="10" width="59" height="13" />
+      </frame>
+      <frame id="2:120" name="More filters" x="1258" y="43" width="102" height="34">
+        <frame id="2:121" name="Event detail icon" x="11" y="10" width="15" height="15" />
+        <text id="2:123" name="Filters" x="37" y="10" width="32" height="13" />
+      </frame>
+      <frame id="2:124" name="Design Your Future: Career Fair" x="0" y="99" width="442.6666564941406" height="319">
+        <frame id="2:125" name="Event poster" x="0" y="0" width="442.6666564941406" height="127">
+          <text id="2:126" name="WESTBRIDGE CAREER FAIR" x="18" y="15" width="106" height="10" />
+          <text id="2:127" name="YOUR NEXT
+CHAPTER." x="18" y="36" width="140" height="58" />
+          <text id="2:128" name="MEET YOUR FUTURE.  /  2026" x="18" y="106" width="100" height="8" />
+          <frame id="2:129" name="Save event" x="394.6666564941406" y="14" width="30" height="30">
+            <frame id="2:130" name="Event detail icon" x="7" y="7" width="15" height="15" />
+          </frame>
+          <text id="2:132" name="NOV 18" x="374.6666564941406" y="103" width="29" height="10" />
+        </frame>
+        <text id="2:133" name="EDUCATION" x="18" y="143" width="53" height="11" />
+        <text id="2:134" name="Design Your Future: Career Fair" x="18" y="164" width="226" height="18" />
+        <text id="2:135" name="by Westbridge University" x="18" y="187" width="119" height="12" />
+        <frame id="2:136" name="Event detail icon" x="18" y="211" width="15" height="15" />
+        <text id="2:139" name="Wed, Nov 18 · 10:00 AM" x="40" y="213" width="124" height="13" />
+        <frame id="2:140" name="Event detail icon" x="18" y="236" width="15" height="15" />
+        <text id="2:143" name="Westbridge Campus, Main Hall" x="40" y="238" width="160" height="13" />
+        <frame id="2:144" name="Card divider" x="18" y="267" width="406.6666564941406" height="1" />
+        <text id="2:145" name="Free" x="18" y="282" width="37" height="21" />
+        <text id="2:146" name="128 going" x="329.6666564941406" y="288" width="84" height="12" />
+      </frame>
+      <frame id="2:147" name="Founders &amp; Coffee" x="458.6666564941406" y="99" width="442.6666564941406" height="319">
+        <frame id="2:148" name="Event poster" x="0" y="0" width="442.6666564941406" height="127">
+          <text id="2:149" name="THE BUSINESS COLLECTIVE" x="18" y="15" width="110" height="10" />
+          <text id="2:150" name="Good coffee.
+Great company." x="18" y="36" width="186" height="58" />
+          <text id="2:151" name="A MORNING FOR BIG IDEAS." x="18" y="106" width="95" height="8" />
+          <frame id="2:152" name="Save event" x="394.6666564941406" y="14" width="30" height="30">
+            <frame id="2:153" name="Event detail icon" x="7" y="7" width="15" height="15" />
+          </frame>
+          <text id="2:155" name="NOV 20" x="374.6666564941406" y="103" width="30" height="10" />
+        </frame>
+        <text id="2:156" name="BUSINESS" x="18" y="143" width="45" height="11" />
+        <text id="2:157" name="Founders &amp; Coffee" x="18" y="164" width="135" height="18" />
+        <text id="2:158" name="by The Business Collective" x="18" y="187" width="127" height="12" />
+        <frame id="2:159" name="Event detail icon" x="18" y="211" width="15" height="15" />
+        <text id="2:162" name="Fri, Nov 20 · 8:30 AM" x="40" y="213" width="110" height="13" />
+        <frame id="2:163" name="Event detail icon" x="18" y="236" width="15" height="15" />
+        <text id="2:166" name="The Foundry, Downtown" x="40" y="238" width="127" height="13" />
+        <frame id="2:167" name="Card divider" x="18" y="267" width="406.6666564941406" height="1" />
+        <text id="2:168" name="$15" x="18" y="282" width="30" height="21" />
+        <text id="2:169" name="/ person" x="50" y="287" width="40" height="12" />
+        <text id="2:170" name="64 going" x="329.6666564941406" y="288" width="84" height="12" />
+      </frame>
+      <frame id="2:171" name="Neighborhood Makers Market" x="917.3333129882812" y="99" width="442.6666564941406" height="319">
+        <frame id="2:172" name="Event poster" x="0" y="0" width="442.6666564941406" height="127">
+          <text id="2:173" name="RIVERSIDE MAKERS MARKET" x="18" y="15" width="113" height="10" />
+          <text id="2:174" name="Made local.
+Loved by all." x="18" y="36" width="146" height="58" />
+          <text id="2:175" name="SHOP SMALL.  /  CONNECT BIG." x="18" y="106" width="108" height="8" />
+          <frame id="2:176" name="Save event" x="394.6666564941406" y="14" width="30" height="30">
+            <frame id="2:177" name="Event detail icon" x="7" y="7" width="15" height="15" />
+          </frame>
+          <text id="2:179" name="NOV 22" x="374.6666564941406" y="103" width="30" height="10" />
+        </frame>
+        <text id="2:180" name="COMMUNITY" x="18" y="143" width="58" height="11" />
+        <text id="2:181" name="Neighborhood Makers Market" x="18" y="164" width="216" height="18" />
+        <text id="2:182" name="by Riverside Community" x="18" y="187" width="115" height="12" />
+        <frame id="2:183" name="Event detail icon" x="18" y="211" width="15" height="15" />
+        <text id="2:186" name="Sun, Nov 22 · 11:00 AM" x="40" y="213" width="120" height="13" />
+        <frame id="2:187" name="Event detail icon" x="18" y="236" width="15" height="15" />
+        <text id="2:190" name="Riverside Park, East Lawn" x="40" y="238" width="134" height="13" />
+        <frame id="2:191" name="Card divider" x="18" y="267" width="406.6666564941406" height="1" />
+        <text id="2:192" name="Free" x="18" y="282" width="37" height="21" />
+        <text id="2:193" name="216 going" x="329.6666564941406" y="288" width="84" height="12" />
+      </frame>
+    </frame>
+    <frame id="2:7" name="Your next event and organizer invitation" x="40" y="966" width="1360" height="218">
+      <text id="2:194" name="You’re on the list" x="0" y="0" width="161" height="24" />
+      <text id="2:195" name="View my tickets  →" x="814" y="5" width="100" height="13" />
+      <frame id="2:196" name="Upcoming booking" x="0" y="42" width="936" height="176">
+        <frame id="2:197" name="Booking date" x="20" y="22" width="72" height="85">
+          <text id="2:198" name="NOV" x="24" y="14" width="23" height="12" />
+          <text id="2:199" name="14" x="17" y="33" width="35" height="36" />
+          <text id="2:200" name="SAT" x="25" y="69" width="16" height="10" />
+        </frame>
+        <text id="2:201" name="Public Speaking Workshop" x="112" y="22" width="220" height="21" />
+        <text id="2:202" name="Westbridge Learning Center" x="112" y="51" width="160" height="15" />
+        <text id="2:203" name="Sat, Nov 14  ·  2:00 PM – 4:00 PM" x="112" y="76" width="174" height="13" />
+        <frame id="2:204" name="Booking status" x="112" y="107" width="86" height="23">
+          <text id="2:205" name="✓ Confirmed" x="10" y="6" width="57" height="11" />
+        </frame>
+        <text id="2:206" name="1 ticket  ·  General admission" x="208" y="114" width="135" height="12" />
+        <text id="2:207" name="Booking #GT-20481" x="20" y="145" width="85" height="11" />
+        <frame id="2:208" name="Ticket perforation" x="753" y="12" width="1" height="4" />
+        <frame id="2:209" name="Ticket perforation" x="753" y="20" width="1" height="4" />
+        <frame id="2:210" name="Ticket perforation" x="753" y="28" width="1" height="4" />
+        <frame id="2:211" name="Ticket perforation" x="753" y="36" width="1" height="4" />
+        <frame id="2:212" name="Ticket perforation" x="753" y="44" width="1" height="4" />
+        <frame id="2:213" name="Ticket perforation" x="753" y="52" width="1" height="4" />
+        <frame id="2:214" name="Ticket perforation" x="753" y="60" width="1" height="4" />
+        <frame id="2:215" name="Ticket perforation" x="753" y="68" width="1" height="4" />
+        <frame id="2:216" name="Ticket perforation" x="753" y="76" width="1" height="4" />
+        <frame id="2:217" name="Ticket perforation" x="753" y="84" width="1" height="4" />
+        <frame id="2:218" name="Ticket perforation" x="753" y="92" width="1" height="4" />
+        <frame id="2:219" name="Ticket perforation" x="753" y="100" width="1" height="4" />
+        <frame id="2:220" name="Ticket perforation" x="753" y="108" width="1" height="4" />
+        <frame id="2:221" name="Ticket perforation" x="753" y="116" width="1" height="4" />
+        <frame id="2:222" name="Ticket perforation" x="753" y="124" width="1" height="4" />
+        <frame id="2:223" name="Ticket perforation" x="753" y="132" width="1" height="4" />
+        <frame id="2:224" name="Ticket perforation" x="753" y="140" width="1" height="4" />
+        <frame id="2:225" name="Ticket perforation" x="753" y="148" width="1" height="4" />
+        <frame id="2:226" name="Ticket perforation" x="753" y="156" width="1" height="4" />
+        <text id="2:227" name="YOU’RE ALL SET" x="775" y="27" width="72" height="11" />
+        <text id="2:228" name="See you there!" x="775" y="50" width="105" height="18" />
+        <frame id="2:229" name="View booking ticket" x="776" y="88" width="137" height="35">
+          <text id="2:230" name="View ticket  →" x="21" y="11" width="76" height="13" />
+        </frame>
+        <text id="2:231" name="Your ticket, ready to go." x="776" y="137" width="102" height="11" />
+      </frame>
+      <frame id="2:232" name="Host your own event" x="960" y="0" width="400" height="218">
+        <text id="2:233" name="MADE FOR ORGANIZERS" x="24" y="24" width="108" height="11" />
+        <text id="2:234" name="Great events start
+with a simple idea." x="24" y="49" width="206" height="56" />
+        <text id="2:235" name="Create your event, manage registrations,
+and bring your community together." x="24" y="114" width="212" height="26" />
+        <frame id="2:236" name="Start organizing" x="24" y="165" width="156" height="33">
+          <text id="2:237" name="Create an event  ↗" x="18" y="10" width="101" height="13" />
+        </frame>
+      </frame>
+    </frame>
+    <frame id="2:43" name="Organizer invitation strip" x="40" y="1212" width="1360" height="76">
+      <text id="2:44" name="Bring people together." x="20" y="16" width="141" height="16" />
+      <text id="2:45" name="Your next great event
+starts right here." x="20" y="42" width="220" height="15" />
+      <frame id="2:46" name="Create event" x="1180" y="20" width="160" height="36">
+        <text id="2:47" name="Create an event   ↗" x="21" y="10" width="113" height="15" />
+      </frame>
+    </frame>
+  </frame>
+  <frame id="2:238" name="Gather — Create account" x="780" y="-430" width="1440" height="1160">
+    <frame id="2:239" name="Authentication layout" x="0" y="0" width="1440" height="1160">
+      <frame id="2:437" name="Form background" x="0" y="0" width="1440" height="1160" />
+      <frame id="2:438" name="Brand story" x="0" y="0" width="570" height="1160">
+        <frame id="2:439" name="Brand tile" x="48" y="44" width="32" height="32">
+          <frame id="2:440" name="ticket icon" x="5" y="5" width="22" height="22" />
+        </frame>
+        <text id="2:443" name="gather" x="92" y="42" width="88" height="33" />
+        <text id="2:444" name="GOOD THINGS HAPPEN
+WHEN PEOPLE GATHER." x="48" y="202" width="130" height="26" />
+        <text id="2:445" name="Your next
+great experience
+starts here." x="48" y="260" width="393" height="174" />
+        <text id="2:446" name="Discover something new. Meet your people.
+Make every event worth being there." x="48" y="461" width="331" height="38" />
+        <frame id="2:447" name="Innovation summit event pass" x="110" y="625" width="358.208097204566" height="184.0900830477476">
+          <text id="2:448" name="GATHER PRESENTS" x="20" y="16" width="86.4578334018588" height="15.48581676185131" />
+          <text id="2:449" name="Innovation
+Summit ’26" x="20" y="42" width="140.95102974772453" height="67.14013244211674" />
+          <text id="2:450" name="LEARN. CONNECT. BUILD." x="20" y="127" width="113.42083018273115" height="16.898887552320957" />
+          <frame id="2:451" name="Summit date" x="233" y="14" width="63.52895153313875" height="72.04559352993965">
+            <text id="2:452" name="NOV" x="18" y="10" width="23.59651020169258" height="13.187281094491482" />
+            <text id="2:453" name="21" x="12" y="28" width="31.581299923360348" height="32.52759347856045" />
+          </frame>
+          <frame id="2:454" name="Perforation" x="229" y="92" width="1.1032989151110542" height="2.0495924703109836" />
+          <frame id="2:455" name="Perforation" x="229" y="96" width="1.1032989151110542" height="2.0495924703109836" />
+          <frame id="2:456" name="Perforation" x="229" y="100" width="1.1032989151110542" height="2.0495924703109836" />
+          <frame id="2:457" name="Perforation" x="229" y="104" width="1.1032989151110542" height="2.0495924703109836" />
+          <frame id="2:458" name="Perforation" x="229" y="108" width="1.1032989151110542" height="2.0495924703109836" />
+          <frame id="2:459" name="Perforation" x="229" y="112" width="1.1032989151110542" height="2.0495924703109836" />
+          <frame id="2:460" name="Perforation" x="229" y="116" width="1.1032989151110542" height="2.0495924703109836" />
+          <frame id="2:461" name="Perforation" x="229" y="120" width="1.1032989151110542" height="2.0495924703109836" />
+          <frame id="2:462" name="Perforation" x="229" y="124" width="1.1032989151110542" height="2.0495924703109836" />
+          <frame id="2:463" name="Perforation" x="229" y="128" width="1.1032989151110542" height="2.0495924703109836" />
+          <frame id="2:464" name="Perforation" x="229" y="132" width="1.1032989151110542" height="2.0495924703109836" />
+          <frame id="2:465" name="Perforation" x="229" y="136" width="1.1032989151110542" height="2.0495924703109836" />
+          <frame id="2:466" name="Perforation" x="229" y="140" width="1.1032989151110542" height="2.0495924703109836" />
+          <frame id="2:467" name="Perforation" x="229" y="144" width="1.1032989151110542" height="2.0495924703109836" />
+          <frame id="2:468" name="Perforation" x="229" y="148" width="1.1032989151110542" height="2.0495924703109836" />
+          <text id="2:469" name="ADMIT
+ONE" x="245" y="115" width="38.310026720166206" height="27.900797612965107" />
+        </frame>
+        <text id="2:470" name="FOR CAMPUSES. COMPANIES. COMMUNITIES." x="48" y="1030" width="225" height="12" />
+        <text id="2:471" name="A little connection goes a long way." x="48" y="1057" width="237" height="17" />
+      </frame>
+      <text id="2:472" name="Already have an account?" x="1030" y="48" width="146" height="15" />
+      <text id="2:473" name="Sign in →" x="1220" y="48" width="54" height="15" />
+      <text id="2:474" name="Create your account" x="765" y="173" width="316" height="39" />
+      <text id="2:475" name="One account. A world of experiences." x="765" y="222" width="248" height="17" />
+      <text id="2:476" name="I’m here to" x="765" y="271" width="60" height="15" />
+      <frame id="2:477" name="Account role" x="765" y="297" width="480" height="48">
+        <frame id="2:478" name="Attendee selected" x="4" y="4" width="232" height="40">
+          <text id="2:479" name="Attend events" x="67" y="12" width="89" height="16" />
+        </frame>
+        <text id="2:480" name="Organize events" x="292" y="16" width="101" height="16" />
+      </frame>
+      <text id="2:481" name="Full name" x="765" y="375" width="55" height="15" />
+      <frame id="2:482" name="Full name field" x="765" y="400" width="480" height="48">
+        <text id="2:483" name="Alex Morgan" x="15" y="16" width="77" height="16" />
+      </frame>
+      <text id="2:484" name="Email address" x="765" y="473" width="80" height="15" />
+      <frame id="2:485" name="Email address field" x="765" y="498" width="480" height="48">
+        <text id="2:486" name="alex@example.com" x="15" y="16" width="119" height="16" />
+      </frame>
+      <text id="2:487" name="Password" x="765" y="571" width="57" height="15" />
+      <frame id="2:488" name="Password field" x="765" y="596" width="480" height="48">
+        <text id="2:489" name="Create a strong password" x="15" y="16" width="159" height="16" />
+      </frame>
+      <text id="2:490" name="Use 8 or more characters, including a number." x="765" y="653" width="240" height="13" />
+      <frame id="2:491" name="Accept terms" x="765" y="695" width="16" height="16" />
+      <text id="2:492" name="I agree to the Terms of Service and Privacy Policy." x="792" y="695" width="285" height="15" />
+      <frame id="2:493" name="Create account  →" x="765" y="744" width="480" height="46">
+        <text id="2:494" name="Create account  →" x="182" y="14" width="116" height="16" />
+      </frame>
+      <text id="2:495" name="We’ll email you a link to verify your account." x="857" y="809" width="226" height="13" />
+      <text id="2:496" name="© 2026 Gather" x="765" y="1090" width="79" height="13" />
+      <text id="2:497" name="Privacy     Terms     Help &amp; support" x="1050" y="1090" width="179" height="13" />
+    </frame>
+  </frame>
+  <frame id="2:240" name="Gather — Sign in" x="2260" y="-430" width="1440" height="1160">
+    <frame id="2:241" name="Authentication layout" x="0" y="0" width="1440" height="1160">
+      <frame id="2:498" name="Form background" x="0" y="0" width="1440" height="1160" />
+      <frame id="2:499" name="Brand story" x="0" y="0" width="570" height="1160">
+        <frame id="2:500" name="Brand tile" x="48" y="44" width="32" height="32">
+          <frame id="2:501" name="ticket icon" x="5" y="5" width="22" height="22" />
+        </frame>
+        <text id="2:504" name="gather" x="92" y="42" width="88" height="33" />
+        <text id="2:505" name="GOOD THINGS HAPPEN
+WHEN PEOPLE GATHER." x="48" y="202" width="130" height="26" />
+        <text id="2:506" name="Your next
+great experience
+starts here." x="48" y="260" width="393" height="174" />
+        <text id="2:507" name="Discover something new. Meet your people.
+Make every event worth being there." x="48" y="461" width="331" height="38" />
+        <frame id="2:508" name="Innovation summit event pass" x="110" y="625" width="358.208097204566" height="184.0900830477476">
+          <text id="2:509" name="GATHER PRESENTS" x="20" y="16" width="86.4578334018588" height="15.48581676185131" />
+          <text id="2:510" name="Innovation
+Summit ’26" x="20" y="42" width="140.95102974772453" height="67.14013244211674" />
+          <text id="2:511" name="LEARN. CONNECT. BUILD." x="20" y="127" width="113.42083018273115" height="16.898887552320957" />
+          <frame id="2:512" name="Summit date" x="233" y="14" width="63.52895153313875" height="72.04559352993965">
+            <text id="2:513" name="NOV" x="18" y="10" width="23.59651020169258" height="13.187281094491482" />
+            <text id="2:514" name="21" x="12" y="28" width="31.581299923360348" height="32.52759347856045" />
+          </frame>
+          <frame id="2:515" name="Perforation" x="229" y="92" width="1.1032989151108268" height="2.0495924703109836" />
+          <frame id="2:516" name="Perforation" x="229" y="96" width="1.1032989151108268" height="2.0495924703109836" />
+          <frame id="2:517" name="Perforation" x="229" y="100" width="1.1032989151108268" height="2.0495924703109836" />
+          <frame id="2:518" name="Perforation" x="229" y="104" width="1.1032989151108268" height="2.0495924703109836" />
+          <frame id="2:519" name="Perforation" x="229" y="108" width="1.1032989151108268" height="2.0495924703109836" />
+          <frame id="2:520" name="Perforation" x="229" y="112" width="1.1032989151108268" height="2.0495924703109836" />
+          <frame id="2:521" name="Perforation" x="229" y="116" width="1.1032989151108268" height="2.0495924703109836" />
+          <frame id="2:522" name="Perforation" x="229" y="120" width="1.1032989151108268" height="2.0495924703109836" />
+          <frame id="2:523" name="Perforation" x="229" y="124" width="1.1032989151108268" height="2.0495924703109836" />
+          <frame id="2:524" name="Perforation" x="229" y="128" width="1.1032989151108268" height="2.0495924703109836" />
+          <frame id="2:525" name="Perforation" x="229" y="132" width="1.1032989151108268" height="2.0495924703109836" />
+          <frame id="2:526" name="Perforation" x="229" y="136" width="1.1032989151108268" height="2.0495924703109836" />
+          <frame id="2:527" name="Perforation" x="229" y="140" width="1.1032989151108268" height="2.0495924703109836" />
+          <frame id="2:528" name="Perforation" x="229" y="144" width="1.1032989151108268" height="2.0495924703109836" />
+          <frame id="2:529" name="Perforation" x="229" y="148" width="1.1032989151108268" height="2.0495924703109836" />
+          <text id="2:530" name="ADMIT
+ONE" x="245" y="115" width="38.310026720166206" height="27.900797612965107" />
+        </frame>
+        <text id="2:531" name="FOR CAMPUSES. COMPANIES. COMMUNITIES." x="48" y="1030" width="225" height="12" />
+        <text id="2:532" name="A little connection goes a long way." x="48" y="1057" width="237" height="17" />
+      </frame>
+      <text id="2:533" name="New to Gather?" x="1030" y="48" width="89" height="15" />
+      <text id="2:534" name="Create an account →" x="1220" y="48" width="121" height="15" />
+      <text id="2:535" name="Welcome back" x="765" y="251" width="227" height="39" />
+      <text id="2:536" name="Sign in to manage your tickets and upcoming events." x="765" y="300" width="350" height="17" />
+      <text id="2:537" name="Email address" x="765" y="361" width="80" height="15" />
+      <frame id="2:538" name="Email address field" x="765" y="386" width="480" height="48">
+        <text id="2:539" name="alex@example.com" x="15" y="16" width="119" height="16" />
+      </frame>
+      <text id="2:540" name="Password" x="765" y="464" width="57" height="15" />
+      <frame id="2:541" name="Password field" x="765" y="489" width="480" height="48">
+        <text id="2:542" name="••••••••••••" x="15" y="16" width="88" height="16" />
+      </frame>
+      <frame id="2:543" name="Keep signed in" x="765" y="561" width="16" height="16" />
+      <text id="2:544" name="Keep me signed in" x="792" y="562" width="104" height="15" />
+      <text id="2:545" name="Forgot password?" x="1133" y="562" width="103" height="15" />
+      <frame id="2:546" name="Sign in  →" x="765" y="614" width="480" height="46">
+        <text id="2:547" name="Sign in  →" x="209" y="14" width="62" height="16" />
+      </frame>
+      <frame id="2:548" name="Institution divider" x="765" y="700" width="480" height="1" />
+      <text id="2:549" name="Using a campus or company account?" x="877" y="729" width="216" height="15" />
+      <frame id="2:550" name="Continue with institution SSO" x="765" y="764" width="480" height="46">
+        <text id="2:551" name="Continue with institution SSO" x="147" y="14" width="186" height="16" />
+      </frame>
+      <text id="2:552" name="Your institution’s sign-in page will open next." x="870" y="831" width="231" height="13" />
+      <text id="2:553" name="© 2026 Gather" x="765" y="1090" width="79" height="13" />
+      <text id="2:554" name="Privacy     Terms     Help &amp; support" x="1050" y="1090" width="179" height="13" />
+    </frame>
+  </frame>
+  <frame id="2:242" name="Gather — Reserve tickets" x="3740" y="-430" width="1440" height="1160">
+    <frame id="2:243" name="Sidebar" x="0" y="0" width="224" height="1160">
+      <frame id="2:244" name="Sidebar divider" x="223" y="0" width="1" height="1160" />
+      <frame id="2:245" name="Brand tile" x="24" y="28" width="32" height="32">
+        <frame id="2:246" name="ticket icon" x="5" y="5" width="22" height="22" />
+      </frame>
+      <text id="2:249" name="gather" x="66" y="27" width="82" height="30" />
+      <text id="2:250" name="YOUR WORKSPACE" x="24" y="110" width="94" height="12" />
+      <frame id="2:251" name="Selected navigation" x="16" y="140" width="192" height="44" />
+      <frame id="2:252" name="grid icon" x="29" y="152" width="20" height="20" />
+      <text id="2:257" name="Discover events" x="61" y="153" width="101" height="16" />
+      <frame id="2:258" name="ticket icon" x="29" y="202" width="20" height="20" />
+      <text id="2:261" name="My tickets" x="61" y="203" width="80" height="16" />
+      <frame id="2:262" name="Ticket count" x="174" y="203" width="20" height="20" />
+      <text id="2:263" name="2" x="180" y="205" width="7" height="13" />
+      <frame id="2:264" name="heart icon" x="29" y="252" width="20" height="20" />
+      <text id="2:266" name="Saved events" x="61" y="253" width="84" height="16" />
+      <frame id="2:267" name="cal icon" x="29" y="302" width="20" height="20" />
+      <text id="2:270" name="Calendar" x="61" y="303" width="57" height="16" />
+      <text id="2:271" name="ORGANIZER" x="24" y="382" width="59" height="12" />
+      <frame id="2:272" name="cal icon" x="29" y="421" width="20" height="20" />
+      <text id="2:275" name="Manage events" x="61" y="422" width="95" height="16" />
+      <frame id="2:276" name="plus icon" x="29" y="471" width="20" height="20" />
+      <text id="2:278" name="Create an event" x="61" y="472" width="99" height="16" />
+      <frame id="2:279" name="Organizer upgrade" x="16" y="838" width="192" height="160">
+        <text id="2:280" name="Bring people together." x="16" y="20" width="141" height="16" />
+        <text id="2:281" name="Your next great event
+starts right here." x="16" y="48" width="122" height="30" />
+        <frame id="2:282" name="Create event" x="16" y="104" width="160" height="36">
+          <text id="2:283" name="Create an event   ↗" x="21" y="10" width="113" height="15" />
+        </frame>
+      </frame>
+      <frame id="2:284" name="help icon" x="29" y="1036" width="20" height="20" />
+      <text id="2:287" name="Help &amp; support" x="61" y="1038" width="92" height="16" />
+      <frame id="2:288" name="settings icon" x="29" y="1080" width="20" height="20" />
+      <text id="2:291" name="Settings" x="61" y="1082" width="51" height="16" />
+    </frame>
+    <frame id="2:292" name="Top bar" x="224" y="0" width="1216" height="88">
+      <text id="2:293" name="Discover" x="40" y="33" width="150" height="21" />
+      <frame id="2:294" name="Search events" x="310" y="23" width="420" height="42">
+        <frame id="2:295" name="search icon" x="14" y="11" width="20" height="20" />
+        <text id="2:298" name="Search events, topics, or organizers" x="44" y="13" width="204" height="15" />
+      </frame>
+      <frame id="2:299" name="bell icon" x="1032" y="33" width="20" height="20" />
+      <frame id="2:301" name="Notification dot" x="1046" y="30" width="5" height="5" />
+      <frame id="2:302" name="Header divider" x="1074" y="27" width="1" height="34" />
+      <text id="2:303" name="Alex Morgan" x="1094" y="28" width="73" height="15" />
+      <text id="2:304" name="Personal account" x="1094" y="47" width="82" height="12" />
+      <frame id="2:305" name="Bottom divider" x="0" y="87" width="1216" height="1" />
+    </frame>
+    <frame id="2:306" name="Page content" x="264" y="120" width="1136" height="1000">
+      <text id="2:555" name="← Back to event" x="0" y="0" width="93" height="15" />
+      <text id="2:556" name="Reserve your place" x="0" y="36" width="259" height="34" />
+      <text id="2:557" name="You’re a few details away from your next great experience." x="0" y="78" width="359" height="16" />
+      <frame id="2:558" name="Reservation steps" x="0" y="119" width="1136" height="52">
+        <text id="2:559" name="01   Select tickets" x="20" y="18" width="102" height="15" />
+        <text id="2:560" name="→" x="241" y="18" width="12" height="15" />
+        <text id="2:561" name="02   Attendee details" x="302" y="18" width="119" height="15" />
+        <text id="2:562" name="→" x="526" y="18" width="12" height="15" />
+        <text id="2:563" name="03   Confirmation" x="588" y="18" width="99" height="15" />
+      </frame>
+      <frame id="2:564" name="Ticket selection" x="0" y="195" width="704" height="321">
+        <text id="2:565" name="1. Choose your tickets" x="24" y="23" width="192" height="22" />
+        <text id="2:566" name="Ticket availability is updated in real time." x="24" y="52" width="230" height="15" />
+        <frame id="2:567" name="General admission" x="16" y="90" width="672" height="64">
+          <text id="2:568" name="General admission" x="14" y="10" width="117" height="16" />
+          <text id="2:569" name="Full access to talks and networking" x="14" y="34" width="166" height="12" />
+          <text id="2:570" name="$25" x="466" y="22" width="29" height="18" />
+          <frame id="2:571" name="Ticket quantity" x="538" y="13" width="117" height="35">
+            <text id="2:572" name="−     2     +" x="14" y="10" width="56" height="15" />
+          </frame>
+        </frame>
+        <frame id="2:573" name="Student admission" x="16" y="161" width="672" height="64">
+          <text id="2:574" name="Student admission" x="14" y="10" width="118" height="16" />
+          <text id="2:575" name="Valid student ID required at entry" x="14" y="34" width="157" height="12" />
+          <text id="2:576" name="$15" x="466" y="22" width="27" height="18" />
+          <frame id="2:577" name="Ticket quantity" x="538" y="13" width="117" height="35">
+            <text id="2:578" name="−     0     +" x="14" y="10" width="56" height="15" />
+          </frame>
+        </frame>
+        <frame id="2:579" name="VIP experience" x="16" y="232" width="672" height="64">
+          <text id="2:580" name="VIP experience" x="14" y="10" width="95" height="16" />
+          <text id="2:581" name="Priority seating and speaker meetup" x="14" y="34" width="171" height="12" />
+          <text id="2:582" name="$45" x="466" y="22" width="30" height="18" />
+          <frame id="2:583" name="Ticket quantity" x="538" y="13" width="117" height="35">
+            <text id="2:584" name="−     0     +" x="14" y="10" width="56" height="15" />
+          </frame>
+        </frame>
+      </frame>
+      <frame id="2:585" name="Attendee details" x="0" y="536" width="704" height="315">
+        <text id="2:586" name="2. Your details" x="24" y="23" width="124" height="22" />
+        <text id="2:587" name="Your tickets and confirmation will be sent to this email." x="24" y="53" width="309" height="15" />
+        <text id="2:588" name="First name" x="24" y="94" width="56" height="13" />
+        <frame id="2:589" name="First name field" x="24" y="117" width="316" height="44">
+          <text id="2:590" name="Alex" x="13" y="14" width="25" height="15" />
+        </frame>
+        <text id="2:591" name="Last name" x="356" y="94" width="55" height="13" />
+        <frame id="2:592" name="Last name field" x="356" y="117" width="324" height="44">
+          <text id="2:593" name="Morgan" x="13" y="14" width="44" height="15" />
+        </frame>
+        <text id="2:594" name="Email address" x="24" y="184" width="74" height="13" />
+        <frame id="2:595" name="Email address field" x="24" y="207" width="656" height="44">
+          <text id="2:596" name="alex@example.com" x="13" y="14" width="110" height="15" />
+        </frame>
+        <text id="2:597" name="Booking for 2? You can share the second ticket after confirmation." x="24" y="274" width="313" height="12" />
+      </frame>
+      <frame id="2:598" name="Cancellation policy" x="0" y="871" width="704" height="105">
+        <text id="2:599" name="Plans change. We understand." x="20" y="19" width="191" height="16" />
+        <text id="2:600" name="Cancel your reservation free of charge until November 19, 2026.
+After this date, contact the organizer for assistance." x="20" y="46" width="363" height="30" />
+      </frame>
+      <frame id="2:601" name="Reservation summary" x="728" y="195" width="408" height="629">
+        <frame id="2:602" name="Summit event identity" x="0" y="0" width="408" height="152">
+          <text id="2:603" name="GATHER PRESENTS" x="24" y="22" width="86" height="11" />
+          <text id="2:604" name="Innovation Summit ’26" x="24" y="49" width="269" height="30" />
+          <text id="2:605" name="LEARN. CONNECT. BUILD." x="24" y="109" width="125" height="12" />
+        </frame>
+        <text id="2:606" name="Saturday, November 21, 2026" x="24" y="176" width="185" height="16" />
+        <text id="2:607" name="9:00 AM – 5:00 PM" x="24" y="202" width="108" height="15" />
+        <text id="2:608" name="City Convention Center" x="24" y="226" width="133" height="15" />
+        <frame id="2:609" name="Summary divider" x="24" y="265" width="360" height="1" />
+        <text id="2:610" name="Order summary" x="24" y="288" width="121" height="19" />
+        <text id="2:611" name="General admission × 2" x="24" y="329" width="127" height="15" />
+        <text id="2:612" name="$50.00" x="329" y="329" width="42" height="15" />
+        <text id="2:613" name="Booking fee" x="24" y="358" width="68" height="15" />
+        <text id="2:614" name="$0.00" x="337" y="358" width="34" height="15" />
+        <frame id="2:615" name="Total divider" x="24" y="390" width="360" height="1" />
+        <text id="2:616" name="Total" x="24" y="414" width="44" height="22" />
+        <text id="2:617" name="$50.00" x="313" y="414" width="71" height="24" />
+        <frame id="2:618" name="Pay at venue notice" x="24" y="456" width="360" height="46">
+          <text id="2:619" name="Pay at the venue. No online payment required." x="14" y="16" width="240" height="13" />
+        </frame>
+        <frame id="2:620" name="Confirm reservation  →" x="24" y="524" width="360" height="44">
+          <text id="2:621" name="Confirm reservation  →" x="113" y="14" width="134" height="15" />
+        </frame>
+        <text id="2:622" name="By reserving, you agree to the event’s terms." x="38" y="590" width="211" height="12" />
+      </frame>
+      <text id="2:623" name="Need a hand? Contact the organizer" x="750" y="854" width="208" height="15" />
+    </frame>
+  </frame>
+  <frame id="2:307" name="Gather — Organizer dashboard" x="5220" y="-430" width="1440" height="1160">
+    <frame id="2:308" name="Sidebar" x="0" y="0" width="224" height="1160">
+      <frame id="2:309" name="Sidebar divider" x="223" y="0" width="1" height="1160" />
+      <frame id="2:310" name="Brand tile" x="24" y="28" width="32" height="32">
+        <frame id="2:311" name="ticket icon" x="5" y="5" width="22" height="22" />
+      </frame>
+      <text id="2:314" name="gather" x="66" y="27" width="82" height="30" />
+      <text id="2:315" name="YOUR WORKSPACE" x="24" y="110" width="94" height="12" />
+      <frame id="2:316" name="Selected navigation" x="16" y="408" width="192" height="44" />
+      <frame id="2:317" name="grid icon" x="29" y="152" width="20" height="20" />
+      <text id="2:322" name="Discover events" x="61" y="153" width="101" height="16" />
+      <frame id="2:323" name="ticket icon" x="29" y="202" width="20" height="20" />
+      <text id="2:326" name="My tickets" x="61" y="203" width="80" height="16" />
+      <frame id="2:327" name="Ticket count" x="174" y="203" width="20" height="20" />
+      <text id="2:328" name="2" x="180" y="205" width="7" height="13" />
+      <frame id="2:329" name="heart icon" x="29" y="252" width="20" height="20" />
+      <text id="2:331" name="Saved events" x="61" y="253" width="84" height="16" />
+      <frame id="2:332" name="cal icon" x="29" y="302" width="20" height="20" />
+      <text id="2:335" name="Calendar" x="61" y="303" width="57" height="16" />
+      <text id="2:336" name="ORGANIZER" x="24" y="382" width="59" height="12" />
+      <frame id="2:337" name="cal icon" x="29" y="421" width="20" height="20" />
+      <text id="2:340" name="Manage events" x="61" y="422" width="97" height="16" />
+      <frame id="2:341" name="plus icon" x="29" y="471" width="20" height="20" />
+      <text id="2:343" name="Create an event" x="61" y="472" width="99" height="16" />
+      <frame id="2:344" name="Organizer upgrade" x="16" y="838" width="192" height="160">
+        <text id="2:345" name="Bring people together." x="16" y="20" width="141" height="16" />
+        <text id="2:346" name="Your next great event
+starts right here." x="16" y="48" width="122" height="30" />
+        <frame id="2:347" name="Create event" x="16" y="104" width="160" height="36">
+          <text id="2:348" name="Create an event   ↗" x="21" y="10" width="113" height="15" />
+        </frame>
+      </frame>
+      <frame id="2:349" name="help icon" x="29" y="1036" width="20" height="20" />
+      <text id="2:352" name="Help &amp; support" x="61" y="1038" width="92" height="16" />
+      <frame id="2:353" name="settings icon" x="29" y="1080" width="20" height="20" />
+      <text id="2:356" name="Settings" x="61" y="1082" width="51" height="16" />
+    </frame>
+    <frame id="2:357" name="Top bar" x="224" y="0" width="1216" height="88">
+      <text id="2:358" name="Discover" x="40" y="33" width="174" height="21" />
+      <frame id="2:359" name="Search events" x="310" y="23" width="420" height="42">
+        <frame id="2:360" name="search icon" x="14" y="11" width="20" height="20" />
+        <text id="2:363" name="Search events, topics, or organizers" x="44" y="13" width="204" height="15" />
+      </frame>
+      <frame id="2:364" name="bell icon" x="1032" y="33" width="20" height="20" />
+      <frame id="2:366" name="Notification dot" x="1046" y="30" width="5" height="5" />
+      <frame id="2:367" name="Header divider" x="1074" y="27" width="1" height="34" />
+      <text id="2:368" name="Alex Morgan" x="1094" y="28" width="73" height="15" />
+      <text id="2:369" name="Personal account" x="1094" y="47" width="87" height="12" />
+      <frame id="2:370" name="Bottom divider" x="0" y="87" width="1216" height="1" />
+    </frame>
+    <frame id="2:371" name="Page content" x="264" y="120" width="1136" height="1000">
+      <text id="2:624" name="Your events, at a glance" x="0" y="0" width="323" height="34" />
+      <text id="2:625" name="Bring people together. We’ll help with the details." x="0" y="43" width="300" height="16" />
+      <frame id="2:626" name="+ Create event" x="982" y="4" width="154" height="40">
+        <text id="2:627" name="+ Create event" x="34" y="13" width="86" height="15" />
+      </frame>
+      <frame id="2:628" name="Published events" x="0" y="91" width="266" height="123">
+        <text id="2:629" name="Published events" x="20" y="18" width="99" height="15" />
+        <text id="2:630" name="4" x="20" y="44" width="20" height="36" />
+        <text id="2:631" name="Across your organization" x="20" y="94" width="118" height="12" />
+      </frame>
+      <frame id="2:632" name="Total registrations" x="290" y="91" width="266" height="123">
+        <text id="2:633" name="Total registrations" x="20" y="18" width="104" height="15" />
+        <text id="2:634" name="594" x="20" y="44" width="59" height="36" />
+        <text id="2:635" name="66% of total capacity" x="20" y="94" width="100" height="12" />
+      </frame>
+      <frame id="2:636" name="Tickets available" x="580" y="91" width="266" height="123">
+        <text id="2:637" name="Tickets available" x="20" y="18" width="96" height="15" />
+        <text id="2:638" name="306" x="20" y="44" width="60" height="36" />
+        <text id="2:639" name="900 tickets across all events" x="20" y="94" width="135" height="12" />
+      </frame>
+      <frame id="2:640" name="Booking value" x="870" y="91" width="266" height="123">
+        <text id="2:641" name="Booking value" x="20" y="18" width="81" height="15" />
+        <text id="2:642" name="$5,610" x="20" y="44" width="100" height="36" />
+        <text id="2:643" name="Gross value · before refunds" x="20" y="94" width="134" height="12" />
+      </frame>
+      <frame id="2:644" name="Registration trends" x="0" y="238" width="704" height="286">
+        <text id="2:645" name="Registration activity" x="24" y="22" width="165" height="21" />
+        <text id="2:646" name="594 registrations in the last 7 days" x="24" y="50" width="180" height="13" />
+        <frame id="2:647" name="Chart period" x="557" y="21" width="123" height="31">
+          <text id="2:648" name="Last 7 days  ⌄" x="15" y="10" width="72" height="13" />
+        </frame>
+        <frame id="2:649" name="Chart gridline" x="58" y="95" width="622" height="1" />
+        <text id="2:650" name="150" x="24" y="89" width="16" height="11" />
+        <frame id="2:651" name="Chart gridline" x="58" y="141" width="622" height="1" />
+        <text id="2:652" name="100" x="24" y="135" width="16" height="11" />
+        <frame id="2:653" name="Chart gridline" x="58" y="187" width="622" height="1" />
+        <text id="2:654" name="50" x="24" y="181" width="12" height="11" />
+        <frame id="2:655" name="Chart gridline" x="58" y="233" width="622" height="1" />
+        <text id="2:656" name="0" x="24" y="227" width="6" height="11" />
+        <frame id="2:657" name="Daily registrations" x="86" y="190.67999267578125" width="37" height="42.31999969482422" />
+        <text id="2:658" name="46" x="94" y="173.67999267578125" width="12" height="11" />
+        <text id="2:659" name="Nov 4" x="87" y="249" width="26" height="11" />
+        <frame id="2:660" name="Daily registrations" x="169" y="175.9600067138672" width="37" height="57.040000915527344" />
+        <text id="2:661" name="62" x="177" y="158.9600067138672" width="12" height="11" />
+        <text id="2:662" name="Nov 5" x="170" y="249" width="25" height="11" />
+        <frame id="2:663" name="Daily registrations" x="252" y="183.32000732421875" width="37" height="49.68000030517578" />
+        <text id="2:664" name="54" x="260" y="166.32000732421875" width="12" height="11" />
+        <text id="2:665" name="Nov 6" x="253" y="249" width="26" height="11" />
+        <frame id="2:666" name="Daily registrations" x="335" y="159.39999389648438" width="37" height="73.5999984741211" />
+        <text id="2:667" name="80" x="343" y="142.39999389648438" width="12" height="11" />
+        <text id="2:668" name="Nov 7" x="336" y="249" width="25" height="11" />
+        <frame id="2:669" name="Daily registrations" x="418" y="148.36000061035156" width="37" height="84.63999938964844" />
+        <text id="2:670" name="92" x="426" y="131.36000061035156" width="12" height="11" />
+        <text id="2:671" name="Nov 8" x="419" y="249" width="26" height="11" />
+        <frame id="2:672" name="Daily registrations" x="501" y="124.44000244140625" width="37" height="108.55999755859375" />
+        <text id="2:673" name="118" x="509" y="107.44000244140625" width="15" height="11" />
+        <text id="2:674" name="Nov 9" x="502" y="249" width="26" height="11" />
+        <frame id="2:675" name="Daily registrations" x="584" y="102.36000061035156" width="37" height="130.63999938964844" />
+        <text id="2:676" name="142" x="592" y="85.36000061035156" width="16" height="11" />
+        <text id="2:677" name="Nov 10" x="585" y="249" width="30" height="11" />
+      </frame>
+      <frame id="2:678" name="Next event readiness" x="728" y="238" width="408" height="286">
+        <text id="2:679" name="UP NEXT  /  IN 8 DAYS" x="24" y="24" width="106" height="12" />
+        <text id="2:680" name="Design Your Future:
+Career Fair" x="24" y="54" width="228" height="58" />
+        <text id="2:681" name="Nov 18, 2026 · 10:00 AM" x="24" y="123" width="139" height="15" />
+        <text id="2:682" name="Westbridge Campus, Main Hall" x="24" y="148" width="174" height="15" />
+        <text id="2:683" name="128 / 200 registered" x="24" y="185" width="117" height="15" />
+        <frame id="2:684" name="Capacity track" x="24" y="211" width="360" height="6" />
+        <frame id="2:685" name="Capacity filled" x="24" y="211" width="230" height="6" />
+        <text id="2:686" name="Manage event  →" x="24" y="244" width="100" height="15" />
+      </frame>
+      <frame id="2:687" name="Event management table" x="0" y="548" width="1136" height="405">
+        <text id="2:688" name="Manage events" x="24" y="23" width="133" height="22" />
+        <frame id="2:689" name="Export attendees ↓" x="953" y="16" width="159" height="40">
+          <text id="2:690" name="Export attendees ↓" x="22" y="13" width="115" height="15" />
+        </frame>
+        <frame id="2:691" name="Published events tab" x="24" y="61" width="119" height="32">
+          <text id="2:692" name="Published  4" x="15" y="10" width="66" height="13" />
+        </frame>
+        <text id="2:693" name="Drafts  0" x="166" y="71" width="45" height="13" />
+        <frame id="2:694" name="Find your event" x="736" y="62" width="376" height="32">
+          <text id="2:695" name="Search by event name…" x="14" y="10" width="125" height="13" />
+        </frame>
+        <frame id="2:696" name="Table header" x="0" y="109" width="1136" height="36" />
+        <text id="2:697" name="EVENT" x="24" y="122" width="31" height="11" />
+        <text id="2:698" name="DATE" x="441" y="122" width="24" height="11" />
+        <text id="2:699" name="REGISTRATIONS" x="615" y="122" width="72" height="11" />
+        <text id="2:700" name="STATUS" x="818" y="122" width="36" height="11" />
+        <text id="2:701" name="ACTION" x="1010" y="122" width="35" height="11" />
+        <text id="2:702" name="Design Your Future: Career Fair" x="24" y="158" width="181" height="15" />
+        <text id="2:703" name="Education · Westbridge University" x="24" y="179" width="160" height="12" />
+        <text id="2:704" name="Nov 18, 2026" x="441" y="167" width="69" height="13" />
+        <text id="2:705" name="128 / 200" x="615" y="167" width="55" height="15" />
+        <frame id="2:706" name="Published status" x="818" y="162" width="77" height="24">
+          <text id="2:707" name="Published" x="12" y="7" width="44" height="11" />
+        </frame>
+        <text id="2:708" name="Manage  →" x="1010" y="168" width="59" height="13" />
+        <frame id="2:709" name="Row divider" x="24" y="205" width="1088" height="1" />
+        <text id="2:710" name="Founders &amp; Coffee" x="24" y="219" width="108" height="15" />
+        <text id="2:711" name="Business · The Business Collective" x="24" y="240" width="163" height="12" />
+        <text id="2:712" name="Nov 20, 2026" x="441" y="228" width="71" height="13" />
+        <text id="2:713" name="64 / 100" x="615" y="228" width="48" height="15" />
+        <frame id="2:714" name="Published status" x="818" y="223" width="77" height="24">
+          <text id="2:715" name="Published" x="12" y="7" width="44" height="11" />
+        </frame>
+        <text id="2:716" name="Manage  →" x="1010" y="229" width="59" height="13" />
+        <frame id="2:717" name="Row divider" x="24" y="266" width="1088" height="1" />
+        <text id="2:718" name="Innovation Summit ’26" x="24" y="280" width="129" height="15" />
+        <text id="2:719" name="Community &amp; innovation · Gather" x="24" y="301" width="156" height="12" />
+        <text id="2:720" name="Nov 21, 2026" x="441" y="289" width="69" height="13" />
+        <text id="2:721" name="186 / 300" x="615" y="289" width="55" height="15" />
+        <frame id="2:722" name="Published status" x="818" y="284" width="77" height="24">
+          <text id="2:723" name="Published" x="12" y="7" width="44" height="11" />
+        </frame>
+        <text id="2:724" name="Manage  →" x="1010" y="290" width="59" height="13" />
+        <frame id="2:725" name="Row divider" x="24" y="327" width="1088" height="1" />
+        <text id="2:726" name="Neighborhood Makers Market" x="24" y="341" width="173" height="15" />
+        <text id="2:727" name="Community · Riverside Community" x="24" y="362" width="163" height="12" />
+        <text id="2:728" name="Nov 22, 2026" x="441" y="350" width="71" height="13" />
+        <text id="2:729" name="216 / 300" x="615" y="350" width="55" height="15" />
+        <frame id="2:730" name="Published status" x="818" y="345" width="77" height="24">
+          <text id="2:731" name="Published" x="12" y="7" width="44" height="11" />
+        </frame>
+        <text id="2:732" name="Manage  →" x="1010" y="351" width="59" height="13" />
+        <frame id="2:733" name="Row divider" x="24" y="388" width="1088" height="1" />
+      </frame>
+      <text id="2:734" name="Showing all 4 published events" x="0" y="977" width="161" height="13" />
+      <text id="2:735" name="Need help getting started? Organizer guide ↗" x="845" y="977" width="239" height="13" />
+    </frame>
+  </frame>
+  <frame id="2:372" name="Gather — My bookings" x="6700" y="-430" width="1440" height="1160">
+    <frame id="2:373" name="Sidebar" x="0" y="0" width="224" height="1160">
+      <frame id="2:374" name="Sidebar divider" x="223" y="0" width="1" height="1160" />
+      <frame id="2:375" name="Brand tile" x="24" y="28" width="32" height="32">
+        <frame id="2:376" name="ticket icon" x="5" y="5" width="22" height="22" />
+      </frame>
+      <text id="2:379" name="gather" x="66" y="27" width="82" height="30" />
+      <text id="2:380" name="YOUR WORKSPACE" x="24" y="110" width="94" height="12" />
+      <frame id="2:381" name="Selected navigation" x="16" y="190" width="192" height="44" />
+      <frame id="2:382" name="grid icon" x="29" y="152" width="20" height="20" />
+      <text id="2:387" name="Discover events" x="61" y="153" width="101" height="16" />
+      <frame id="2:388" name="ticket icon" x="29" y="202" width="20" height="20" />
+      <text id="2:391" name="My tickets" x="61" y="203" width="81" height="16" />
+      <frame id="2:392" name="Ticket count" x="174" y="203" width="20" height="20" />
+      <text id="2:393" name="2" x="180" y="205" width="7" height="13" />
+      <frame id="2:394" name="heart icon" x="29" y="252" width="20" height="20" />
+      <text id="2:396" name="Saved events" x="61" y="253" width="84" height="16" />
+      <frame id="2:397" name="cal icon" x="29" y="302" width="20" height="20" />
+      <text id="2:400" name="Calendar" x="61" y="303" width="57" height="16" />
+      <text id="2:401" name="ORGANIZER" x="24" y="382" width="59" height="12" />
+      <frame id="2:402" name="cal icon" x="29" y="421" width="20" height="20" />
+      <text id="2:405" name="Manage events" x="61" y="422" width="95" height="16" />
+      <frame id="2:406" name="plus icon" x="29" y="471" width="20" height="20" />
+      <text id="2:408" name="Create an event" x="61" y="472" width="99" height="16" />
+      <frame id="2:409" name="Organizer upgrade" x="16" y="838" width="192" height="160">
+        <text id="2:410" name="Bring people together." x="16" y="20" width="141" height="16" />
+        <text id="2:411" name="Your next great event
+starts right here." x="16" y="48" width="122" height="30" />
+        <frame id="2:412" name="Create event" x="16" y="104" width="160" height="36">
+          <text id="2:413" name="Create an event   ↗" x="21" y="10" width="113" height="15" />
+        </frame>
+      </frame>
+      <frame id="2:414" name="help icon" x="29" y="1036" width="20" height="20" />
+      <text id="2:417" name="Help &amp; support" x="61" y="1038" width="92" height="16" />
+      <frame id="2:418" name="settings icon" x="29" y="1080" width="20" height="20" />
+      <text id="2:421" name="Settings" x="61" y="1082" width="51" height="16" />
+    </frame>
+    <frame id="2:422" name="Top bar" x="224" y="0" width="1216" height="88">
+      <text id="2:423" name="Discover" x="40" y="33" width="180" height="21" />
+      <frame id="2:424" name="Search events" x="310" y="23" width="420" height="42">
+        <frame id="2:425" name="search icon" x="14" y="11" width="20" height="20" />
+        <text id="2:428" name="Search events, topics, or organizers" x="44" y="13" width="204" height="15" />
+      </frame>
+      <frame id="2:429" name="bell icon" x="1032" y="33" width="20" height="20" />
+      <frame id="2:431" name="Notification dot" x="1046" y="30" width="5" height="5" />
+      <frame id="2:432" name="Header divider" x="1074" y="27" width="1" height="34" />
+      <text id="2:433" name="Alex Morgan" x="1094" y="28" width="73" height="15" />
+      <text id="2:434" name="Personal account" x="1094" y="47" width="82" height="12" />
+      <frame id="2:435" name="Bottom divider" x="0" y="87" width="1216" height="1" />
+    </frame>
+    <frame id="2:436" name="Page content" x="264" y="120" width="1136" height="1000">
+      <text id="2:736" name="My bookings" x="0" y="0" width="174" height="34" />
+      <text id="2:737" name="All your plans, tickets, and event details in one place." x="0" y="43" width="325" height="16" />
+      <frame id="2:738" name="Discover events  →" x="969" y="4" width="167" height="40">
+        <text id="2:739" name="Discover events  →" x="28" y="13" width="111" height="15" />
+      </frame>
+      <frame id="2:740" name="Reservation confirmation" x="0" y="91" width="1136" height="64">
+        <text id="2:741" name="✓  You’re booked for Innovation Summit ’26!" x="20" y="13" width="275" height="16" />
+        <text id="2:742" name="2 tickets reserved. A confirmation has been sent to alex@example.com." x="40" y="37" width="372" height="13" />
+        <text id="2:743" name="Booking #GT-20512" x="952" y="27" width="105" height="13" />
+      </frame>
+      <frame id="2:744" name="Upcoming  2" x="0" y="181" width="126" height="37">
+        <text id="2:745" name="Upcoming  2" x="17" y="12" width="73" height="15" />
+      </frame>
+      <frame id="2:746" name="Past  1" x="134" y="181" width="90" height="37">
+        <text id="2:747" name="Past  1" x="17" y="12" width="38" height="15" />
+      </frame>
+      <frame id="2:748" name="Cancelled  1" x="232" y="181" width="121" height="37">
+        <text id="2:749" name="Cancelled  1" x="17" y="12" width="70" height="15" />
+      </frame>
+      <frame id="2:750" name="Search bookings" x="744" y="181" width="392" height="37">
+        <text id="2:751" name="Search event name or booking reference…" x="14" y="12" width="221" height="13" />
+      </frame>
+      <frame id="2:752" name="Innovation summit booking selected" x="0" y="244" width="704" height="243">
+        <frame id="2:753" name="Summit identity" x="0" y="0" width="704" height="67">
+          <text id="2:754" name="GATHER PRESENTS" x="20" y="15" width="76" height="10" />
+          <text id="2:755" name="Innovation Summit ’26" x="20" y="32" width="194" height="22" />
+          <frame id="2:756" name="Confirmed status" x="592" y="23" width="92" height="24">
+            <text id="2:757" name="✓ Confirmed" x="12" y="7" width="63" height="12" />
+          </frame>
+        </frame>
+        <text id="2:758" name="Saturday, Nov 21, 2026 · 9:00 AM – 5:00 PM" x="20" y="88" width="252" height="15" />
+        <text id="2:759" name="City Convention Center" x="20" y="113" width="133" height="15" />
+        <text id="2:760" name="2 tickets · General admission · $50.00 due at venue" x="20" y="147" width="266" height="13" />
+        <frame id="2:761" name="Booking divider" x="20" y="177" width="664" height="1" />
+        <text id="2:762" name="#GT-20512" x="20" y="202" width="53" height="12" />
+        <text id="2:763" name="View details  →" x="570" y="202" width="89" height="15" />
+      </frame>
+      <frame id="2:764" name="Speaking workshop booking" x="0" y="507" width="704" height="221">
+        <frame id="2:765" name="Workshop date" x="20" y="22" width="67" height="72">
+          <text id="2:766" name="NOV" x="22" y="11" width="20" height="11" />
+          <text id="2:767" name="14" x="16" y="30" width="31" height="33" />
+        </frame>
+        <text id="2:768" name="Public Speaking Workshop" x="108" y="23" width="220" height="21" />
+        <text id="2:769" name="Sat, Nov 14 · 2:00 PM – 4:00 PM" x="108" y="53" width="183" height="15" />
+        <text id="2:770" name="Westbridge Learning Center" x="108" y="78" width="160" height="15" />
+        <text id="2:771" name="1 ticket · General admission · Free" x="20" y="121" width="175" height="13" />
+        <frame id="2:772" name="Confirmed status" x="582" y="119" width="102" height="24">
+          <text id="2:773" name="✓ Confirmed" x="16" y="7" width="63" height="12" />
+        </frame>
+        <frame id="2:774" name="Booking divider" x="20" y="157" width="664" height="1" />
+        <text id="2:775" name="#GT-20481" x="20" y="184" width="53" height="12" />
+        <text id="2:776" name="View details  →" x="570" y="184" width="89" height="15" />
+      </frame>
+      <text id="2:777" name="Showing 2 upcoming bookings" x="0" y="751" width="160" height="13" />
+      <frame id="2:778" name="Selected booking details" x="728" y="244" width="408" height="612">
+        <text id="2:779" name="Booking details" x="24" y="23" width="142" height="23" />
+        <text id="2:780" name="Innovation Summit ’26" x="24" y="63" width="151" height="17" />
+        <text id="2:781" name="Booking reference" x="24" y="108" width="95" height="13" />
+        <text id="2:782" name="#GT-20512" x="325" y="108" width="59" height="13" />
+        <text id="2:783" name="Booked by" x="24" y="141" width="56" height="13" />
+        <text id="2:784" name="Alex Morgan" x="318" y="141" width="66" height="13" />
+        <text id="2:785" name="Booking date" x="24" y="174" width="69" height="13" />
+        <text id="2:786" name="Nov 10, 2026" x="314" y="174" width="70" height="13" />
+        <text id="2:787" name="Ticket type" x="24" y="207" width="59" height="13" />
+        <text id="2:788" name="General admission" x="286" y="207" width="98" height="13" />
+        <text id="2:789" name="Quantity" x="24" y="240" width="45" height="13" />
+        <text id="2:790" name="2 tickets" x="339" y="240" width="45" height="13" />
+        <text id="2:791" name="Reservation status" x="24" y="273" width="97" height="13" />
+        <text id="2:792" name="Confirmed" x="328" y="273" width="56" height="13" />
+        <frame id="2:793" name="Details divider" x="24" y="317" width="360" height="1" />
+        <text id="2:794" name="Amount due at venue" x="24" y="340" width="133" height="16" />
+        <text id="2:795" name="$50.00" x="313" y="337" width="67" height="23" />
+        <frame id="2:796" name="View tickets  →" x="24" y="385" width="360" height="40">
+          <text id="2:797" name="View tickets  →" x="135.5" y="13" width="89" height="15" />
+        </frame>
+        <frame id="2:798" name="Download confirmation ↓" x="24" y="436" width="360" height="40">
+          <text id="2:799" name="Download confirmation ↓" x="105" y="13" width="150" height="15" />
+        </frame>
+        <text id="2:800" name="Cancellation available until Nov 19, 2026." x="24" y="502" width="194" height="12" />
+        <text id="2:801" name="Cancel reservation" x="24" y="529" width="108" height="15" />
+        <text id="2:802" name="Contact organizer  ↗" x="24" y="565" width="121" height="15" />
+      </frame>
+      <frame id="2:803" name="Booking support" x="0" y="885" width="1136" height="91">
+        <text id="2:804" name="A change of plans?" x="22" y="20" width="148" height="19" />
+        <text id="2:805" name="Check your event’s cancellation policy or reach out to the organizer for help." x="22" y="50" width="431" height="15" />
+        <frame id="2:806" name="Booking help  ↗" x="956" y="25" width="158" height="40">
+          <text id="2:807" name="Booking help  ↗" x="32.5" y="13" width="93" height="15" />
+        </frame>
+      </frame>
+    </frame>
+  </frame>
+</canvas>

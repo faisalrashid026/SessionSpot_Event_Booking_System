@@ -1,0 +1,38 @@
+[
+  {
+    "id": "2:2",
+    "name": "Gather \u2014 Discover events",
+    "width": 1440.0,
+    "height": 1320.0
+  },
+  {
+    "id": "2:238",
+    "name": "Gather \u2014 Create account",
+    "width": 1440.0,
+    "height": 1160.0
+  },
+  {
+    "id": "2:240",
+    "name": "Gather \u2014 Sign in",
+    "width": 1440.0,
+    "height": 1160.0
+  },
+  {
+    "id": "2:242",
+    "name": "Gather \u2014 Reserve tickets",
+    "width": 1440.0,
+    "height": 1160.0
+  },
+  {
+    "id": "2:307",
+    "name": "Gather \u2014 Organizer dashboard",
+    "width": 1440.0,
+    "height": 1160.0
+  },
+  {
+    "id": "2:372",
+    "name": "Gather \u2014 My bookings",
+    "width": 1440.0,
+    "height": 1160.0
+  }
+]

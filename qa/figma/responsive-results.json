@@ -1,0 +1,752 @@
+[
+  {
+    "page": "index",
+    "target": 1440,
+    "width": 1440,
+    "scrollWidth": 1440,
+    "h1": "Good morning, Alex",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "event",
+    "target": 1440,
+    "width": 1440,
+    "scrollWidth": 1440,
+    "h1": "Innovation Summit ’26",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "reserve",
+    "target": 1440,
+    "width": 1440,
+    "scrollWidth": 1440,
+    "h1": "Reserve your place",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "confirmation",
+    "target": 1440,
+    "width": 1440,
+    "scrollWidth": 1440,
+    "h1": "You’re on the list!",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "my-bookings",
+    "target": 1440,
+    "width": 1440,
+    "scrollWidth": 1440,
+    "h1": "My bookings",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "login",
+    "target": 1440,
+    "width": 1440,
+    "scrollWidth": 1440,
+    "h1": "Welcome back",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "register",
+    "target": 1440,
+    "width": 1440,
+    "scrollWidth": 1440,
+    "h1": "Create your account",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "forgot-password",
+    "target": 1440,
+    "width": 1440,
+    "scrollWidth": 1440,
+    "h1": "Forgot your password?",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "reset-password",
+    "target": 1440,
+    "width": 1440,
+    "scrollWidth": 1440,
+    "h1": "A fresh start",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "profile",
+    "target": 1440,
+    "width": 1440,
+    "scrollWidth": 1440,
+    "h1": "Your profile",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "dashboard",
+    "target": 1440,
+    "width": 1440,
+    "scrollWidth": 1440,
+    "h1": "Your events, at a glance",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "create-event",
+    "target": 1440,
+    "width": 1440,
+    "scrollWidth": 1440,
+    "h1": "Create an event",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "attendees",
+    "target": 1440,
+    "width": 1440,
+    "scrollWidth": 1440,
+    "h1": "Your attendees",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "admin",
+    "target": 1440,
+    "width": 1440,
+    "scrollWidth": 1440,
+    "h1": "A little oversight. A better experience.",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "help",
+    "target": 1440,
+    "width": 1440,
+    "scrollWidth": 1440,
+    "h1": "We’re here to help",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "index",
+    "target": 1024,
+    "width": 1023,
+    "scrollWidth": 1023,
+    "h1": "Good morning, Alex",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "event",
+    "target": 1024,
+    "width": 1023,
+    "scrollWidth": 1023,
+    "h1": "Innovation Summit ’26",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "reserve",
+    "target": 1024,
+    "width": 1023,
+    "scrollWidth": 1023,
+    "h1": "Reserve your place",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "confirmation",
+    "target": 1024,
+    "width": 1023,
+    "scrollWidth": 1023,
+    "h1": "You’re on the list!",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "my-bookings",
+    "target": 1024,
+    "width": 1023,
+    "scrollWidth": 1023,
+    "h1": "My bookings",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "login",
+    "target": 1024,
+    "width": 1023,
+    "scrollWidth": 1023,
+    "h1": "Welcome back",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "register",
+    "target": 1024,
+    "width": 1023,
+    "scrollWidth": 1023,
+    "h1": "Create your account",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "forgot-password",
+    "target": 1024,
+    "width": 1023,
+    "scrollWidth": 1023,
+    "h1": "Forgot your password?",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "reset-password",
+    "target": 1024,
+    "width": 1023,
+    "scrollWidth": 1023,
+    "h1": "A fresh start",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "profile",
+    "target": 1024,
+    "width": 1023,
+    "scrollWidth": 1023,
+    "h1": "Your profile",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "dashboard",
+    "target": 1024,
+    "width": 1023,
+    "scrollWidth": 1023,
+    "h1": "Your events, at a glance",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "create-event",
+    "target": 1024,
+    "width": 1023,
+    "scrollWidth": 1023,
+    "h1": "Create an event",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "attendees",
+    "target": 1024,
+    "width": 1023,
+    "scrollWidth": 1023,
+    "h1": "Your attendees",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "admin",
+    "target": 1024,
+    "width": 1023,
+    "scrollWidth": 1023,
+    "h1": "A little oversight. A better experience.",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "help",
+    "target": 1024,
+    "width": 1023,
+    "scrollWidth": 1023,
+    "h1": "We’re here to help",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "index",
+    "target": 768,
+    "width": 768,
+    "scrollWidth": 768,
+    "h1": "Good morning, Alex",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "event",
+    "target": 768,
+    "width": 768,
+    "scrollWidth": 768,
+    "h1": "Innovation Summit ’26",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "reserve",
+    "target": 768,
+    "width": 768,
+    "scrollWidth": 768,
+    "h1": "Reserve your place",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "confirmation",
+    "target": 768,
+    "width": 768,
+    "scrollWidth": 768,
+    "h1": "You’re on the list!",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "my-bookings",
+    "target": 768,
+    "width": 768,
+    "scrollWidth": 768,
+    "h1": "My bookings",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "login",
+    "target": 768,
+    "width": 768,
+    "scrollWidth": 768,
+    "h1": "Welcome back",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "register",
+    "target": 768,
+    "width": 768,
+    "scrollWidth": 768,
+    "h1": "Create your account",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "forgot-password",
+    "target": 768,
+    "width": 768,
+    "scrollWidth": 768,
+    "h1": "Forgot your password?",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "reset-password",
+    "target": 768,
+    "width": 768,
+    "scrollWidth": 768,
+    "h1": "A fresh start",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "profile",
+    "target": 768,
+    "width": 768,
+    "scrollWidth": 768,
+    "h1": "Your profile",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "dashboard",
+    "target": 768,
+    "width": 768,
+    "scrollWidth": 768,
+    "h1": "Your events, at a glance",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "create-event",
+    "target": 768,
+    "width": 768,
+    "scrollWidth": 768,
+    "h1": "Create an event",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "attendees",
+    "target": 768,
+    "width": 768,
+    "scrollWidth": 768,
+    "h1": "Your attendees",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "admin",
+    "target": 768,
+    "width": 768,
+    "scrollWidth": 768,
+    "h1": "A little oversight. A better experience.",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "help",
+    "target": 768,
+    "width": 768,
+    "scrollWidth": 768,
+    "h1": "We’re here to help",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "index",
+    "target": 390,
+    "width": 390,
+    "scrollWidth": 390,
+    "h1": "Good morning, Alex",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "event",
+    "target": 390,
+    "width": 390,
+    "scrollWidth": 390,
+    "h1": "Innovation Summit ’26",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "reserve",
+    "target": 390,
+    "width": 390,
+    "scrollWidth": 390,
+    "h1": "Reserve your place",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "confirmation",
+    "target": 390,
+    "width": 390,
+    "scrollWidth": 390,
+    "h1": "You’re on the list!",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "my-bookings",
+    "target": 390,
+    "width": 390,
+    "scrollWidth": 390,
+    "h1": "My bookings",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "login",
+    "target": 390,
+    "width": 390,
+    "scrollWidth": 390,
+    "h1": "Welcome back",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "register",
+    "target": 390,
+    "width": 390,
+    "scrollWidth": 390,
+    "h1": "Create your account",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "forgot-password",
+    "target": 390,
+    "width": 390,
+    "scrollWidth": 390,
+    "h1": "Forgot your password?",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "reset-password",
+    "target": 390,
+    "width": 390,
+    "scrollWidth": 390,
+    "h1": "A fresh start",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "profile",
+    "target": 390,
+    "width": 390,
+    "scrollWidth": 390,
+    "h1": "Your profile",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "dashboard",
+    "target": 390,
+    "width": 390,
+    "scrollWidth": 390,
+    "h1": "Your events, at a glance",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "create-event",
+    "target": 390,
+    "width": 390,
+    "scrollWidth": 390,
+    "h1": "Create an event",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "attendees",
+    "target": 390,
+    "width": 390,
+    "scrollWidth": 390,
+    "h1": "Your attendees",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "admin",
+    "target": 390,
+    "width": 390,
+    "scrollWidth": 390,
+    "h1": "A little oversight. A better experience.",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "help",
+    "target": 390,
+    "width": 390,
+    "scrollWidth": 390,
+    "h1": "We’re here to help",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "index",
+    "target": 375,
+    "width": 375,
+    "scrollWidth": 375,
+    "h1": "Good morning, Alex",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "event",
+    "target": 375,
+    "width": 375,
+    "scrollWidth": 375,
+    "h1": "Innovation Summit ’26",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "reserve",
+    "target": 375,
+    "width": 375,
+    "scrollWidth": 375,
+    "h1": "Reserve your place",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "confirmation",
+    "target": 375,
+    "width": 375,
+    "scrollWidth": 375,
+    "h1": "You’re on the list!",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "my-bookings",
+    "target": 375,
+    "width": 375,
+    "scrollWidth": 375,
+    "h1": "My bookings",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "login",
+    "target": 375,
+    "width": 375,
+    "scrollWidth": 375,
+    "h1": "Welcome back",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "register",
+    "target": 375,
+    "width": 375,
+    "scrollWidth": 375,
+    "h1": "Create your account",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "forgot-password",
+    "target": 375,
+    "width": 375,
+    "scrollWidth": 375,
+    "h1": "Forgot your password?",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "reset-password",
+    "target": 375,
+    "width": 375,
+    "scrollWidth": 375,
+    "h1": "A fresh start",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "profile",
+    "target": 375,
+    "width": 375,
+    "scrollWidth": 375,
+    "h1": "Your profile",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "dashboard",
+    "target": 375,
+    "width": 375,
+    "scrollWidth": 375,
+    "h1": "Your events, at a glance",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "create-event",
+    "target": 375,
+    "width": 375,
+    "scrollWidth": 375,
+    "h1": "Create an event",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "attendees",
+    "target": 375,
+    "width": 375,
+    "scrollWidth": 375,
+    "h1": "Your attendees",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "admin",
+    "target": 375,
+    "width": 375,
+    "scrollWidth": 375,
+    "h1": "A little oversight. A better experience.",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  },
+  {
+    "page": "help",
+    "target": 375,
+    "width": 375,
+    "scrollWidth": 375,
+    "h1": "We’re here to help",
+    "fontReady": true,
+    "badImages": [],
+    "pass": true
+  }
+]

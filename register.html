@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="SessionSpot — discover events and try a browser-local university ticket booking prototype."
+    />
+    <title>Create account | SessionSpot</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
+    <link
+      rel="preload"
+      href="assets/fonts/InterVariable.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/figma.css?v=b4d6a79280" />
+    <script defer src="js/form-guard.js?v=d79fb3a354"></script>
+    <script type="module" src="js/app.js?v=08b46b5db8"></script>
+  </head>
+  <body data-figma-node="2:238" data-page="register">
+    <a class="skip" href="#main">Skip to main content</a>
+    <main class="auth-layout" id="main" tabindex="-1">
+      <aside class="auth-marketing" aria-label="Welcome to SessionSpot">
+        <a class="logo" href="index.html" aria-label="SessionSpot home"
+          ><span class="brand-tile"
+            ><img
+              src="assets/figma/e0a44.svg"
+              alt=""
+              width="22"
+              height="22" /></span
+          >SessionSpot</a
+        >
+        <div class="marketing-copy">
+          <div class="eyebrow">Good things happen<br />when people gather.</div>
+          <h2>Your next <br />great experience <br />starts here.</h2>
+          <p>
+            Discover something new. Meet your people. <br />Make every event
+            worth being there.
+          </p>
+        </div>
+        <div
+          class="ticket-art"
+          role="img"
+          aria-label="Illustrated Innovation Summit ticket, November 21"
+        >
+          <div class="art-label">SESSIONSPOT PRESENTS</div>
+          <h3>Innovation<br />Summit ’26</h3>
+          <div class="date-block">NOV<strong>21</strong></div>
+          <div class="art-footer">LEARN. CONNECT. BUILD.</div>
+          <div class="admit">ADMIT<br />ONE</div>
+        </div>
+        <div class="marketing-footer">
+          <div class="eyebrow">For campuses. Companies. Communities.</div>
+          <p>A little connection goes a long way.</p>
+        </div>
+      </aside>
+      <section class="auth-right" aria-label="Create account">
+        <div class="auth-top">
+          <span>Already have an account?</span><a href="login.html">Sign in</a>
+        </div>
+        <div class="auth-content register">
+          <h1>Create your account</h1>
+          <p class="subtitle">One account. A world of experiences.</p>
+          <form id="register-form" class="stack" method="dialog" data-demo-form>
+            <fieldset class="segmented-fieldset">
+              <legend>I’m here to</legend>
+              <div class="segmented">
+                <label
+                  ><input
+                    type="radio"
+                    name="role"
+                    value="Attendee"
+                    checked
+                  /><span>Attend events</span></label
+                ><label
+                  ><input type="radio" name="role" value="Organizer" /><span
+                    >Organize events</span
+                  ></label
+                >
+              </div>
+            </fieldset>
+            <label class="field"
+              >Full name<input
+                type="text"
+                name="name"
+                required
+                maxlength="80"
+                placeholder="Alex Morgan"
+                autocomplete="name" /></label
+            ><label class="field"
+              >Email address<input
+                type="email"
+                name="email"
+                required
+                placeholder="alex@example.com"
+                autocomplete="email" /></label
+            ><label class="field"
+              >Password<input
+                type="password"
+                name="password"
+                aria-label="Password"
+                required
+                minlength="8"
+                placeholder="Create a strong password"
+                autocomplete="new-password"
+                aria-describedby="password-hint"
+               maxlength="72" /><span class="hint" id="password-hint"
+                >Use 8 or more characters, including a number. Demo only.</span
+              ></label
+            ><label class="field"
+              >Confirm password<input
+                type="password"
+                name="confirm"
+                disabled
+                required
+                minlength="8"
+                placeholder="Repeat your password"
+                autocomplete="new-password"  maxlength="72" /></label
+            ><label class="check-label"
+              ><input type="checkbox" name="terms" required /><span
+                >I agree to the
+                <a href="help.html#terms">demo Terms of Service</a> and
+                <a href="help.html#privacy">Privacy Policy</a>.</span
+              ></label
+            ><button class="btn wide" type="submit">
+              Create demo account
+              <span class="direction-arrow" aria-hidden="true">→</span>
+            </button>
+            <p class="feedback" role="alert" data-feedback></p>
+            <p class="prototype">
+              Prototype only. Use sample details. No real account is created and
+              no password is stored.
+            </p>
+          </form>
+        </div>
+        <footer class="auth-footer">
+          <span>© 2026 SessionSpot</span>
+          <div class="row">
+            <a href="help.html#privacy">Privacy</a
+            ><a href="help.html#terms">Terms</a
+            ><a href="help.html">Help & support</a>
+          </div>
+        </footer>
+      </section>
+    </main>
+    <noscript
+      ><p class="noscript">
+        Enable JavaScript to use the sample event and booking interactions. Page
+        navigation remains available.
+      </p></noscript
+    >
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+    <dialog class="dialog" id="action-dialog" aria-labelledby="dialog-title">
+      <h2 id="dialog-title"></h2>
+      <p id="dialog-message"></p>
+      <div class="row">
+        <button class="btn secondary" type="button" id="dialog-dismiss">
+          Keep it</button
+        ><button class="btn" type="button" id="dialog-confirm">Continue</button>
+      </div>
+    </dialog>
+  </body>
+</html>

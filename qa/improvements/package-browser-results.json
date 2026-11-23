@@ -1,0 +1,197 @@
+{
+  "runtimeSha256": "0b2489c00e6684eaefbfc7e5b8d25bcccd50853184ec69b5522b431dc3edecb0",
+  "pages": [
+    {
+      "page": "index",
+      "font": true,
+      "h1": 1,
+      "images": true,
+      "overflow": false,
+      "ready": true,
+      "styles": 2,
+      "version": "http://localhost:8005/package/js/app.js?v=9678db2751",
+      "pass": true
+    },
+    {
+      "page": "event",
+      "font": true,
+      "h1": 1,
+      "images": true,
+      "overflow": false,
+      "ready": true,
+      "styles": 2,
+      "version": "http://localhost:8005/package/js/app.js?v=9678db2751",
+      "pass": true
+    },
+    {
+      "page": "reserve",
+      "font": true,
+      "h1": 1,
+      "images": true,
+      "overflow": false,
+      "ready": true,
+      "styles": 2,
+      "version": "http://localhost:8005/package/js/app.js?v=9678db2751",
+      "pass": true
+    },
+    {
+      "page": "confirmation",
+      "font": true,
+      "h1": 1,
+      "images": true,
+      "overflow": false,
+      "ready": true,
+      "styles": 2,
+      "version": "http://localhost:8005/package/js/app.js?v=9678db2751",
+      "pass": true
+    },
+    {
+      "page": "my-bookings",
+      "font": true,
+      "h1": 1,
+      "images": true,
+      "overflow": false,
+      "ready": true,
+      "styles": 2,
+      "version": "http://localhost:8005/package/js/app.js?v=9678db2751",
+      "pass": true
+    },
+    {
+      "page": "login",
+      "font": true,
+      "h1": 1,
+      "images": true,
+      "overflow": false,
+      "ready": true,
+      "styles": 2,
+      "version": "http://localhost:8005/package/js/app.js?v=9678db2751",
+      "pass": true
+    },
+    {
+      "page": "register",
+      "font": true,
+      "h1": 1,
+      "images": true,
+      "overflow": false,
+      "ready": true,
+      "styles": 2,
+      "version": "http://localhost:8005/package/js/app.js?v=9678db2751",
+      "pass": true
+    },
+    {
+      "page": "forgot-password",
+      "font": true,
+      "h1": 1,
+      "images": true,
+      "overflow": false,
+      "ready": true,
+      "styles": 2,
+      "version": "http://localhost:8005/package/js/app.js?v=9678db2751",
+      "pass": true
+    },
+    {
+      "page": "reset-password",
+      "font": true,
+      "h1": 1,
+      "images": true,
+      "overflow": false,
+      "ready": true,
+      "styles": 2,
+      "version": "http://localhost:8005/package/js/app.js?v=9678db2751",
+      "pass": true
+    },
+    {
+      "page": "profile",
+      "font": true,
+      "h1": 1,
+      "images": true,
+      "overflow": false,
+      "ready": true,
+      "styles": 2,
+      "version": "http://localhost:8005/package/js/app.js?v=9678db2751",
+      "pass": true
+    },
+    {
+      "page": "dashboard",
+      "font": true,
+      "h1": 1,
+      "images": true,
+      "overflow": false,
+      "ready": true,
+      "styles": 2,
+      "version": "http://localhost:8005/package/js/app.js?v=9678db2751",
+      "pass": true
+    },
+    {
+      "page": "create-event",
+      "font": true,
+      "h1": 1,
+      "images": true,
+      "overflow": false,
+      "ready": true,
+      "styles": 2,
+      "version": "http://localhost:8005/package/js/app.js?v=9678db2751",
+      "pass": true
+    },
+    {
+      "page": "attendees",
+      "font": true,
+      "h1": 1,
+      "images": true,
+      "overflow": false,
+      "ready": true,
+      "styles": 2,
+      "version": "http://localhost:8005/package/js/app.js?v=9678db2751",
+      "pass": true
+    },
+    {
+      "page": "admin",
+      "font": true,
+      "h1": 1,
+      "images": true,
+      "overflow": false,
+      "ready": true,
+      "styles": 2,
+      "version": "http://localhost:8005/package/js/app.js?v=9678db2751",
+      "pass": true
+    },
+    {
+      "page": "help",
+      "font": true,
+      "h1": 1,
+      "images": true,
+      "overflow": false,
+      "ready": true,
+      "styles": 2,
+      "version": "http://localhost:8005/package/js/app.js?v=9678db2751",
+      "pass": true
+    }
+  ],
+  "flows": [
+    {
+      "name": "Extracted booking saved before confirmation",
+      "pass": true
+    },
+    {
+      "name": "Extracted duplicate-click protection",
+      "pass": true
+    },
+    {
+      "name": "Extracted cancellation retains history",
+      "pass": true
+    },
+    {
+      "name": "Extracted inventory and values restore",
+      "pass": true
+    },
+    {
+      "name": "Extracted attendee cannot administer roles",
+      "pass": true
+    },
+    {
+      "name": "Extracted mobile layout and safe form",
+      "pass": true
+    }
+  ],
+  "console": []
+}

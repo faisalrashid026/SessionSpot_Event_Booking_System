@@ -1,0 +1,362 @@
+[
+  {
+    "page": "index",
+    "width": 1440,
+    "pass": true,
+    "baselineElements": 198,
+    "currentElements": 198,
+    "differences": []
+  },
+  {
+    "page": "event",
+    "width": 1440,
+    "pass": true,
+    "baselineElements": 119,
+    "currentElements": 119,
+    "differences": []
+  },
+  {
+    "page": "reserve",
+    "width": 1440,
+    "pass": true,
+    "baselineElements": 161,
+    "currentElements": 161,
+    "differences": []
+  },
+  {
+    "page": "confirmation",
+    "width": 1440,
+    "pass": true,
+    "baselineElements": 117,
+    "currentElements": 117,
+    "differences": []
+  },
+  {
+    "page": "my-bookings",
+    "width": 1440,
+    "pass": true,
+    "baselineElements": 155,
+    "currentElements": 155,
+    "differences": []
+  },
+  {
+    "page": "login",
+    "width": 1440,
+    "pass": true,
+    "baselineElements": 50,
+    "currentElements": 50,
+    "differences": []
+  },
+  {
+    "page": "register",
+    "width": 1440,
+    "pass": true,
+    "baselineElements": 57,
+    "currentElements": 57,
+    "differences": []
+  },
+  {
+    "page": "forgot-password",
+    "width": 1440,
+    "pass": true,
+    "baselineElements": 40,
+    "currentElements": 40,
+    "differences": []
+  },
+  {
+    "page": "reset-password",
+    "width": 1440,
+    "pass": true,
+    "baselineElements": 42,
+    "currentElements": 42,
+    "differences": []
+  },
+  {
+    "page": "profile",
+    "width": 1440,
+    "pass": true,
+    "baselineElements": 100,
+    "currentElements": 100,
+    "differences": []
+  },
+  {
+    "page": "dashboard",
+    "width": 1440,
+    "pass": true,
+    "baselineElements": 209,
+    "currentElements": 209,
+    "differences": []
+  },
+  {
+    "page": "create-event",
+    "width": 1440,
+    "pass": true,
+    "baselineElements": 111,
+    "currentElements": 111,
+    "differences": []
+  },
+  {
+    "page": "attendees",
+    "width": 1440,
+    "pass": true,
+    "baselineElements": 91,
+    "currentElements": 91,
+    "differences": []
+  },
+  {
+    "page": "admin",
+    "width": 1440,
+    "pass": true,
+    "baselineElements": 205,
+    "currentElements": 205,
+    "differences": []
+  },
+  {
+    "page": "help",
+    "width": 1440,
+    "pass": true,
+    "baselineElements": 101,
+    "currentElements": 101,
+    "differences": []
+  },
+  {
+    "page": "index",
+    "width": 768,
+    "pass": true,
+    "baselineElements": 190,
+    "currentElements": 190,
+    "differences": []
+  },
+  {
+    "page": "event",
+    "width": 768,
+    "pass": true,
+    "baselineElements": 125,
+    "currentElements": 125,
+    "differences": []
+  },
+  {
+    "page": "reserve",
+    "width": 768,
+    "pass": true,
+    "baselineElements": 167,
+    "currentElements": 167,
+    "differences": []
+  },
+  {
+    "page": "confirmation",
+    "width": 768,
+    "pass": true,
+    "baselineElements": 123,
+    "currentElements": 123,
+    "differences": []
+  },
+  {
+    "page": "my-bookings",
+    "width": 768,
+    "pass": true,
+    "baselineElements": 161,
+    "currentElements": 161,
+    "differences": []
+  },
+  {
+    "page": "login",
+    "width": 768,
+    "pass": true,
+    "baselineElements": 50,
+    "currentElements": 50,
+    "differences": []
+  },
+  {
+    "page": "register",
+    "width": 768,
+    "pass": true,
+    "baselineElements": 57,
+    "currentElements": 57,
+    "differences": []
+  },
+  {
+    "page": "forgot-password",
+    "width": 768,
+    "pass": true,
+    "baselineElements": 40,
+    "currentElements": 40,
+    "differences": []
+  },
+  {
+    "page": "reset-password",
+    "width": 768,
+    "pass": true,
+    "baselineElements": 42,
+    "currentElements": 42,
+    "differences": []
+  },
+  {
+    "page": "profile",
+    "width": 768,
+    "pass": true,
+    "baselineElements": 106,
+    "currentElements": 106,
+    "differences": []
+  },
+  {
+    "page": "dashboard",
+    "width": 768,
+    "pass": true,
+    "baselineElements": 215,
+    "currentElements": 215,
+    "differences": []
+  },
+  {
+    "page": "create-event",
+    "width": 768,
+    "pass": true,
+    "baselineElements": 117,
+    "currentElements": 117,
+    "differences": []
+  },
+  {
+    "page": "attendees",
+    "width": 768,
+    "pass": true,
+    "baselineElements": 97,
+    "currentElements": 97,
+    "differences": []
+  },
+  {
+    "page": "admin",
+    "width": 768,
+    "pass": true,
+    "baselineElements": 211,
+    "currentElements": 211,
+    "differences": []
+  },
+  {
+    "page": "help",
+    "width": 768,
+    "pass": true,
+    "baselineElements": 107,
+    "currentElements": 107,
+    "differences": []
+  },
+  {
+    "page": "index",
+    "width": 390,
+    "pass": true,
+    "baselineElements": 190,
+    "currentElements": 190,
+    "differences": []
+  },
+  {
+    "page": "event",
+    "width": 390,
+    "pass": true,
+    "baselineElements": 119,
+    "currentElements": 119,
+    "differences": []
+  },
+  {
+    "page": "reserve",
+    "width": 390,
+    "pass": true,
+    "baselineElements": 161,
+    "currentElements": 161,
+    "differences": []
+  },
+  {
+    "page": "confirmation",
+    "width": 390,
+    "pass": true,
+    "baselineElements": 117,
+    "currentElements": 117,
+    "differences": []
+  },
+  {
+    "page": "my-bookings",
+    "width": 390,
+    "pass": true,
+    "baselineElements": 155,
+    "currentElements": 155,
+    "differences": []
+  },
+  {
+    "page": "login",
+    "width": 390,
+    "pass": true,
+    "baselineElements": 38,
+    "currentElements": 38,
+    "differences": []
+  },
+  {
+    "page": "register",
+    "width": 390,
+    "pass": true,
+    "baselineElements": 45,
+    "currentElements": 45,
+    "differences": []
+  },
+  {
+    "page": "forgot-password",
+    "width": 390,
+    "pass": true,
+    "baselineElements": 28,
+    "currentElements": 28,
+    "differences": []
+  },
+  {
+    "page": "reset-password",
+    "width": 390,
+    "pass": true,
+    "baselineElements": 30,
+    "currentElements": 30,
+    "differences": []
+  },
+  {
+    "page": "profile",
+    "width": 390,
+    "pass": true,
+    "baselineElements": 100,
+    "currentElements": 100,
+    "differences": []
+  },
+  {
+    "page": "dashboard",
+    "width": 390,
+    "pass": true,
+    "baselineElements": 209,
+    "currentElements": 209,
+    "differences": []
+  },
+  {
+    "page": "create-event",
+    "width": 390,
+    "pass": true,
+    "baselineElements": 111,
+    "currentElements": 111,
+    "differences": []
+  },
+  {
+    "page": "attendees",
+    "width": 390,
+    "pass": true,
+    "baselineElements": 91,
+    "currentElements": 91,
+    "differences": []
+  },
+  {
+    "page": "admin",
+    "width": 390,
+    "pass": true,
+    "baselineElements": 205,
+    "currentElements": 205,
+    "differences": []
+  },
+  {
+    "page": "help",
+    "width": 390,
+    "pass": true,
+    "baselineElements": 101,
+    "currentElements": 101,
+    "differences": []
+  }
+]

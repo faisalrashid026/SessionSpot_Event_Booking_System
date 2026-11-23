@@ -1,0 +1,473 @@
+{
+  "index": [
+    {
+      "selector": ".topbar",
+      "nodeId": "2:4",
+      "name": "Top bar",
+      "x": 0.0,
+      "y": 0.0,
+      "w": 1440.0,
+      "h": 88.0
+    },
+    {
+      "selector": ".discover-nav",
+      "nodeId": "2:3",
+      "name": "Top navigation",
+      "x": 0.0,
+      "y": 88.0,
+      "w": 1440.0,
+      "h": 60.0
+    },
+    {
+      "selector": ".feature",
+      "nodeId": "2:72",
+      "name": "Featured event",
+      "x": 40.0,
+      "y": 266.0,
+      "w": 1360.0,
+      "h": 208.0
+    },
+    {
+      "selector": ".event-card:nth-child(1)",
+      "nodeId": "2:124",
+      "name": "Design Your Future: Career Fair",
+      "x": 40.0,
+      "y": 607.0,
+      "w": 442.6666564941406,
+      "h": 319.0
+    },
+    {
+      "selector": ".event-card:nth-child(2)",
+      "nodeId": "2:147",
+      "name": "Founders & Coffee",
+      "x": 498.6666564941406,
+      "y": 607.0,
+      "w": 442.6666564941406,
+      "h": 319.0
+    },
+    {
+      "selector": ".event-card:nth-child(3)",
+      "nodeId": "2:171",
+      "name": "Neighborhood Makers Market",
+      "x": 957.3333129882812,
+      "y": 607.0,
+      "w": 442.6666564941406,
+      "h": 319.0
+    },
+    {
+      "selector": ".booking-preview",
+      "nodeId": "2:196",
+      "name": "Upcoming booking",
+      "x": 40.0,
+      "y": 1008.0,
+      "w": 936.0,
+      "h": 176.0
+    },
+    {
+      "selector": ".organizer-cta",
+      "nodeId": "2:232",
+      "name": "Host your own event",
+      "x": 1000.0,
+      "y": 966.0,
+      "w": 400.0,
+      "h": 218.0
+    },
+    {
+      "selector": ".bottom-banner",
+      "nodeId": "2:43",
+      "name": "Organizer invitation strip",
+      "x": 40.0,
+      "y": 1212.0,
+      "w": 1360.0,
+      "h": 76.0
+    }
+  ],
+  "register": [
+    {
+      "selector": ".auth-marketing",
+      "nodeId": "2:438",
+      "name": "Brand story",
+      "x": 0.0,
+      "y": 0.0,
+      "w": 570.0,
+      "h": 1160.0
+    },
+    {
+      "selector": ".segmented",
+      "nodeId": "2:477",
+      "name": "Account role",
+      "x": 765.0,
+      "y": 297.0,
+      "w": 480.0,
+      "h": 48.0
+    },
+    {
+      "selector": "[name=name]",
+      "nodeId": "2:482",
+      "name": "Full name field",
+      "x": 765.0,
+      "y": 400.0,
+      "w": 480.0,
+      "h": 48.0
+    },
+    {
+      "selector": "[name=email]",
+      "nodeId": "2:485",
+      "name": "Email address field",
+      "x": 765.0,
+      "y": 498.0,
+      "w": 480.0,
+      "h": 48.0
+    },
+    {
+      "selector": "[name=password]",
+      "nodeId": "2:488",
+      "name": "Password field",
+      "x": 765.0,
+      "y": 596.0,
+      "w": 480.0,
+      "h": 48.0
+    },
+    {
+      "selector": "[name=terms]",
+      "nodeId": "2:491",
+      "name": "Accept terms",
+      "x": 765.0,
+      "y": 695.0,
+      "w": 16.0,
+      "h": 16.0
+    },
+    {
+      "selector": "button[type=submit]",
+      "nodeId": "2:493",
+      "name": "Create account  \u2192",
+      "x": 765.0,
+      "y": 744.0,
+      "w": 480.0,
+      "h": 46.0
+    }
+  ],
+  "login": [
+    {
+      "selector": ".auth-marketing",
+      "nodeId": "2:499",
+      "name": "Brand story",
+      "x": 0.0,
+      "y": 0.0,
+      "w": 570.0,
+      "h": 1160.0
+    },
+    {
+      "selector": "[name=email]",
+      "nodeId": "2:538",
+      "name": "Email address field",
+      "x": 765.0,
+      "y": 386.0,
+      "w": 480.0,
+      "h": 48.0
+    },
+    {
+      "selector": "[name=password]",
+      "nodeId": "2:541",
+      "name": "Password field",
+      "x": 765.0,
+      "y": 489.0,
+      "w": 480.0,
+      "h": 48.0
+    },
+    {
+      "selector": "[name=remember]",
+      "nodeId": "2:543",
+      "name": "Keep signed in",
+      "x": 765.0,
+      "y": 561.0,
+      "w": 16.0,
+      "h": 16.0
+    },
+    {
+      "selector": "button[type=submit]",
+      "nodeId": "2:546",
+      "name": "Sign in  \u2192",
+      "x": 765.0,
+      "y": 614.0,
+      "w": 480.0,
+      "h": 46.0
+    },
+    {
+      "selector": "[data-sso]",
+      "nodeId": "2:550",
+      "name": "Continue with institution SSO",
+      "x": 765.0,
+      "y": 764.0,
+      "w": 480.0,
+      "h": 46.0
+    }
+  ],
+  "reserve": [
+    {
+      "selector": ".stepper",
+      "nodeId": "2:558",
+      "name": "Reservation steps",
+      "x": 264.0,
+      "y": 239.0,
+      "w": 1136.0,
+      "h": 52.0
+    },
+    {
+      "selector": "#reservation-form .stack>.card:nth-child(1)",
+      "nodeId": "2:564",
+      "name": "Ticket selection",
+      "x": 264.0,
+      "y": 315.0,
+      "w": 704.0,
+      "h": 321.0
+    },
+    {
+      "selector": "#reservation-form .stack>.card:nth-child(2)",
+      "nodeId": "2:585",
+      "name": "Attendee details",
+      "x": 264.0,
+      "y": 656.0,
+      "w": 704.0,
+      "h": 315.0
+    },
+    {
+      "selector": ".policy",
+      "nodeId": "2:598",
+      "name": "Cancellation policy",
+      "x": 264.0,
+      "y": 991.0,
+      "w": 704.0,
+      "h": 105.0
+    },
+    {
+      "selector": ".ticket-summary",
+      "nodeId": "2:601",
+      "name": "Reservation summary",
+      "x": 992.0,
+      "y": 315.0,
+      "w": 408.0,
+      "h": 629.0
+    },
+    {
+      "selector": ".ticket-row:nth-child(1) .quantity",
+      "nodeId": "2:571",
+      "name": "Ticket quantity",
+      "x": 818.0,
+      "y": 418.0,
+      "w": 117.0,
+      "h": 35.0
+    },
+    {
+      "selector": ".ticket-row:nth-child(2) .quantity",
+      "nodeId": "2:577",
+      "name": "Ticket quantity",
+      "x": 818.0,
+      "y": 489.0,
+      "w": 117.0,
+      "h": 35.0
+    },
+    {
+      "selector": ".ticket-row:nth-child(3) .quantity",
+      "nodeId": "2:583",
+      "name": "Ticket quantity",
+      "x": 818.0,
+      "y": 560.0,
+      "w": 117.0,
+      "h": 35.0
+    }
+  ],
+  "dashboard": [
+    {
+      "selector": ".metric:nth-child(1)",
+      "nodeId": "2:628",
+      "name": "Published events",
+      "x": 264.0,
+      "y": 211.0,
+      "w": 266.0,
+      "h": 123.0
+    },
+    {
+      "selector": ".metric:nth-child(2)",
+      "nodeId": "2:632",
+      "name": "Total registrations",
+      "x": 554.0,
+      "y": 211.0,
+      "w": 266.0,
+      "h": 123.0
+    },
+    {
+      "selector": ".chart-card",
+      "nodeId": "2:644",
+      "name": "Registration trends",
+      "x": 264.0,
+      "y": 358.0,
+      "w": 704.0,
+      "h": 286.0
+    },
+    {
+      "selector": ".up-next",
+      "nodeId": "2:678",
+      "name": "Next event readiness",
+      "x": 992.0,
+      "y": 358.0,
+      "w": 408.0,
+      "h": 286.0
+    },
+    {
+      "selector": ".manage-card",
+      "nodeId": "2:687",
+      "name": "Event management table",
+      "x": 264.0,
+      "y": 668.0,
+      "w": 1136.0,
+      "h": 405.0
+    },
+    {
+      "selector": ".chart-column:nth-child(2) .bar",
+      "nodeId": "2:657",
+      "name": "Daily registrations",
+      "x": 350.0,
+      "y": 548.6799926757812,
+      "w": 37.0,
+      "h": 42.31999969482422
+    },
+    {
+      "selector": ".chart-column:nth-child(3) .bar",
+      "nodeId": "2:660",
+      "name": "Daily registrations",
+      "x": 433.0,
+      "y": 533.9600067138672,
+      "w": 37.0,
+      "h": 57.040000915527344
+    },
+    {
+      "selector": ".chart-column:nth-child(4) .bar",
+      "nodeId": "2:663",
+      "name": "Daily registrations",
+      "x": 516.0,
+      "y": 541.3200073242188,
+      "w": 37.0,
+      "h": 49.68000030517578
+    },
+    {
+      "selector": ".chart-column:nth-child(5) .bar",
+      "nodeId": "2:666",
+      "name": "Daily registrations",
+      "x": 599.0,
+      "y": 517.3999938964844,
+      "w": 37.0,
+      "h": 73.5999984741211
+    },
+    {
+      "selector": ".chart-column:nth-child(6) .bar",
+      "nodeId": "2:669",
+      "name": "Daily registrations",
+      "x": 682.0,
+      "y": 506.36000061035156,
+      "w": 37.0,
+      "h": 84.63999938964844
+    },
+    {
+      "selector": ".chart-column:nth-child(7) .bar",
+      "nodeId": "2:672",
+      "name": "Daily registrations",
+      "x": 765.0,
+      "y": 482.44000244140625,
+      "w": 37.0,
+      "h": 108.55999755859375
+    },
+    {
+      "selector": ".chart-column:nth-child(8) .bar",
+      "nodeId": "2:675",
+      "name": "Daily registrations",
+      "x": 848.0,
+      "y": 460.36000061035156,
+      "w": 37.0,
+      "h": 130.63999938964844
+    }
+  ],
+  "my-bookings": [
+    {
+      "selector": ".booking-success",
+      "nodeId": "2:740",
+      "name": "Reservation confirmation",
+      "x": 264.0,
+      "y": 211.0,
+      "w": 1136.0,
+      "h": 64.0
+    },
+    {
+      "selector": "[data-booking-tab=Upcoming]",
+      "nodeId": "2:744",
+      "name": "Upcoming  2",
+      "x": 264.0,
+      "y": 301.0,
+      "w": 126.0,
+      "h": 37.0
+    },
+    {
+      "selector": "[data-booking-tab=Past]",
+      "nodeId": "2:746",
+      "name": "Past  1",
+      "x": 398.0,
+      "y": 301.0,
+      "w": 90.0,
+      "h": 37.0
+    },
+    {
+      "selector": "[data-booking-tab=Cancelled]",
+      "nodeId": "2:748",
+      "name": "Cancelled  1",
+      "x": 496.0,
+      "y": 301.0,
+      "w": 121.0,
+      "h": 37.0
+    },
+    {
+      "selector": "#booking-search",
+      "nodeId": "2:750",
+      "name": "Search bookings",
+      "x": 1008.0,
+      "y": 301.0,
+      "w": 392.0,
+      "h": 37.0
+    },
+    {
+      "selector": ".booking-card:nth-child(1)",
+      "nodeId": "2:752",
+      "name": "Innovation summit booking selected",
+      "x": 264.0,
+      "y": 364.0,
+      "w": 704.0,
+      "h": 243.0
+    },
+    {
+      "selector": ".booking-card:nth-child(2)",
+      "nodeId": "2:764",
+      "name": "Speaking workshop booking",
+      "x": 264.0,
+      "y": 627.0,
+      "w": 704.0,
+      "h": 221.0
+    },
+    {
+      "selector": ".booking-details",
+      "nodeId": "2:778",
+      "name": "Selected booking details",
+      "x": 992.0,
+      "y": 364.0,
+      "w": 408.0,
+      "h": 612.0
+    },
+    {
+      "selector": ".bookings-banner",
+      "nodeId": "2:803",
+      "name": "Booking support",
+      "x": 264.0,
+      "y": 1005.0,
+      "w": 1136.0,
+      "h": 91.0
+    }
+  ]
+}

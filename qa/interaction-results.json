@@ -1,0 +1,150 @@
+[
+  {
+    "test": "Event title/description search",
+    "pass": true
+  },
+  {
+    "test": "Empty results message",
+    "pass": true
+  },
+  {
+    "test": "Reset filters",
+    "pass": true
+  },
+  {
+    "test": "Category filtering",
+    "pass": true
+  },
+  {
+    "test": "Date filtering",
+    "pass": true
+  },
+  {
+    "test": "Save event toggle",
+    "pass": true
+  },
+  {
+    "test": "Saved event navigation",
+    "pass": true
+  },
+  {
+    "test": "Zero-ticket reservation rejected",
+    "pass": true
+  },
+  {
+    "test": "Quantity maximum validation",
+    "pass": true
+  },
+  {
+    "test": "Mixed ticket total $110",
+    "pass": true
+  },
+  {
+    "test": "Required attendee fields prevent navigation",
+    "pass": true
+  },
+  {
+    "test": "Booking confirmation route and $110 total",
+    "pass": true
+  },
+  {
+    "test": "Booking reference shared across pages",
+    "pass": true
+  },
+  {
+    "test": "Cancellation and cancelled tab",
+    "pass": true
+  },
+  {
+    "test": "Registration password mismatch feedback",
+    "pass": true
+  },
+  {
+    "test": "Registration simulated success and continuation",
+    "pass": true
+  },
+  {
+    "test": "SSO honest demo dialog",
+    "pass": true
+  },
+  {
+    "test": "Demo login navigation",
+    "pass": true
+  },
+  {
+    "test": "Forgot password sample reset link",
+    "pass": true
+  },
+  {
+    "test": "Password reset honest simulation feedback",
+    "pass": true
+  },
+  {
+    "test": "Attendee event selection and search",
+    "pass": true
+  },
+  {
+    "test": "Created and published event visible in dashboard",
+    "pass": true
+  },
+  {
+    "test": "Managed event search",
+    "pass": true
+  },
+  {
+    "test": "Selected event edit form populated",
+    "pass": true
+  },
+  {
+    "test": "Event status changes and draft tab",
+    "pass": true
+  },
+  {
+    "test": "Profile save feedback and header update",
+    "pass": true
+  },
+  {
+    "test": "Profile password validation simulation",
+    "pass": true
+  },
+  {
+    "test": "Admin role save feedback",
+    "pass": true
+  },
+  {
+    "test": "Admin sample user removal",
+    "pass": true
+  },
+  {
+    "test": "Admin event archive",
+    "pass": true
+  },
+  {
+    "test": "Admin event restore",
+    "pass": true
+  },
+  {
+    "test": "Contact form honest validation feedback",
+    "pass": true
+  },
+  {
+    "test": "FAQ disclosure",
+    "pass": true
+  },
+  {
+    "test": "Event-specific detail data",
+    "pass": true
+  },
+  {
+    "test": "Browser back and forward navigation",
+    "pass": true
+  },
+  {
+    "test": "Mobile navigation drawer opens",
+    "pass": true
+  },
+  {
+    "test": "Mobile navigation drawer closes",
+    "pass": true
+  }
+]

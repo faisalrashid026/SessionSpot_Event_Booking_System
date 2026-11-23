@@ -1,0 +1,23 @@
+{
+  "pass": true,
+  "zip": "/private/tmp/sessionspot-functional-rc-u0v90is7/SessionSpot-Functional-RC.zip",
+  "zipSha256": "9b9d8d4e4687b31f3f60211f859c555656760b95e4d80f6424d62c0f38979c8f",
+  "bytes": 599051,
+  "files": 74,
+  "htmlPages": 15,
+  "resolvedRuntimeReferences": 452,
+  "extractedProject": "/private/tmp/sessionspot-part2-verify-bq36n2cw/Renamed SessionSpot",
+  "extractionParent": "/private/tmp/sessionspot-part2-verify-bq36n2cw",
+  "runtimeSha256": "0b2489c00e6684eaefbfc7e5b8d25bcccd50853184ec69b5522b431dc3edecb0",
+  "checks": [
+    "explicit inventory",
+    "allowlist",
+    "no backups/caches/screenshots",
+    "unique safe ZIP entries",
+    "CRC",
+    "extraction",
+    "all file hashes",
+    "renamed-directory relative references",
+    "no machine-specific runtime paths"
+  ]
+}

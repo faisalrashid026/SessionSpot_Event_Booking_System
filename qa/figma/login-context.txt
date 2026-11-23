@@ -1,0 +1,138 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/2bb6871b-a047-4339-a1c9-3445389fc3b5";
+const imgTicketIcon = `${assetPathPrefix}/e0a44.svg`;
+
+export default function GatherSignIn() {
+  return (
+    <div className="bg-[#f8f9fa] relative size-full" data-node-id="2:240" data-name="Gather — Sign in">
+      <div className="absolute h-[1160px] left-0 overflow-clip top-0 w-[1440px]" data-node-id="2:241" data-name="Authentication layout">
+        <div className="absolute bg-white h-[1160px] left-0 top-0 w-[1440px]" data-node-id="2:498" data-name="Form background" />
+        <div className="absolute bg-[#3d315d] h-[1160px] left-0 overflow-clip top-0 w-[570px]" data-node-id="2:499" data-name="Brand story">
+          <div className="absolute bg-[#6554c0] left-[48px] overflow-clip rounded-[9px] size-[32px] top-[44px]" data-node-id="2:500" data-name="Brand tile">
+            <div className="absolute left-[5px] size-[22px] top-[5px]" data-node-id="2:501" data-name="ticket icon">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgTicketIcon} />
+            </div>
+          </div>
+          <p className="[word-break:break-word] absolute font-['Inter:Bold'] font-bold leading-[normal] left-[92px] not-italic text-[27px] text-white top-[42px] whitespace-nowrap" data-node-id="2:504">
+            gather
+          </p>
+          <div className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[0] left-[48px] not-italic text-[#d1c6ea] text-[11px] top-[202px] whitespace-nowrap" data-node-id="2:505">
+            <p className="leading-[normal] mb-0">GOOD THINGS HAPPEN</p>
+            <p className="leading-[normal]">WHEN PEOPLE GATHER.</p>
+          </div>
+          <div className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[0] left-[48px] not-italic text-[48px] text-white top-[260px] whitespace-nowrap" data-node-id="2:506">
+            <p className="leading-[normal] mb-0">Your next</p>
+            <p className="leading-[normal] mb-0">great experience</p>
+            <p className="leading-[normal]">starts here.</p>
+          </div>
+          <div className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[0] left-[48px] not-italic text-[#ded5ee] text-[16px] top-[461px] whitespace-nowrap" data-node-id="2:507">
+            <p className="leading-[normal] mb-0">Discover something new. Meet your people.</p>
+            <p className="leading-[normal]">Make every event worth being there.</p>
+          </div>
+          <div className="absolute flex h-[184.09px] items-center justify-center left-[101.31px] top-[625px] w-[358.208px]" data-node-id="2:508">
+            <div className="flex-none rotate-3">
+              <div className="bg-[#3d315d] h-[166px] overflow-clip relative rounded-[12px] w-[350px]" data-name="Innovation summit event pass">
+                <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[normal] left-[20px] not-italic text-[#d7cfee] text-[9px] top-[16px] whitespace-nowrap" data-node-id="2:509">
+                  GATHER PRESENTS
+                </p>
+                <div className="[word-break:break-word] absolute font-['Inter:Bold'] font-bold leading-[0] left-[20px] not-italic text-[25px] text-white top-[42px] whitespace-nowrap" data-node-id="2:510">
+                  <p className="leading-[normal] mb-0">Innovation</p>
+                  <p className="leading-[normal]">Summit ’26</p>
+                </div>
+                <p className="[word-break:break-word] absolute font-['Inter:Medium'] font-medium leading-[normal] left-[20px] not-italic text-[#cdc0e8] text-[9px] top-[127px] whitespace-nowrap" data-node-id="2:511">
+                  LEARN. CONNECT. BUILD.
+                </p>
+                <div className="[word-break:break-word] absolute bg-[#d9cbf7] h-[69px] leading-[normal] left-[233px] not-italic overflow-clip rounded-[8px] top-[14px] w-[60px] whitespace-nowrap" data-node-id="2:512" data-name="Summit date">
+                  <p className="absolute font-['Inter:Semi_Bold'] font-semibold left-[18px] text-[#4e3c6d] text-[10px] top-[10px]" data-node-id="2:513">
+                    NOV
+                  </p>
+                  <p className="absolute font-['Inter:Bold'] font-bold left-[12px] text-[#3d315d] text-[26px] top-[28px]" data-node-id="2:514">
+                    21
+                  </p>
+                </div>
+                <div className="absolute bg-[#8e7fab] h-[2px] left-[229px] top-[92px] w-px" data-node-id="2:515" data-name="Perforation" />
+                <div className="absolute bg-[#8e7fab] h-[2px] left-[229px] top-[96px] w-px" data-node-id="2:516" data-name="Perforation" />
+                <div className="absolute bg-[#8e7fab] h-[2px] left-[229px] top-[100px] w-px" data-node-id="2:517" data-name="Perforation" />
+                <div className="absolute bg-[#8e7fab] h-[2px] left-[229px] top-[104px] w-px" data-node-id="2:518" data-name="Perforation" />
+                <div className="absolute bg-[#8e7fab] h-[2px] left-[229px] top-[108px] w-px" data-node-id="2:519" data-name="Perforation" />
+                <div className="absolute bg-[#8e7fab] h-[2px] left-[229px] top-[112px] w-px" data-node-id="2:520" data-name="Perforation" />
+                <div className="absolute bg-[#8e7fab] h-[2px] left-[229px] top-[116px] w-px" data-node-id="2:521" data-name="Perforation" />
+                <div className="absolute bg-[#8e7fab] h-[2px] left-[229px] top-[120px] w-px" data-node-id="2:522" data-name="Perforation" />
+                <div className="absolute bg-[#8e7fab] h-[2px] left-[229px] top-[124px] w-px" data-node-id="2:523" data-name="Perforation" />
+                <div className="absolute bg-[#8e7fab] h-[2px] left-[229px] top-[128px] w-px" data-node-id="2:524" data-name="Perforation" />
+                <div className="absolute bg-[#8e7fab] h-[2px] left-[229px] top-[132px] w-px" data-node-id="2:525" data-name="Perforation" />
+                <div className="absolute bg-[#8e7fab] h-[2px] left-[229px] top-[136px] w-px" data-node-id="2:526" data-name="Perforation" />
+                <div className="absolute bg-[#8e7fab] h-[2px] left-[229px] top-[140px] w-px" data-node-id="2:527" data-name="Perforation" />
+                <div className="absolute bg-[#8e7fab] h-[2px] left-[229px] top-[144px] w-px" data-node-id="2:528" data-name="Perforation" />
+                <div className="absolute bg-[#8e7fab] h-[2px] left-[229px] top-[148px] w-px" data-node-id="2:529" data-name="Perforation" />
+                <div className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[0] left-[245px] not-italic text-[#e7def8] text-[11px] top-[115px] whitespace-nowrap" data-node-id="2:530">
+                  <p className="leading-[normal] mb-0">ADMIT</p>
+                  <p className="leading-[normal]">ONE</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[normal] left-[48px] not-italic text-[#d1c6ea] text-[10px] top-[1030px] whitespace-nowrap" data-node-id="2:531">
+            FOR CAMPUSES. COMPANIES. COMMUNITIES.
+          </p>
+          <p className="[word-break:break-word] absolute font-['Inter:Medium'] font-medium leading-[normal] left-[48px] not-italic text-[14px] text-white top-[1057px] whitespace-nowrap" data-node-id="2:532">
+            A little connection goes a long way.
+          </p>
+        </div>
+        <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[normal] left-[1030px] not-italic text-[#716c81] text-[12px] top-[48px] whitespace-nowrap" data-node-id="2:533">
+          New to Gather?
+        </p>
+        <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[normal] left-[1220px] not-italic text-[#6554c0] text-[12px] top-[48px] whitespace-nowrap" data-node-id="2:534">
+          Create an account →
+        </p>
+        <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[normal] left-[765px] not-italic text-[#25243b] text-[32px] top-[251px] whitespace-nowrap" data-node-id="2:535">
+          Welcome back
+        </p>
+        <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[normal] left-[765px] not-italic text-[#716c81] text-[14px] top-[300px] whitespace-nowrap" data-node-id="2:536">
+          Sign in to manage your tickets and upcoming events.
+        </p>
+        <p className="[word-break:break-word] absolute font-['Inter:Medium'] font-medium leading-[normal] left-[765px] not-italic text-[#25243b] text-[12px] top-[361px] whitespace-nowrap" data-node-id="2:537">
+          Email address
+        </p>
+        <div className="absolute bg-white border border-[#dfdce9] border-solid h-[48px] left-[765px] overflow-clip rounded-[8px] top-[386px] w-[480px]" data-node-id="2:538" data-name="Email address field">
+          <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[normal] left-[14px] not-italic text-[#716c81] text-[13px] top-[15px] whitespace-nowrap" data-node-id="2:539">
+            alex@example.com
+          </p>
+        </div>
+        <p className="[word-break:break-word] absolute font-['Inter:Medium'] font-medium leading-[normal] left-[765px] not-italic text-[#25243b] text-[12px] top-[464px] whitespace-nowrap" data-node-id="2:540">
+          Password
+        </p>
+        <div className="absolute bg-white border border-[#dfdce9] border-solid h-[48px] left-[765px] overflow-clip rounded-[8px] top-[489px] w-[480px]" data-node-id="2:541" data-name="Password field">
+          <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[normal] left-[14px] not-italic text-[#716c81] text-[13px] top-[15px] whitespace-nowrap" data-node-id="2:542">
+            ••••••••••••
+          </p>
+        </div>
+        <div className="absolute bg-white border border-[#b3abca] border-solid left-[765px] rounded-[3px] size-[16px] top-[561px]" data-node-id="2:543" data-name="Keep signed in" />
+        <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[normal] left-[792px] not-italic text-[#716c81] text-[12px] top-[562px] whitespace-nowrap" data-node-id="2:544">
+          Keep me signed in
+        </p>
+        <p className="[word-break:break-word] absolute font-['Inter:Medium'] font-medium leading-[normal] left-[1133px] not-italic text-[#6554c0] text-[12px] top-[562px] whitespace-nowrap" data-node-id="2:545">
+          Forgot password?
+        </p>
+        <div className="absolute bg-[#6554c0] h-[46px] left-[765px] overflow-clip rounded-[8px] top-[614px] w-[480px]" data-node-id="2:546" data-name="Sign in  →">
+          <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[normal] left-[209px] not-italic text-[13px] text-white top-[14px] whitespace-pre" data-node-id="2:547">{`Sign in  →`}</p>
+        </div>
+        <div className="absolute bg-[#ece9f2] h-px left-[765px] top-[700px] w-[480px]" data-node-id="2:548" data-name="Institution divider" />
+        <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[normal] left-[877px] not-italic text-[#716c81] text-[12px] top-[729px] whitespace-nowrap" data-node-id="2:549">
+          Using a campus or company account?
+        </p>
+        <div className="absolute bg-white border border-[#dfdce9] border-solid h-[46px] left-[765px] overflow-clip rounded-[8px] top-[764px] w-[480px]" data-node-id="2:550" data-name="Continue with institution SSO">
+          <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold'] font-semibold leading-[normal] left-[146px] not-italic text-[#6554c0] text-[13px] top-[13px] whitespace-nowrap" data-node-id="2:551">
+            Continue with institution SSO
+          </p>
+        </div>
+        <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[normal] left-[870px] not-italic text-[#716c81] text-[11px] top-[831px] whitespace-nowrap" data-node-id="2:552">
+          Your institution’s sign-in page will open next.
+        </p>
+        <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[normal] left-[765px] not-italic text-[#716c81] text-[11px] top-[1090px] whitespace-nowrap" data-node-id="2:553">
+          © 2026 Gather
+        </p>
+        <p className="[word-break:break-word] absolute font-['Inter:Regular'] font-normal leading-[normal] left-[1050px] not-italic text-[#716c81] text-[11px] top-[1090px] whitespace-pre" data-node-id="2:554">{`Privacy     Terms     Help & support`}</p>
+      </div>
+    </div>
+  );
+}

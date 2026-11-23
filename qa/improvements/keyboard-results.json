@@ -1,0 +1,92 @@
+[
+  {
+    "page": "index",
+    "visible": true,
+    "mainFocused": true,
+    "pass": true
+  },
+  {
+    "page": "event",
+    "visible": true,
+    "mainFocused": true,
+    "pass": true
+  },
+  {
+    "page": "reserve",
+    "visible": true,
+    "mainFocused": true,
+    "pass": true
+  },
+  {
+    "page": "confirmation",
+    "visible": true,
+    "mainFocused": true,
+    "pass": true
+  },
+  {
+    "page": "my-bookings",
+    "visible": true,
+    "mainFocused": true,
+    "pass": true
+  },
+  {
+    "page": "login",
+    "visible": true,
+    "mainFocused": true,
+    "pass": true
+  },
+  {
+    "page": "register",
+    "visible": true,
+    "mainFocused": true,
+    "pass": true
+  },
+  {
+    "page": "forgot-password",
+    "visible": true,
+    "mainFocused": true,
+    "pass": true
+  },
+  {
+    "page": "reset-password",
+    "visible": true,
+    "mainFocused": true,
+    "pass": true
+  },
+  {
+    "page": "profile",
+    "visible": true,
+    "mainFocused": true,
+    "pass": true
+  },
+  {
+    "page": "dashboard",
+    "visible": true,
+    "mainFocused": true,
+    "pass": true
+  },
+  {
+    "page": "create-event",
+    "visible": true,
+    "mainFocused": true,
+    "pass": true
+  },
+  {
+    "page": "attendees",
+    "visible": true,
+    "mainFocused": true,
+    "pass": true
+  },
+  {
+    "page": "admin",
+    "visible": true,
+    "mainFocused": true,
+    "pass": true
+  },
+  {
+    "page": "help",
+    "visible": true,
+    "mainFocused": true,
+    "pass": true
+  }
+]
