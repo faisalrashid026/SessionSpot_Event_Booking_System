@@ -1,65 +1,51 @@
+# Private configuration, database files, sessions and local runtime
 .local/
-server/config.local.php
-storage/*
-!storage/.htaccess
-qa/v1/*-private*
-__pycache__/
-
-# macOS and editor files
-.DS_Store
-.vscode/
-
-# Private environment configuration
 .env
 .env.*
 !.env.example
+server/config.local.php
 config.local.php
 database.local.php
 secrets.php
-
-# Local user uploads
-uploads/*
-!uploads/.gitkeep
-
-# Database dumps (keep schema.sql)
+*.log
 *.sqlite
 *.sqlite3
+*.sql
+!schema.sql
+*.sql.gz
+*.sql.bak
 database-dumps/
 db-backups/
 
-# Backups and submission packages
-*.zip
-backups/
-submission/
-
-# Runtime and test artifacts
-*.log
-cache/
-tmp/
-node_modules/
-coverage/
-
-# Generated QA artifacts and duplicate project copies
-qa/improvements/approved-baseline/
-qa/final/
-design-reference/
-
-# Submission packages and backups
-submission/
-backups/
-*.zip
-
-# Private configuration
-.env
-.env.*
-!.env.example
-config.local.php
-database.local.php
-secrets.php
-
-# Runtime data
-*.log
-.DS_Store
-node_modules/
+# User uploads (retain only protection/empty-directory placeholders)
+storage/*
+!storage/.htaccess
+!storage/posters/
+storage/posters/*
+!storage/posters/.htaccess
+!storage/posters/.gitkeep
 uploads/*
 !uploads/.gitkeep
+
+# Releases, backups, staging and development archives
+*.zip
+*.tar
+*.tar.gz
+submission/
+backups/
+checkpoints/
+release-staging/
+development-archive/
+qa/
+design-reference/
+
+# Generated test/tool artifacts and editor/system files
+__pycache__/
+*.pyc
+.pytest_cache/
+node_modules/
+coverage/
+cache/
+tmp/
+.DS_Store
+.vscode/

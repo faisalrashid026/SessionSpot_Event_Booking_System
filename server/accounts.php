@@ -6,7 +6,7 @@ function organization_fields(array $d): array {
     if (!in_array($category,ORG_CATEGORIES,true)) fail('Choose a valid organization category.');
     $website=text($d['website']??'',0,500,'website');
     if ($website && (!filter_var($website,FILTER_VALIDATE_URL) || !in_array(parse_url($website,PHP_URL_SCHEME),['http','https'],true))) fail('Use an http or https website address.');
-    return [$name,$category,$website,text($d['description']??'',0,2000,'organization description')];
+    return [$name,$category,$website,multiline($d['description']??'',0,2000,'organization description')];
 }
 function register_account(array $d): array {
     rate_limit('registration',30);
@@ -15,7 +15,8 @@ function register_account(array $d): array {
     if (($d['terms']??false)!==true) fail('Please agree to the terms and privacy policy.');
     $type=$d['accountType']??'individual'; if (!in_array($type,['individual','organization'],true)) fail('Choose an individual or organization account.');
     $intent=$d['intent']??'Attendee'; if(!in_array($intent,['Attendee','Organizer'],true)) fail('Choose a valid initial intention.');
-    $org=$type==='organization' ? organization_fields($d['organization']??[]) : null;
+    if($type==='organization'&&!is_array($d['organization']??null))fail('Enter the organization details.');
+    $org=$type==='organization' ? organization_fields($d['organization']) : null;
     $id=uid(); $hash=password_hash($pass,PASSWORD_DEFAULT);
     transaction(function() use ($id,$name,$email,$hash,$intent,$org) {
         if (row('SELECT id FROM users WHERE email=?',[$email])) fail('That email is already registered. Sign in instead.',409);

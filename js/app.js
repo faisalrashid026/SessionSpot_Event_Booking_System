@@ -1,6 +1,5 @@
 import {
   state,
-  resetState,
   getEvent,
   available,
   money,
@@ -14,10 +13,10 @@ import {
   currentUser, canManage, requireRole, requireExport, managementEvents,
   isUpcoming, isPublished, isBookable, compareEvents, daysUntil,
   visibleBookings, canViewBooking, canCancelBooking, submissionIdentifier,
-  toggleSaved, updateProfile, loginDemo, registerDemo, saveEvent, changeEventStatus, changeRole, removeUser,
-} from "./data.js?v=5203cbb22e";
+  toggleSaved, updateProfile, loginAccount, registerAccount, saveEvent, changeEventStatus, changeRole, setUserStatus, loadServerState, request, logoutAccount, saveOrganization, setOrganizationStatus,
+} from "./api.js?v=179d6bdf46";
 import { icon, esc } from "./ui.js?v=3f86f75c1f";
-import { csvText, bookingText } from "./exports.js?v=86694397e4";
+import { csvText, bookingText } from "./exports.js?v=f23361883d";
 import { cleanText, matchesEvent, accountDetails, checkPassword, emailAddress } from "./validation.js?v=cc8bacc99c";
 import { readPoster, validatePoster } from "./poster.js?v=8e5d6a42e6";
 const $ = (selector, root = document) => root.querySelector(selector);
@@ -61,9 +60,17 @@ function feedback(form, message, success = false) {
   el.textContent = message;
   el.classList.toggle("success", success);
 }
-function perform(work, form) {
+function validateAction(work, form) {
   try { work(); return true; }
   catch (error) { if (form) feedback(form, error.message); else toast(error.message); return false; }
+}
+async function perform(work, form) {
+  if (form?.dataset.busy === 'true') return false;
+  const buttons = form ? $$('button[type=submit]', form) : [];
+  if (form) { form.dataset.busy='true'; form.setAttribute('aria-busy','true'); buttons.forEach(b=>b.disabled=true); }
+  try { await work(); return true; }
+  catch(error) { if(form) feedback(form,error.message); else toast(error.message); return false; }
+  finally { if(form){delete form.dataset.busy; form.removeAttribute('aria-busy'); buttons.forEach(b=>b.disabled=false);} }
 }
 function dialog(title, message, confirmText, action) {
   const d = $("#action-dialog");
@@ -75,10 +82,7 @@ function dialog(title, message, confirmText, action) {
   confirm.hidden = !action;
   confirm.textContent = confirmText || "Continue";
   cancel.onclick = () => d.close();
-  confirm.onclick = () => {
-    d.close();
-    perform(() => action?.());
-  };
+  confirm.onclick = async () => { confirm.disabled=true; const ok=await perform(async()=>{await action?.();}); confirm.disabled=false; if(ok)d.close(); };
   d.showModal();
 }
 function download(name, text, type = "text/plain;charset=utf-8") {
@@ -93,7 +97,7 @@ function download(name, text, type = "text/plain;charset=utf-8") {
   setTimeout(() => URL.revokeObjectURL(url), 10000);
 }
 function exportAttendees(id) {
-  perform(() => {
+  perform(async () => {
   requireExport(id);
   const all = id
     ? attendees(id)
@@ -104,21 +108,21 @@ function exportAttendees(id) {
     ? ["name", "email", "reference", "tickets"]
     : ["event", "name", "email", "reference", "tickets"];
   download(
-    "sessionspot-demo-attendees.csv",
+    "sessionspot-attendees.csv",
     csvText([cols, ...all.map((a) => cols.map((c) => a[c]))]),
     "text/csv;charset=utf-8",
   );
-  toast("Sample attendee CSV prepared for download.");
+  toast("Attendee CSV prepared for download.");
   });
 }
 function downloadBooking(b) {
-  if (!canViewBooking(b)) { toast("You cannot export this sample booking."); return; }
+  if (!canViewBooking(b)) { toast("You cannot export this booking."); return; }
   const e = getEvent(b.eventId);
   download(
-    `${b.id}-demo-confirmation.txt`,
+    `${b.id}-confirmation.txt`,
     bookingText(b, e),
   );
-  toast("Demo confirmation prepared for download.");
+  toast("Confirmation prepared for download.");
 }
 function refreshShell() {
   const confirmed = visibleBookings().filter(
@@ -129,7 +133,7 @@ function refreshShell() {
     (el) => (el.textContent = state.profile.name),
   );
   $$(".account-text small").forEach((el) => {
-    el.textContent = `${currentUser()?.role || "Demo"} account`;
+    el.textContent = `${currentUser()?.role === "Admin" ? "Admin" : currentUser() ? "Personal" : "Guest"} account`;
   });
   $$("[data-first-name]").forEach(
     (el) => (el.textContent = state.profile.name.split(" ")[0]),
@@ -137,6 +141,12 @@ function refreshShell() {
 }
 function initShell() {
   refreshShell();
+  $$('a[href="admin.html"]').forEach(el=>el.hidden=currentUser()?.role!=='Admin');
+  $$('a[href="login.html"]').forEach(el=>{if(currentUser()){el.textContent='Sign out';el.addEventListener('click',e=>{e.preventDefault();perform(async()=>{await logoutAccount();location.href='login.html';});});}});
+  const account=$('a.account');if(account&&!currentUser())account.href='login.html';
+  $$('.avatar').forEach(el=>el.textContent=state.profile.name.split(' ').map(n=>n[0]).slice(0,2).join(''));
+  const today=$('.greeting-date');if(today)today.textContent=dateLabel(new Intl.DateTimeFormat('en-CA',{timeZone:'America/Vancouver',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date()),{weekday:'long',month:'long',day:'numeric'});
+
   const sidebar = $(".sidebar"),
     toggle = $(".menu-toggle"),
     backdrop = $(".drawer-backdrop");
@@ -195,28 +205,18 @@ function initShell() {
     b.addEventListener("click", () =>
       dialog(
         "You’re on the list",
-        "Your sample bookings are ready in My bookings. This prototype does not send push notifications.",
+        "Your reservations are available in My Bookings.",
       ),
     ),
   );
   $$("[data-export-all]").forEach((b) =>
     b.addEventListener("click", () => exportAttendees()),
   );
-  $("[data-reset-demo]")?.addEventListener("click", () =>
-    dialog(
-      "Reset sample data?",
-      "This restores the original sample events, bookings, profile and roles in this browser.",
-      "Reset demo",
-      () => {
-        resetState();
-        location.href = "index.html";
-      },
-    ),
-  );
+
 }
 function posterAppearance(e, summary = false) {
   // Invalid hand-edited local state falls back to the original Figma artwork.
-  try { return validatePoster(e.posterImage) ? ` style="background-image:${summary ? "linear-gradient(#241c3b99,#241c3b99)," : ""}url('${esc(e.posterImage)}');background-size:cover;background-position:center"` : ""; }
+  try { return (typeof e.posterImage === "string" && /^api\/index\.php\?action=poster&event=[a-f0-9]{32}&v=[a-f0-9]{32}\.png$/.test(e.posterImage) || validatePoster(e.posterImage)) ? ` style="background-image:${summary ? "linear-gradient(#241c3b99,#241c3b99)," : ""}url('${esc(e.posterImage)}');background-size:cover;background-position:center"` : ""; }
   catch { return ""; }
 }
 function poster(e, save = false) {
@@ -232,9 +232,20 @@ function calendarTile(date) {
 }
 function previewCard(b) {
   const e = getEvent(b.eventId);
-  return `<article class="card booking-preview">${calendarTile(e.date)}<div class="preview-main"><h3>${esc(e.title)}</h3><p class="small muted" style="margin:0">${esc(e.organizer)}</p><p class="meta">${esc(dateLabel(e.date, { weekday: "short", month: "short", day: "numeric" }))} · ${esc(e.time)}</p><div class="row">${statusLabel(b.status)}<span class="small muted">${quantity(b)} ${quantity(b) === 1 ? "ticket" : "tickets"} · General admission</span></div><p class="small muted booking-reference" style="font-size:10px;margin:12px 0 0">Booking #${esc(b.id)}</p></div><div class="preview-cta"><div class="eyebrow muted">You’re all set</div><h3>See you there!</h3><a class="btn" href="${bookingURL(b.id)}">View ticket <span class="direction-arrow" aria-hidden="true">→</span></a><p class="small muted" style="font-size:10px;margin:12px 0 0">Your sample ticket, ready to go.</p></div></article>`;
+  return `<article class="card booking-preview">${calendarTile(e.date)}<div class="preview-main"><h3>${esc(e.title)}</h3><p class="small muted" style="margin:0">${esc(e.organizer)}</p><p class="meta">${esc(dateLabel(e.date, { weekday: "short", month: "short", day: "numeric" }))} · ${esc(e.time)}</p><div class="row">${statusLabel(b.status)}<span class="small muted">${quantity(b)} ${quantity(b) === 1 ? "ticket" : "tickets"} · General admission</span></div><p class="small muted booking-reference" style="font-size:10px;margin:12px 0 0">Booking #${esc(b.id)}</p></div><div class="preview-cta"><div class="eyebrow muted">You’re all set</div><h3>See you there!</h3><a class="btn" href="${bookingURL(b.id)}">View ticket <span class="direction-arrow" aria-hidden="true">→</span></a><p class="small muted" style="font-size:10px;margin:12px 0 0">Your reservation, ready to go.</p></div></article>`;
 }
 function initDiscovery() {
+  const feature=$('.feature'),featured=published()[0];
+  if(feature){
+    $('#featured-heading').textContent=featured?.title||'Bring people together.';
+    $('.eyebrow',feature).textContent=featured?`Featured event / ${featured.category}`:'Your next connection starts here';
+    $('.feature-meta',feature).textContent=featured?`${shortDate(featured.date)} · ${featured.time} · ${featured.location}`:'Explore published events or create your own.';
+    const cta=$('a.btn',feature);cta.href=featured?eventURL(featured.id):'create-event.html';cta.childNodes[0].textContent=featured?'View event ':'Create an event ';
+    $('.small.muted',feature).textContent=featured?`From ${money(lowest(featured))} / person`:'';
+    $('.ticket-art h3',feature).textContent=featured?.title||'Your next event';$('.ticket-art',feature).setAttribute('aria-label',featured?`Featured event: ${featured.title}`:'SessionSpot event ticket illustration');
+    $('.art-label',feature).textContent=featured?.organizer||'SESSIONSPOT';$('.date-block',feature).innerHTML=featured?`${esc(dateLabel(featured.date,{month:'short'}).toUpperCase())}<strong>${Number(featured.date.slice(-2))}</strong>`:'JOIN<strong>US</strong>';
+  }
+
   const input = $("#global-search");
   let category = "",
     view = params.get("view") || "",
@@ -272,17 +283,17 @@ function initDiscovery() {
     if (view === "calendar")
       events.sort(compareEvents);
     if (!showAll && !q && !category && !date && price === "all")
-      events = events.filter((e) => e.id !== "summit");
+      events = events.filter((e) => e.id !== featured?.id);
     $("#event-grid").innerHTML = events.map(eventCard).join("");
     $("#events-empty").hidden = events.length > 0;
     $("#results-count").textContent = `${events.length} events found`;
     $$("[data-save]").forEach((button) =>
       button.addEventListener("click", () => {
         const id = button.dataset.save;
-        perform(() => {
-          toggleSaved(id);
+        perform(async () => {
+          await toggleSaved(id);
           render();
-          toast(state.saved.includes(id) ? "Event saved in this browser." : "Event removed from saved events.");
+          toast(state.saved.includes(id) ? "Event saved to your account." : "Event removed from saved events.");
         });
       }),
     );
@@ -350,7 +361,7 @@ function summaryCover(e) {
   return `<div class="summary-cover"${artwork}><div class="eyebrow">${esc(e.organizer)} presents</div><h2>${esc(e.title)}</h2><p>${esc(e.poster)}</p></div>`;
 }
 function getSelectedEvent() {
-  return getEvent(params.get("event") || "summit");
+  return getEvent(params.get("event") || published()[0]?.id);
 }
 function unavailable(element, message = "This event could not be found.") {
   const level = $$("main h1").some((h) => !element.contains(h)) ? 2 : 1;
@@ -384,7 +395,7 @@ function initReservation() {
     .join("");
   $("#reservation-summary").innerHTML =
     summaryCover(e) +
-    `<div class="summary-content"><strong>${esc(longDate(e.date))}</strong><p class="muted">${esc(e.time)}</p><p class="muted">${esc(e.location)}</p><hr class="divider"><h3>Order summary</h3><div id="order-items" class="order-summary" aria-live="polite"></div><div class="order-line small"><span>Booking fee</span><span>$0.00</span></div><div class="total-line"><span>Total</span><span id="order-total" aria-live="polite"></span></div><p class="payment-note">Demo only. No online payment and no real reservation.</p><button class="btn wide" id="confirm-reservation" type="submit">Confirm demo reservation</button><p class="summary-legal">By reserving, you’re trying a simulated booking flow.</p></div>`;
+    `<div class="summary-content"><strong>${esc(longDate(e.date))}</strong><p class="muted">${esc(e.time)}</p><p class="muted">${esc(e.location)}</p><hr class="divider"><h3>Order summary</h3><div id="order-items" class="order-summary" aria-live="polite"></div><div class="order-line small"><span>Booking fee</span><span>$0.00</span></div><div class="total-line"><span>Total</span><span id="order-total" aria-live="polite"></span></div><p class="payment-note">Payment due at venue. No online payment is collected.</p><button class="btn wide" id="confirm-reservation" type="submit">Confirm reservation</button><p class="summary-legal">Your reservation is confirmed only after availability is checked.</p></div>`;
   function update() {
     let total = 0;
     const errors = [];
@@ -416,8 +427,8 @@ function initReservation() {
         .join("") || '<p class="small muted">Select at least one ticket.</p>';
     $("#order-total").textContent = money(total);
     $(".payment-note", form).textContent = total > 0
-      ? "Pay at venue · CAD. Demo only; no online payment taken."
-      : "Free tickets · Demo only; no payment or real reservation.";
+      ? "Payment due at venue · CAD. No online payment taken."
+      : "Free tickets · No payment required.";
     $("#quantity-error").textContent = errors.join(" ");
     return !errors.length;
   }
@@ -431,7 +442,7 @@ function initReservation() {
   $$(".quantity input").forEach((input) =>
     input.addEventListener("input", update),
   );
-  form.addEventListener("submit", (ev) => {
+  form.addEventListener("submit", async (ev) => {
     ev.preventDefault();
     if (submitting || !update()) return;
     const data = new FormData(form);
@@ -446,7 +457,7 @@ function initReservation() {
       try { sessionStorage.setItem(pendingKey, JSON.stringify(pending)); } catch {}
       submitting = true;
       $("#confirm-reservation").disabled = true;
-      const b = makeBooking(e.id, qty, person, pending.id);
+      const b = await makeBooking(e.id, qty, person, pending.id);
       location.href = bookingURL(b.id);
     } catch (err) {
       submitting = false;
@@ -463,15 +474,15 @@ function renderMetrics(target, admin = false) {
     ? [
         [
           state.users.filter((u) => u.active).length,
-          "Active demo users",
-          "Browser-local role controls",
+          "Active users",
+          "Registered accounts",
         ],
-        [s.events, "Published events", "Across the sample organization"],
-        [s.sold, "Registrations", "Includes seeded aggregate totals"],
+        [s.events, "Published events", "Across all events"],
+        [s.sold, "Registrations", "Confirmed ticket allocations"],
         [
           state.bookings.length,
-          "Sample bookings",
-          "Individual records in this browser",
+          "Bookings",
+          "Reservation records",
         ],
       ]
     : [
@@ -489,7 +500,7 @@ function renderMetrics(target, admin = false) {
         [
           money(s.value).replace(".00", ""),
           "Booking value",
-          "Gross sample value · before refunds",
+          "Confirmed reservation value · CAD",
         ],
       ];
   target.innerHTML = data
@@ -502,14 +513,16 @@ function renderMetrics(target, admin = false) {
 function initDashboard() {
   renderMetrics($("#dashboard-metrics"));
   const activity = state.activity;
+  const ceiling = Math.max(150,Math.ceil(Math.max(...activity)/50)*50);
   $("#chart-caption").textContent =
-    `${activity.reduce((a, b) => a + b, 0)} sample registrations in the last 7 days`;
+    `${activity.reduce((a, b) => a + b, 0)} registrations in the last 7 days`;
   $("#activity-chart").innerHTML =
-    `<div class="bar-chart" role="img" aria-label="Registration activity: ${activity.map((v, i) => `November ${i + 4}, ${v} registrations`).join("; ")}"><div class="chart-scale" aria-hidden="true"><span>150</span><span>100</span><span>50</span><span>0</span></div>${activity.map((n, i) => `<div class="chart-column" aria-hidden="true"><span class="bar-value">${n}</span><div class="bar" style="--height:${(n / 150) * 100}%"></div><span class="bar-date">Nov ${i + 4}</span></div>`).join("")}</div>`;
+    `<div class="bar-chart" role="img" aria-label="Registration activity: ${activity.map((v, i) => `${shortDate(state.activityDates[i])}, ${v} registrations`).join("; ")}"><div class="chart-scale" aria-hidden="true"><span>${ceiling}</span><span>${Math.round(ceiling*2/3)}</span><span>${Math.round(ceiling/3)}</span><span>0</span></div>${activity.map((n, i) => `<div class="chart-column" aria-hidden="true"><span class="bar-value">${n}</span><div class="bar" style="--height:${(n / ceiling) * 100}%"></div><span class="bar-date">${shortDate(state.activityDates[i])}</span></div>`).join("")}</div>`;
   const next = managementEvents().filter((e) => isPublished(e)).sort(compareEvents)[0];
   $("#up-next").innerHTML = next
     ? `<div class="eyebrow">Up next / ${daysUntil(next)} days away</div><h2>${esc(next.title)}</h2><p>${esc(shortDate(next.date))}, ${next.date.slice(0, 4)} · ${esc(next.time.split(" – ")[0])}</p><p>${esc(next.location)}</p><div class="capacity">${soldCount(next)} / ${eventCapacity(next)} registered<div class="progress-track" style="--progress:${(soldCount(next) / eventCapacity(next)) * 100}%"><span></span></div></div><a class="text-button" href="${eventURL(next.id, "create-event")}">Manage event</a>`
     : '<h2>Your next event starts here.</h2><a class="btn" href="create-event.html">Create an event</a>';
+  const cancelled=$('[data-event-status="Draft"]').cloneNode(false);cancelled.dataset.eventStatus='Archived';cancelled.textContent='Cancelled '+managementEvents().filter(e=>e.status==='Archived').length;cancelled.setAttribute('aria-pressed','false');$('[data-event-status="Draft"]').after(cancelled);
   let status = "Published";
   $("#published-count").textContent = managementEvents().filter(
     (e) => e.status === "Published",
@@ -553,7 +566,7 @@ function bookingDetails(b, confirmation = false) {
     .map((t) => esc(b.ticketNames?.[t.id] ?? t.name))
     .join(
       ", ",
-    )}</dd><dt>Quantity</dt><dd>${quantity(b)} tickets</dd><dt>Reservation status</dt><dd>${esc(b.status)}</dd></dl><div class="total-line"><span>${b.status === "Cancelled" ? "Historical sample value" : "Sample amount due at venue"}</span><strong>${money(bookingTotal(b))}</strong></div>${!confirmation ? `<a class="btn" href="${bookingURL(b.id)}">View tickets <span class="direction-arrow" aria-hidden="true">→</span></a>` : ""}<button type="button" class="btn secondary" data-download-booking="${esc(b.id)}">Download demo confirmation</button><div class="cancel-area"><p>Prototype only. No real ticket or email.</p>${canCancel ? `<button type="button" class="text-button danger" data-cancel-booking="${esc(b.id)}">Cancel reservation</button>` : ""}<a href="help.html">Contact organizer <span class="direction-arrow" aria-hidden="true">→</span></a></div>`;
+    )}</dd><dt>Quantity</dt><dd>${quantity(b)} tickets</dd><dt>Reservation status</dt><dd>${esc(b.status)}</dd></dl><div class="total-line"><span>${b.status === "Cancelled" ? "Historical reservation value" : bookingTotal(b) ? "Payment due at venue · CAD" : "Free tickets · No payment required"}</span><strong>${money(bookingTotal(b))}</strong></div>${!confirmation ? `<a class="btn" href="${bookingURL(b.id)}">View tickets <span class="direction-arrow" aria-hidden="true">→</span></a>` : ""}<button type="button" class="btn secondary" data-download-booking="${esc(b.id)}">Download confirmation</button><div class="cancel-area"><p>Keep your booking reference. Payment is not collected online.</p>${canCancel ? `<button type="button" class="text-button danger" data-cancel-booking="${esc(b.id)}">Cancel reservation</button>` : ""}<a href="help.html">Contact organizer <span class="direction-arrow" aria-hidden="true">→</span></a></div>`;
 }
 function bindBookingActions(after) {
   $$("[data-download-booking]").forEach((button) =>
@@ -566,14 +579,14 @@ function bindBookingActions(after) {
   $$("[data-cancel-booking]").forEach((button) =>
     button.addEventListener("click", () =>
       dialog(
-        "Cancel this demo reservation?",
-        "The sample tickets will return to local availability. This does not cancel a real event booking.",
-        "Cancel demo reservation",
-        () => {
-          cancelBooking(button.dataset.cancelBooking);
+        "Cancel this reservation?",
+        "Your tickets will return to event availability. Your booking history is retained.",
+        "Cancel reservation",
+        async () => {
+          await cancelBooking(button.dataset.cancelBooking);
           refreshShell();
           after();
-          toast("Demo reservation cancelled. Sample tickets released.");
+          toast("Reservation cancelled. Tickets released.");
         },
       ),
     ),
@@ -583,11 +596,11 @@ function bookingCard(b, selected) {
   const e = getEvent(b.eventId);
   const rows = e.tickets.filter((t) => b.items[t.id]);
   const compact = e.id !== "summit";
-  return `<article class="card booking-card ${selected ? "selected" : ""}">${!compact ? `<div class="booking-cover"><div><div class="eyebrow">${esc(e.organizer)} presents</div><h3>${esc(e.title)}</h3></div>${statusLabel(b.status)}</div>` : ""}<div class="booking-card-body">${compact ? `<div class="booking-compact">${calendarTile(e.date)}<div><h3>${esc(e.title)}</h3><p class="muted">${esc(shortDate(e.date))} · ${esc(e.time)}</p><p class="muted">${esc(e.location)}</p></div></div>` : `<p>${esc(dateLabel(e.date, { weekday: "long", month: "short", day: "numeric", year: "numeric" }))} · ${esc(e.time)}</p><p class="muted">${esc(e.location)}</p>`}<div class="row between"><p class="muted" style="margin:8px 0 0">${quantity(b)} tickets · ${rows.map((t) => esc(b.ticketNames?.[t.id] ?? t.name)).join(", ")} · ${bookingTotal(b) ? money(bookingTotal(b)) + " sample value" : "Free"}</p>${compact ? statusLabel(b.status) : ""}</div><div class="booking-actions"><span>#${esc(b.id)}</span><button class="text-button" type="button" data-select-booking="${esc(b.id)}" aria-pressed="${selected}">View details <span class="direction-arrow" aria-hidden="true">→</span><span class="sr-only"> for ${esc(e.title)}</span></button></div></div></article>`;
+  return `<article class="card booking-card ${selected ? "selected" : ""}">${!compact ? `<div class="booking-cover"><div><div class="eyebrow">${esc(e.organizer)} presents</div><h3>${esc(e.title)}</h3></div>${statusLabel(b.status)}</div>` : ""}<div class="booking-card-body">${compact ? `<div class="booking-compact">${calendarTile(e.date)}<div><h3>${esc(e.title)}</h3><p class="muted">${esc(shortDate(e.date))} · ${esc(e.time)}</p><p class="muted">${esc(e.location)}</p></div></div>` : `<p>${esc(dateLabel(e.date, { weekday: "long", month: "short", day: "numeric", year: "numeric" }))} · ${esc(e.time)}</p><p class="muted">${esc(e.location)}</p>`}<div class="row between"><p class="muted" style="margin:8px 0 0">${quantity(b)} tickets · ${rows.map((t) => esc(b.ticketNames?.[t.id] ?? t.name)).join(", ")} · ${bookingTotal(b) ? money(bookingTotal(b)) + " reservation value" : "Free"}</p>${compact ? statusLabel(b.status) : ""}</div><div class="booking-actions"><span>#${esc(b.id)}</span><button class="text-button" type="button" data-select-booking="${esc(b.id)}" aria-pressed="${selected}">View details <span class="direction-arrow" aria-hidden="true">→</span><span class="sr-only"> for ${esc(e.title)}</span></button></div></div></article>`;
 }
 function initBookings() {
   let tab = "Upcoming",
-    selected = params.get("booking") || "SS-20512";
+    selected = params.get("booking") || visibleBookings()[0]?.id;
   const classify = (b) =>
     b.status === "Cancelled"
       ? "Cancelled"
@@ -632,7 +645,7 @@ function initBookings() {
         b.status === "Confirmed" && isUpcoming(getEvent(b.eventId)),
     );
     $("#booking-success").innerHTML = recent
-      ? `<div class="notice success booking-success">${icon("check")}<div><strong>You’re booked for ${esc(getEvent(recent.eventId).title)}!</strong><p>${quantity(recent)} sample tickets reserved. Demo only — no confirmation email sent.</p></div><span class="booking-ref">Booking #${esc(recent.id)}</span></div>`
+      ? `<div class="notice success booking-success">${icon("check")}<div><strong>You’re booked for ${esc(getEvent(recent.eventId).title)}!</strong><p>${quantity(recent)} tickets reserved. Keep your booking reference.</p></div><span class="booking-ref">Booking #${esc(recent.id)}</span></div>`
       : "";
     $$("[data-select-booking]").forEach((button) =>
       button.addEventListener("click", () => {
@@ -680,23 +693,23 @@ function initEvent() {
       esc(e.title),
       "Good people. Shared ideas. A little connection goes a long way.",
     ) +
-    `<div class="two-col"><div class="stack"><section class="card event-detail-cover">${poster(e)}<div class="card-pad"><div class="category">${esc(e.category)}</div><h2>About this experience</h2><p class="event-description">${esc(e.description)}</p><p class="meta">${icon("calendar")}${esc(longDate(e.date))} · ${esc(e.time)}</p><p class="meta">${icon("location")}${esc(e.location)}</p><p class="small muted">Organized by ${esc(e.organizer)}</p></div></section><section class="card card-pad"><h2>Choose your experience</h2><div class="stack" style="margin-top:20px">${e.tickets.map((t) => `<div class="row between"><div><h3>${esc(t.name)}</h3><p class="small muted" style="margin:0">${esc(t.description)}</p></div><div style="text-align:right"><strong>${t.price ? money(t.price) : "Free"}</strong><div class="small ${available(t) ? "muted" : "danger"}">${available(t) ? available(t) + " sample tickets left" : "Sold out"}</div></div></div>`).join("")}</div></section></div><aside class="card card-pad"><h2>A place for you</h2><p class="muted small">From ${money(lowest(e))} per person · No booking fee</p>${reservable ? `<a class="btn wide" href="${eventURL(e.id, "reserve")}">Reserve tickets</a>` : '<p class="notice">This event is unavailable for new reservations.</p>'}<hr class="divider"><p class="small muted">Part 2 demo. Sample availability is not a real ticket inventory.</p><a href="help.html" class="small">Questions? We’re here to help.</a></aside></div>`;
+    `<div class="two-col"><div class="stack"><section class="card event-detail-cover">${poster(e)}<div class="card-pad"><div class="category">${esc(e.category)}</div><h2>About this experience</h2><p class="event-description">${esc(e.description)}</p><p class="meta">${icon("calendar")}${esc(longDate(e.date))} · ${esc(e.time)}</p><p class="meta">${icon("location")}${esc(e.location)}</p><p class="small muted">Organized by ${esc(e.organizer)}</p></div></section><section class="card card-pad"><h2>Choose your experience</h2><div class="stack" style="margin-top:20px">${e.tickets.map((t) => `<div class="row between"><div><h3>${esc(t.name)}</h3><p class="small muted" style="margin:0">${esc(t.description)}</p></div><div style="text-align:right"><strong>${t.price ? money(t.price) : "Free"}</strong><div class="small ${available(t) ? "muted" : "danger"}">${available(t) ? available(t) + " tickets left" : "Sold out"}</div></div></div>`).join("")}</div></section></div><aside class="card card-pad"><h2>A place for you</h2><p class="muted small">From ${money(lowest(e))} per person · No booking fee</p>${reservable ? `<a class="btn wide" href="${eventURL(e.id, "reserve")}">Reserve tickets</a>` : '<p class="notice">This event is unavailable for new reservations.</p>'}<hr class="divider"><p class="small muted">Availability is checked again when you confirm your reservation.</p><a href="help.html" class="small">Questions? We’re here to help.</a></aside></div>`;
 }
 function initConfirmation() {
   const b = state.bookings.find(
-    (b) => b.id === (params.get("booking") || "SS-20512"),
+    (b) => b.id === (params.get("booking") || visibleBookings()[0]?.id),
   );
   if (!b || !getEvent(b.eventId) || !canViewBooking(b)) {
     unavailable(
       $("#confirmation-detail"),
-      "This demo booking could not be found.",
+      "This booking could not be found.",
     );
     return;
   }
   const render = () => {
     const e = getEvent(b.eventId);
     $("#confirmation-detail").innerHTML =
-      `<div class="confirmation-mark">${icon(b.status === "Cancelled" ? "close" : "check")}</div>${heading(b.status === "Cancelled" ? "Reservation cancelled" : "You’re on the list!", b.status === "Cancelled" ? "Your sample tickets have been released." : "Your next great experience is one step closer.")}<div class="notice success" style="margin-bottom:24px">Prototype confirmation · No real tickets held, payment collected or email sent.</div><div class="two-col"><section class="card ticket-summary">${summaryCover(e)}<div class="summary-content"><h2>${esc(e.title)}</h2><p class="meta">${icon("calendar")}${esc(longDate(e.date))} · ${esc(e.time)}</p><p class="meta">${icon("location")}${esc(e.location)}</p><hr class="divider"><h3>Booking #${esc(b.id)}</h3><p class="muted small">${esc(b.name)} · ${esc(b.email)}</p>${e.tickets
+      `<div class="confirmation-mark">${icon(b.status === "Cancelled" ? "close" : "check")}</div>${heading(b.status === "Cancelled" ? "Reservation cancelled" : "You’re on the list!", b.status === "Cancelled" ? "Your tickets have been released." : "Your next great experience is one step closer.")}<div class="notice success" style="margin-bottom:24px">Reservation saved. Payment due at venue for priced tickets; no online payment collected.</div><div class="two-col"><section class="card ticket-summary">${summaryCover(e)}<div class="summary-content"><h2>${esc(e.title)}</h2><p class="meta">${icon("calendar")}${esc(longDate(e.date))} · ${esc(e.time)}</p><p class="meta">${icon("location")}${esc(e.location)}</p><hr class="divider"><h3>Booking #${esc(b.id)}</h3><p class="muted small">${esc(b.name)} · ${esc(b.email)}</p>${e.tickets
         .filter((t) => b.items[t.id])
         .map(
           (t) =>
@@ -704,7 +717,7 @@ function initConfirmation() {
         )
         .join(
           "",
-        )}<div class="form-actions"><a class="btn" href="${bookingURL(b.id, "my-bookings")}">View my bookings</a><button class="btn secondary" type="button" id="print-confirmation">Print demo ticket</button></div></div></section><aside class="card card-pad booking-details">${bookingDetails(b, true)}</aside></div>`;
+        )}<div class="form-actions"><a class="btn" href="${bookingURL(b.id, "my-bookings")}">View my bookings</a><button class="btn secondary" type="button" id="print-confirmation">Print confirmation</button></div></div></section><aside class="card card-pad booking-details">${bookingDetails(b, true)}</aside></div>`;
     $("#print-confirmation").addEventListener("click", () => window.print());
     bindBookingActions(render);
   };
@@ -724,82 +737,55 @@ function validatePasswords(form) {
   }
 }
 function initAuth() {
-  const login = $("#login-form");
-  if (login) { try { $("[name=remember]", login).checked = localStorage.getItem("sessionspot-demo-mode") === "selected"; } catch {} }
-  login?.addEventListener("submit", (e) => {
-    e.preventDefault(); feedback(login, "");
-    perform(() => {
-      const actor = loginDemo($('[name=email]', login).value, $('[name=password]', login).value);
-      const keep = $('[name=remember]', login).checked;
-      try { if (keep) localStorage.setItem("sessionspot-demo-mode", "selected"); else localStorage.removeItem("sessionspot-demo-mode"); } catch {}
-      $$("input[type=password]", login).forEach((input) => input.value = "");
-      feedback(login, "Demo identity selected. No credentials were verified or stored.", true);
-      location.href = actor.role === "Admin" ? "admin.html" : actor.role === "Organizer" ? "dashboard.html" : "my-bookings.html";
-    }, login);
-  });
-  const register = $("#register-form");
-  if (register) {
-    const password = $('[name=password]', register), confirm = $('[name=confirm]', register);
-    const reveal = () => { confirm.disabled = !password.value; confirm.closest("label").hidden = !password.value; };
-    password.addEventListener("input", reveal); reveal();
+  const login=$('#login-form');
+  if(login && params.has('registered')) feedback(login,'Account created. Sign in with your email and password.',true);
+  login?.addEventListener('submit',e=>{e.preventDefault();feedback(login,'');perform(async()=>{
+    const user=await loginAccount($('[name=email]',login).value,$('[name=password]',login).value);
+    $('[name=password]',login).value='';
+    const next=params.get('next');
+    location.href=next&&/^(?:index|event|reserve|confirmation|my-bookings|profile|dashboard|create-event|attendees|admin)\.html(?:\?[^#]*)?$/.test(next)?next:user.role==='Admin'?'admin.html':'my-bookings.html';
+  },login);});
+  const register=$('#register-form');
+  if(register){
+    const password=$('[name=password]',register),confirm=$('[name=confirm]',register);
+    const reveal=()=>{confirm.disabled=!password.value;confirm.closest('label').hidden=!password.value;};password.addEventListener('input',reveal);reveal();
+    const accountMode=()=>{const org=$('[name=accountType]:checked',register).value==='organization';$('#organization-fields').hidden=!org;$$('input,select,textarea',$('#organization-fields')).forEach(el=>{el.disabled=!org;el.required=org&&['organizationName','organizationCategory'].includes(el.name);});};
+    $$('[name=accountType]',register).forEach(el=>el.addEventListener('change',accountMode));accountMode();
+    register.addEventListener('submit',e=>{e.preventDefault();if(!validatePasswords(register))return;perform(async()=>{
+      await registerAccount({name:$('[name=name]',register).value,email:$('[name=email]',register).value,password:password.value,confirm:confirm.value,terms:$('[name=terms]',register).checked,accountType:$('[name=accountType]:checked',register).value,intent:'Attendee',organization:{name:$('[name=organizationName]',register).value,category:$('[name=organizationCategory]',register).value,website:$('[name=organizationWebsite]',register).value,description:$('[name=organizationDescription]',register).value}});
+      password.value='';confirm.value='';location.href='login.html?registered=1';
+    },register);});
   }
-  register?.addEventListener("submit", (e) => {
-    e.preventDefault(); feedback(register, "");
-    if (!validatePasswords(register)) return;
-    perform(() => {
-      const role = $('[name=role]:checked', register).value;
-      registerDemo({ name: $('[name=name]', register).value, email: $('[name=email]', register).value }, $('[name=password]', register).value, $('[name=confirm]', register).value, role, $('[name=terms]', register).checked);
-      $$("input[type=password]", register).forEach((input) => input.value = "");
-      feedback(register, "Demo account preview complete. No real account or email was created." + (role === "Organizer" ? " Registered as a sample Attendee. For organizer testing, sign in as priya@example.com, or have the sample Admin assign your role." : ""), true);
-      const link = document.createElement("a"); link.className = "btn secondary";
-      link.href = role === "Organizer" ? "login.html" : "my-bookings.html";
-      link.textContent = role === "Organizer" ? "Sign in to organizer demo" : "Continue to sample bookings";
-      $("[data-continue]", register)?.remove(); link.dataset.continue = ""; register.append(link);
-    }, register);
-  });
-  $("[data-sso]")?.addEventListener("click", () => dialog("Institution SSO preview", "This button demonstrates where institution sign-in would begin. No institution is connected and no credentials are transmitted."));
-  const forgot = $("#forgot-form");
-  forgot?.addEventListener("submit", (e) => {
-    e.preventDefault(); perform(() => {
-      $('[name=email]', forgot).value = emailAddress($('[name=email]', forgot).value);
-      feedback(forgot, "Demo reset request validated. No email was sent. Open the sample reset link below.", true);
-      $("#reset-preview").hidden = false;
-    }, forgot);
-  });
-  const reset = $("#reset-form");
-  reset?.addEventListener("submit", (e) => {
-    e.preventDefault(); feedback(reset, ""); if (!validatePasswords(reset)) return;
-    $$("input[type=password]", reset).forEach((input) => input.value = "");
-    feedback(reset, "Demo reset preview complete. No password was changed or stored.", true);
-  });
+  const forgot=$('#forgot-form');forgot?.addEventListener('submit',e=>{e.preventDefault();perform(async()=>{const result=await request('forgot',{email:$('[name=email]',forgot).value});feedback(forgot,result.message,true);},forgot);});
+  const reset=$('#reset-form');reset?.addEventListener('submit',e=>{e.preventDefault();if(!validatePasswords(reset))return;perform(async()=>{
+    await request('reset',{token:new URLSearchParams(location.hash.slice(1)).get('token'),password:$('[name=password]',reset).value,confirm:$('[name=confirm]',reset).value});
+    history.replaceState(null,'','reset-password.html');$$('input[type=password]',reset).forEach(el=>el.value='');feedback(reset,'Password changed. Sign in with your new password.',true);
+  },reset);});
 }
+const organizationCategories=['Business / Company','University / Educational institution','Nonprofit / Charity','Community organization','Government / Public institution','Other'];
 function initProfile() {
-  const form = $("#profile-form");
-  $('[name=name]', form).value = state.profile.name; $('[name=email]', form).value = state.profile.email;
-  form.addEventListener("submit", (e) => {
-    e.preventDefault(); feedback(form, "");
-    perform(() => {
-      updateProfile({ name: $('[name=name]', form).value, email: $('[name=email]', form).value });
-      $('[name=name]', form).value = state.profile.name; $('[name=email]', form).value = state.profile.email;
-      refreshShell(); feedback(form, "Sample profile saved in this browser.", true);
-    }, form);
-  });
-  const pw = $("#password-form");
-  pw.addEventListener("submit", (e) => {
-    e.preventDefault(); feedback(pw, ""); if (!validatePasswords(pw)) return;
-    $$("input[type=password]", pw).forEach((input) => input.value = "");
-    feedback(pw, "Password change validated for the demo. No credential was changed or stored.", true);
-  });
+  const form=$('#profile-form');$('[name=name]',form).value=state.profile.name;$('[name=email]',form).value=state.profile.email;
+  form.addEventListener('submit',e=>{e.preventDefault();perform(async()=>{await updateProfile({name:$('[name=name]',form).value,email:$('[name=email]',form).value,current:$('[name=current]',form).value});$('[name=current]',form).value='';refreshShell();feedback(form,'Profile saved.',true);},form);});
+  const pw=$('#password-form');pw.addEventListener('submit',e=>{e.preventDefault();if(!validatePasswords(pw))return;perform(async()=>{await request('password',{current:$('[name=current]',pw).value,password:$('[name=password]',pw).value,confirm:$('[name=confirm]',pw).value});$$('input',pw).forEach(el=>el.value='');feedback(pw,'Password changed. Other sessions have been revoked.',true);},pw);});
+  const section=document.createElement('section');section.className='card card-pad';
+  section.innerHTML=`<h2>Your organizations</h2><p class="small muted">Own an organization and reserve tickets with the same account. New organizations are unverified.</p><form id="organization-form" class="stack" method="dialog" data-demo-form><label class="field">Organization<select name="id"><option value="">Create an organization</option>${state.organizations.filter(o=>o.ownerId===currentUser().id).map(o=>`<option value="${esc(o.id)}">${esc(o.name)}</option>`).join('')}</select></label><label class="field">Organization name<input name="name" required maxlength="120"></label><label class="field">Organization category<select name="category">${organizationCategories.map(c=>`<option>${esc(c)}</option>`).join('')}</select></label><label class="field">Website (optional)<input name="website" type="url" maxlength="500"></label><label class="field">Description (optional)<textarea name="description" maxlength="2000"></textarea></label><button class="btn" type="submit">Save organization</button><p class="feedback" role="alert" data-feedback></p></form>`;
+  form.closest('section').parentElement.append(section);const org=$('#organization-form');
+  $('[name=id]',org).addEventListener('change',()=>{const o=state.organizations.find(o=>o.id===$('[name=id]',org).value);for(const n of ['name','category','website','description'])$(`[name=${n}]`,org).value=o?.[n]||(n==='category'?organizationCategories[0]:'');});
+  org.addEventListener('submit',e=>{e.preventDefault();perform(async()=>{await saveOrganization(Object.fromEntries(new FormData(org)));location.reload();},org);});
 }
 function initEventForm() {
   const form = $("#event-form"),
     edit = params.get("event"),
     event = edit ? getEvent(edit) : null;
+  const organizerSelect=$('[name=organizationId]',form);
+  organizerSelect.innerHTML='<option value="">Personal event · '+esc(state.profile.name)+'</option>'+state.organizations.filter(o=>o.status==='Active'&&o.ownerId===(event?.ownerId||currentUser().id)).map(o=>`<option value="${esc(o.id)}">${esc(o.name)}</option>`).join('');
+  organizerSelect.value=event?.organizationId||'';
+  $('[name=venue]',form).value=event?.venue||'';
   let posterImage = event?.posterImage || null;
   $("#manage-poster").addEventListener("click", (e) => {
     e.preventDefault();
-    if (!perform(() => { requireRole(["Organizer", "Admin"]); if (event && !canManage(event)) throw Error("You cannot edit this event's poster."); }, form)) return;
-    dialog("Event poster", "PNG, JPEG or WebP up to 1 MB. Saved in this browser only when you save the event.", "Use this poster", () => { posterImage = pending; feedback(form, "Poster choice ready. Save the event to keep it in this browser.", true); });
+    if (!validateAction(() => { requireRole(["Organizer", "Admin"]); if (event && !canManage(event)) throw Error("You cannot edit this event's poster."); }, form)) return;
+    dialog("Event poster", "PNG, JPEG or WebP up to 1 MB. The image is uploaded when you save the event.", "Use this poster", () => { posterImage = pending; feedback(form, "Poster choice ready. Save the event to upload it.", true); });
     const modal = $("#action-dialog"), controls = document.createElement("div");
     let pending = posterImage, selection = 0, closed = false;
     controls.innerHTML = '<label class="field">Poster image<input type="file" accept="image/png,image/jpeg,image/webp"></label><img alt="Selected event poster preview" hidden style="display:block;width:100%;max-height:220px;object-fit:contain"><p class="feedback" role="status" aria-live="polite"></p><button class="btn secondary sm" type="button">Use default poster</button>';
@@ -847,7 +833,6 @@ function initEventForm() {
       "time",
       "location",
       "category",
-      "organizer",
     ])
       $(`[name="${name}"]`, form).value = event[name];
     $("[name=status]", form).value =
@@ -855,11 +840,11 @@ function initEventForm() {
     $("#event-delete-area").hidden = false;
     $("#delete-event").addEventListener("click", () =>
       dialog(
-        "Archive this sample event?",
-        "It will leave discovery while its existing sample bookings remain available.",
-        "Archive event",
-        () => {
-          changeEventStatus(event.id, "Archived");
+        "Cancel this event?",
+        "This cancels the event and all confirmed reservations. History is retained.",
+        "Cancel event",
+        async () => {
+          await changeEventStatus(event.id, "Archived");
           location.href = "dashboard.html";
         },
       ),
@@ -883,9 +868,9 @@ function initEventForm() {
     }));
   }
   $("#add-ticket-type").addEventListener("click", () => {
-    if (!perform(() => { requireRole(["Organizer", "Admin"]); if (event && !canManage(event)) throw Error("You cannot edit this event's tickets."); }, form)) return;
+    if (!validateAction(() => { requireRole(["Organizer", "Admin"]); if (event && !canManage(event)) throw Error("You cannot edit this event's tickets."); }, form)) return;
     if (tickets.length >= 5) {
-      toast("This demo supports up to five ticket categories.");
+      toast("Use up to five ticket categories.");
       return;
     }
     tickets = collectTickets();
@@ -902,9 +887,9 @@ function initEventForm() {
   });
   form.addEventListener("submit", (e) => {
     e.preventDefault(); feedback(form, "");
-    perform(() => {
+    perform(async () => {
       const data = new FormData(form);
-      saveEvent(edit, { title: data.get("title"), description: data.get("description"), date: data.get("date"), time: data.get("time"), location: data.get("location"), category: data.get("category"), organizer: data.get("organizer"), status: data.get("status"), tickets: collectTickets(), posterImage });
+      await saveEvent(edit, { title: data.get("title"), description: data.get("description"), date: data.get("date"), time: data.get("time"), location: data.get("location"), category: data.get("category"), organizationId: data.get("organizationId"), venue: data.get("venue"), status: data.get("status"), tickets: collectTickets(), posterImage });
       location.href = "dashboard.html";
     }, form);
   });
@@ -929,7 +914,7 @@ function initAttendees() {
       .join("");
     $("#attendee-empty").hidden = rows.length > 0;
     $("#attendee-count").textContent =
-      `${rows.length} sample attendee records · ${rows.reduce((s, a) => s + a.tickets, 0)} tickets`;
+      `${rows.length} attendee records · ${rows.reduce((s, a) => s + a.tickets, 0)} tickets`;
   }
   select.addEventListener("change", () => {
     history.replaceState(null, "", eventURL(select.value, "attendees"));
@@ -942,94 +927,22 @@ function initAttendees() {
   render();
 }
 function initAdmin() {
-  function render() {
-    renderMetrics($("#admin-metrics"), true);
-    const q = $("#user-search").value.toLowerCase();
-    const users = state.users.filter(
-      (u) => u.active && `${u.name} ${u.email}`.toLowerCase().includes(q),
-    );
-    $("#user-rows").innerHTML = users.length
-      ? users
-          .map(
-            (u) =>
-              `<tr><td>${esc(u.name)}</td><td>${esc(u.email)}</td><td><select aria-label="Role for ${esc(u.name)}" data-role="${esc(u.id)}">${["Attendee", "Organizer", "Admin"].map((role) => `<option ${u.role === role ? "selected" : ""}>${role}</option>`).join("")}</select></td><td><div class="row"><button type="button" class="btn secondary sm" data-save-role="${esc(u.id)}">Save</button><button type="button" class="text-button danger" data-remove-user="${esc(u.id)}">Remove</button></div></td></tr>`,
-          )
-          .join("")
-      : '<tr><td colspan="4" class="empty">No matching sample users.</td></tr>';
-    $("#admin-event-rows").innerHTML = state.events
-      .map(
-        (e) =>
-          `<tr><td><strong>${esc(e.title)}</strong></td><td>${esc(e.organizer)}</td><td>${statusLabel(e.status)}</td><td><div class="row"><a class="btn secondary sm" href="${eventURL(e.id, "create-event")}">Edit</a><button type="button" class="text-button ${e.status === "Archived" ? "" : "danger"}" data-archive-event="${esc(e.id)}">${e.status === "Archived" ? "Restore" : "Archive"}</button></div></td></tr>`,
-      )
-      .join("");
-    $$("[data-save-role]").forEach((b) =>
-      b.addEventListener("click", () => {
-        perform(() => {
-          changeRole(b.dataset.saveRole, $(`[data-role="${b.dataset.saveRole}"]`).value);
-          toast("Demo role saved locally. No secure permissions changed.");
-        });
-      }),
-    );
-    $$("[data-remove-user]").forEach((b) =>
-      b.addEventListener("click", () =>
-        dialog(
-          "Remove this sample user?",
-          "The demo user will be hidden locally. Reset sample data in Settings to restore it.",
-          "Remove sample user",
-          () => {
-            removeUser(b.dataset.removeUser);
-            render();
-            toast("Sample user removed locally.");
-          },
-        ),
-      ),
-    );
-    $$("[data-archive-event]").forEach((b) =>
-      b.addEventListener("click", () => {
-        const event = getEvent(b.dataset.archiveEvent);
-        dialog(
-          event.status === "Archived"
-            ? "Restore sample event?"
-            : "Archive sample event?",
-          event.status === "Archived"
-            ? "The event will return to published sample events."
-            : "The event will leave discovery. Existing sample bookings remain available.",
-          event.status === "Archived" ? "Restore event" : "Archive event",
-          () => {
-            changeEventStatus(event.id, event.status === "Archived" ? "Restore" : "Archived");
-            render();
-            toast("Sample event status updated.");
-          },
-        );
-      }),
-    );
+  const extra=document.createElement('div');extra.className='stack';extra.innerHTML='<section class="card card-pad"><h2>Organizations</h2><div class="table-scroll"><table><thead><tr><th>Name</th><th>Category</th><th>Status</th><th>Action</th></tr></thead><tbody id="admin-organizations"></tbody></table></div></section><section class="card card-pad"><h2>Bookings</h2><div class="table-scroll"><table><thead><tr><th>Reference</th><th>Event</th><th>Tickets</th><th>Value (CAD)</th><th>Status</th></tr></thead><tbody id="admin-bookings"></tbody></table></div></section>';
+  $('.page-footer').before(extra);
+  function render(){
+    renderMetrics($('#admin-metrics'),true);const q=$('#user-search').value.toLowerCase();
+    $('#user-rows').innerHTML=state.users.filter(u=>`${u.name} ${u.email}`.toLowerCase().includes(q)).map(u=>`<tr><td>${esc(u.name)}<small>${esc(u.status)}</small></td><td>${esc(u.email)}</td><td><select aria-label="Role for ${esc(u.name)}" data-role="${esc(u.id)}">${['User','Admin'].map(r=>`<option ${u.role===r?'selected':''}>${r}</option>`).join('')}</select></td><td><div class="row"><button class="btn secondary sm" data-save-role="${esc(u.id)}">Save</button><button class="text-button danger" data-user-status="${esc(u.id)}">${u.active?'Suspend':'Reactivate'}</button></div></td></tr>`).join('')||'<tr><td colspan="4">No matching users.</td></tr>';
+    $('#admin-event-rows').innerHTML=state.events.map(e=>`<tr><td>${esc(e.title)}</td><td>${esc(e.organizer)}</td><td>${statusLabel(e.status)}</td><td><a class="btn secondary sm" href="${eventURL(e.id,'create-event')}">Edit</a><button class="text-button danger" data-moderate-event="${esc(e.id)}">${e.status==='Archived'?'Restore':'Cancel'}</button></td></tr>`).join('');
+    $('#admin-organizations').innerHTML=state.organizations.map(o=>`<tr><td>${esc(o.name)}<small>${o.verified?'Verified':'Unverified'}</small></td><td>${esc(o.category)}</td><td>${esc(o.status)}</td><td><button class="text-button" data-org-status="${esc(o.id)}">${o.status==='Active'?'Suspend':'Reactivate'}</button></td></tr>`).join('')||'<tr><td colspan="4">No organizations.</td></tr>';
+    $('#admin-bookings').innerHTML=state.bookings.map(b=>`<tr><td><a href="${bookingURL(b.id)}">${esc(b.id)}</a></td><td>${esc(getEvent(b.eventId)?.title||'')}</td><td>${quantity(b)}</td><td>${money(bookingTotal(b))}</td><td>${esc(b.status)}</td></tr>`).join('')||'<tr><td colspan="5">No bookings.</td></tr>';
+    $$('[data-save-role]').forEach(button=>button.addEventListener('click',()=>dialog('Change account role?','This changes server-side administrative permissions.','Save role',async()=>{await changeRole(button.dataset.saveRole,$(`[data-role="${button.dataset.saveRole}"]`).value);render();toast('Account role updated.');})));
+    $$('[data-user-status]').forEach(button=>button.addEventListener('click',()=>{const u=state.users.find(u=>u.id===button.dataset.userStatus);dialog(u.active?'Suspend account?':'Reactivate account?','Suspended accounts cannot sign in or accept new reservations for their events.','Confirm',async()=>{await setUserStatus(u.id,u.active?'Suspended':'Active');render();});}));
+    $$('[data-org-status]').forEach(button=>button.addEventListener('click',()=>{const o=state.organizations.find(o=>o.id===button.dataset.orgStatus);dialog('Change organization status?','Suspended organizations cannot accept new event reservations.','Confirm',async()=>{await setOrganizationStatus(o.id,o.status==='Active'?'Suspended':'Active');render();});}));
+    $$('[data-moderate-event]').forEach(button=>button.addEventListener('click',()=>{const e=getEvent(button.dataset.moderateEvent);dialog(e.status==='Archived'?'Restore event?':'Cancel event?',e.status==='Archived'?'Existing cancellations remain in history.':'All confirmed reservations will be cancelled and inventory released.','Confirm',async()=>{await changeEventStatus(e.id,e.status==='Archived'?'Restore':'Archived');render();});}));
   }
-  $("#user-search").addEventListener("input", render);
-  render();
+  $('#user-search').addEventListener('input',render);render();
 }
-function initHelp() {
-  const form = $("#contact-form");
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    if (!perform(() => { $("[name=email]", form).value = emailAddress($("[name=email]", form).value); }, form)) return;
-    if (
-      !$("[name=message]", form).value.trim() ||
-      $("[name=message]", form).value.trim().length < 10
-    ) {
-      feedback(form, "Write at least 10 characters about your question.");
-      return;
-    }
-    feedback(
-      form,
-      "Message preview validated. Demo only — nothing was sent or saved.",
-      true,
-    );
-  });
-  if (location.hash) {
-    const detail = document.getElementById(location.hash.slice(1));
-    if (detail?.tagName === "DETAILS") detail.open = true;
-  }
-}
+function initHelp(){const form=$('#contact-form');form.addEventListener('submit',e=>{e.preventDefault();perform(async()=>{await request('contact',{email:$('[name=email]',form).value,message:$('[name=message]',form).value});feedback(form,'Your message was accepted for delivery.',true);},form);});if(location.hash){const detail=document.getElementById(location.hash.slice(1));if(detail?.tagName==='DETAILS')detail.open=true;}}
 const init = {
   index: initDiscovery,
   reserve: initReservation,
@@ -1047,10 +960,18 @@ const init = {
   admin: initAdmin,
   help: initHelp,
 };
-try {
-  initShell();
-  init[page]?.();
-  $$("form[data-demo-form]").forEach((form) => form.dataset.demoReady = "true");
-} catch (error) {
-  toast("The demo could not initialize. Reload before submitting: " + error.message);
+async function start() {
+  const main=$('main');main?.setAttribute('aria-busy','true');
+  try {
+    await loadServerState();
+    const restricted=['reserve','confirmation','my-bookings','profile','dashboard','create-event','attendees','admin'];
+    if(!currentUser()&&restricted.includes(page)){location.replace('login.html?next='+encodeURIComponent(location.pathname.split('/').pop()+location.search));return;}
+    initShell();
+    if(page==='admin'&&currentUser()?.role!=='Admin'){unavailable(main,'Administrator access required.');return;}
+    init[page]?.();
+    document.body.dataset.serverReady='true';
+    $$('form[data-demo-form]').forEach(form=>form.dataset.demoReady='true');
+  }catch(error){$$('form[data-demo-form]').forEach(form=>feedback(form,error.message));const status=document.createElement('p');status.className='notice';status.setAttribute('role','alert');status.textContent=error.message;main?.prepend(status);toast(error.message);}
+  finally{main?.removeAttribute('aria-busy');}
 }
+start();

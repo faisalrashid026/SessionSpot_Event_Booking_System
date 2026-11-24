@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="SessionSpot — discover events and try a browser-local university ticket booking prototype."
+      content="SessionSpot — discover events and reserve tickets."
     />
     <title>My bookings | SessionSpot</title>
     <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
@@ -18,8 +18,8 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/figma.css?v=b4d6a79280" />
-    <script defer src="js/form-guard.js?v=d79fb3a354"></script>
-    <script type="module" src="js/app.js?v=08b46b5db8"></script>
+    <script defer src="js/form-guard.js?v=54ca397aae"></script>
+    <script type="module" src="js/app.js?v=defcacf091"></script>
   </head>
   <body data-figma-node="2:372" data-page="my-bookings">
     <a class="skip" href="#main">Skip to main content</a>
@@ -74,7 +74,7 @@
             height="20"
             aria-hidden="true"
           /><span>My bookings</span
-          ><span class="badge" data-booking-count>2</span></a
+          ><span class="badge" data-booking-count>0</span></a
         ><a class="nav-link" href="index.html?view=saved"
           ><img
             class="icon figma-icon"
@@ -193,7 +193,7 @@
           ><a class="account" href="profile.html"
             ><span class="avatar" aria-hidden="true">AM</span
             ><span class="account-text"
-              ><strong data-profile-name>Alex Morgan</strong
+              ><strong data-profile-name>Guest</strong
               ><small>Personal account</small></span
             ><span class="sr-only">My profile</span></a
           >
@@ -288,23 +288,20 @@
         </div>
         <footer class="page-footer">
           <div class="row between">
-            <span>SessionSpot · COMP 3540 · Team G13</span
+            <span>SessionSpot</span
             ><span
-              ><a href="admin.html">Demo admin</a
-              ><a href="login.html">Demo sign in</a
+              ><a href="admin.html">Administration</a
+              ><a href="login.html">Sign in</a
               ><a href="help.html">Help</a></span
             >
           </div>
-          <p class="prototype">
-            Part 2 prototype · Browser-local sample data · Demo date: November
-            10, 2026 · No real payments, email or authentication.
-          </p>
+          <p class="prototype">SessionSpot · Events and reservations · Prices in CAD · Payment due at venue for priced tickets.</p>
         </footer>
       </main>
     </div>
     <noscript
       ><p class="noscript">
-        Enable JavaScript to use the sample event and booking interactions. Page
+        Enable JavaScript to use accounts, events and reservations. Page
         navigation remains available.
       </p></noscript
     >

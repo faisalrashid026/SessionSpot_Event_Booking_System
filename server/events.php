@@ -37,10 +37,11 @@ function store_poster(mixed $data): array {
 }
 function save_event(array $d): string {
     $u=actor();$id=$d['id']??null;$fields=$d['fields']??[];$newPoster=null;$oldPoster=null;
+    if(!is_array($fields))fail('Enter valid event fields.');
     try {
         $result=transaction(function()use($u,$id,$fields,&$newPoster,&$oldPoster){
             $existing=$id?event_row($id,true):null;if($existing)require_event_owner($existing);
-            $title=text($fields['title']??null,4,140,'event title'); $description=text($fields['description']??null,15,5000,'description');
+            $title=text($fields['title']??null,4,140,'event title'); $description=multiline($fields['description']??null,15,5000,'description');
             $location=text($fields['location']??null,3,160,'location/address'); $venue=text($fields['venue']??$location,2,160,'venue');
             $category=$fields['category']??'';$status=$fields['status']??'';
             if(!in_array($category,['Education','Business','Community','Arts & culture'],true)||!in_array($status,['Draft','Published'],true))fail('Choose a valid category and status.');
@@ -56,6 +57,7 @@ function save_event(array $d): string {
             $previous=$existing?query('SELECT * FROM ticket_types WHERE event_id=? ORDER BY id FOR UPDATE',[$id])->fetchAll():[];
             $old=array_column($previous,null,'client_key');$names=[];$keys=[];$tickets=[];
             foreach($inputs as $t) {
+                if(!is_array($t))fail('Enter valid ticket details.');
                 $key=$t['id']??'';if(!is_string($key)||!preg_match('/^[A-Za-z0-9_-]{1,80}$/D',$key)||isset($keys[$key]))fail('Ticket identities must be distinct and stable.');
                 $name=text($t['name']??null,2,80,'ticket name');$normalized=mb_strtolower(preg_replace('/\s+/u',' ',$name));
                 if(isset($names[$normalized]))fail('Use distinct ticket names.');$names[$normalized]=true;$keys[$key]=true;
@@ -81,7 +83,7 @@ function save_event(array $d): string {
             }
             audit('event.save',$eventId);return $eventId;
         });
-        if($oldPoster&&$oldPoster!==$newPoster&&($newPoster||($fields['posterImage']??'')===null))@unlink(dirname(__DIR__).'/storage/posters/'.$oldPoster);
+        if($oldPoster&&$oldPoster!==$newPoster&&($newPoster||array_key_exists('posterImage',$fields)&&$fields['posterImage']===null))@unlink(dirname(__DIR__).'/storage/posters/'.$oldPoster);
         return $result;
     } catch(Throwable $e) { if($newPoster)@unlink(dirname(__DIR__).'/storage/posters/'.$newPoster);throw $e; }
 }

@@ -1,35 +1,62 @@
-# SessionSpot functional v2 — test report
+# SessionSpot V1 Final — Verification report
 
-November 23, 2026. Current results supersede the approved baseline's earlier totals; the original verified ZIP remains unchanged.
+COMP 3540 · Team G13. This finalization preserves the working PHP/MySQL application, consolidates documentation and verifies a clean, independently configured release. It does not count historical results as freshly executed tests.
 
-## Automated verification
+## Executed final verification
 
-`node --test tests/data.test.mjs tests/exports.test.mjs tests/improvements.test.mjs`: **56 passed, 0 failed**. The original 16 tests remain intact; 40 new tests cover search, invalid categories/quantities, duplicate requests/replay, mixed cancellation, storage quota/denial and rollback, roles/ownership/lifecycle, capacity/identity preservation, historical prices/names, profile/password rules, invalid dates/times, DST and the relative fixture clock.
+| Check | PASS | FAIL | Scope |
+| --- | ---: | ---: | --- |
+| Real backend acceptance | 39 | 0 | Independent XAMPP/PHP/MariaDB verification application |
+| Security/concurrency/durability follow-up | 21 | 0 | Same isolated verification instance; actual database outage/restart |
+| Current reservation/CSV export tests | 8 | 0 | Tests shipped in the clean release |
+| Development regression tests | 65 | 0 | Source checkout, including protected historical fixtures |
+| Browser workflows after cleanup | 15 | 0 | Real login, booking/history/cancellation, admin access, forms and error feedback |
+| Page/render checks | 30 | 0 | All 15 pages at 1440 and 390 CSS pixels |
+| Keyboard skip-link checks | 15 | 0 | Every page's link focuses its main region |
+| Static page/dependency audit | PASS | 0 | 15 pages, focusable main regions, unique static IDs and relative dependencies |
+| Optional sample seed | PASS | 0 | Two labeled samples created in verification DB; repeat creates none |
+| Instructor-database fixture guard | PASS | 0 | Test tools refuse the clean instructor database |
+| Original CSS/assets preservation | 23 files | 0 | Both stylesheets and 21 font/icon/SVG/license assets unchanged |
 
-`python3 tests/static_audit.py`: passed. Exactly 15 root application pages, one main landmark, English language, unique static IDs, focusable skip destinations, 439 resolving HTML references, independent guards and native-safe sensitive forms. Sensitive inputs require dialog-method demo forms; submitter overrides and credential GET fallbacks are rejected. Eight `node --check` syntax checks pass. `automated-results.json` retains actual stdout/exit codes.
+The HTTP suites operate on real PHP/PDO/MariaDB records, not local mocks. They verify individual registration, unique emails, actual password hashing/verification, logout/new-session login, persistent profile updates, invalid input rejection, organization creation/ownership/editing/unverified status, personal and organization events, draft privacy, poster storage/delivery, publication and cross-user discovery.
 
-## Browser checks
+Reservations are tested with mixed paid/free tickets, server-calculated totals, unique references, matching idempotent retries, changed-request rejection and invalid quantities/categories. Simultaneous requests for the last ticket yield one success and one inventory rejection. Simultaneous identical submissions allocate once. Cancellation restores each category once while retaining historical names/prices. Event cancellation releases all allocations; restoration does not revive cancelled bookings.
 
-- **74/74 interactions pass**: search and combined filters, saved/calendar navigation, quantities and $110 mixed totals, double-click/replay deduplication, history/cancellation and restored inventory, profile normalization/carryover and friend details, account/recovery validation, role denials and authorized actions, own/foreign event rules, five-category editing, duplicate names, capacity floors, real-time publishing, archive/restore, attendee search, export triggers, FAQ/contact/notifications and keyboard/mobile navigation.
-- **75/75 page/viewport checks pass**, all 15 pages at target widths 1440, 1024, 768, 390 and 375. Fonts/images load, one h1, initialized forms and no document horizontal overflow. Table/nav scrolling remains contained. A resource-load check was synchronized to network idle after a transient incomplete-image observation.
-- **15/15 skip links pass** real Tab visibility/outline and Enter focus transfer.
-- **12/12 native-form/fault cases pass**, covering six forms with all scripts blocked by CSP and with a deliberate controller exception. All fields were natively valid. Both click and Enter were tested: **24 safe submission paths**, no credential query fields and no POSTs. The engine's global JS setting was not changed. Fault-mode console errors are intentional and separate from the normal console record.
-- Normal browser sweep: **0 errors/warnings**. Fault scenarios retain their expected console entries; no global zero-console claim includes deliberate failures.
+Administration is provisioned through the private CLI. Tests cover ordinary-user/foreign-event/foreign-booking denial, admin listings, account and organization suspension/reactivation, session invalidation, CSRF and cross-site-origin rejection, HttpOnly/SameSite cookies and protected configuration/Git/storage paths (including an encoded Git path). Secure recovery tokens are single-use, old credentials are rejected after rotation, and password changes revoke prior sessions. A controlled shutdown of only the isolated verification MariaDB yields genuine 503; restart preserves records. No instructor/development database is reset by tests.
 
-Sensitive input values are redacted by the browser tool. Profile email normalization was therefore verified through visible sample records and a real demo confirmation, and password error retention through non-empty controls/feedback, supplemented by direct validation tests. Earlier assertions comparing redacted field strings were corrected; no product failure remained.
+Browser checks used the independent verification application and tested actual credentials, a server-calculated CAD 12.50 booking, My Bookings after reload, cancellation/history and restored paid/free capacities, logout and admin access. The mobile conditional organization form remains usable. Normal browser checks produced no warnings/errors. The deliberately unavailable mail request produced its expected 503 and accurate error feedback. One initial booking-list probe ran before asynchronous loading completed; the settled-state rerun passed.
 
-## Visual regression
+## Commands and reproducibility
 
-**45/45 exact decoded-pixel comparisons pass**, all 15 pages at desktop 1440, tablet 768 and phone 390 widths. Current final controller: `9678db2751`. Six reference-screen captures use the approved 1440 × 1320/1160 frame dimensions. Screenshot rows were recaptured where resource timing or raster capture initially differed; no visual code change or tolerance relaxation was made.
+Run acceptance suites only in a **fresh disposable verification extraction**, never the instructor/developer instance:
 
-All 15 normalized presentation trees match the approved ZIP. Both CSS files and all 21 local asset/font/license files are unchanged. Full screenshot pairs live under `qa/improvements/screens/`, outside the ZIP. `pixel-regression.json`, `visual-regression.json` and `presentation-integrity.json` record evidence. No literal new live-Figma comparison is claimed in this functional-only pass.
+```sh
+python3 scripts/start_local.py --port 8081 --database sessionspot_verify_final --base-path /SessionSpot
+export SESSIONSPOT_APP_ROOT="$PWD"
+export SESSIONSPOT_TEST_URL="http://localhost:8081/SessionSpot"
+python3 tests/backend_api.py
+python3 tests/stability_v1.py
+node --test tests/exports.test.mjs tests/v1_exports.test.mjs
+python3 tests/static_audit.py
+```
 
-## Export, scope and packaging limits
+The suites create their own random test credentials privately in that extraction's ignored `.local/`. The helper checks the matching URL/socket and requires a `sessionspot_verify_*`/`sessionspot_test_*` database before permitting fixture operations. The stability suite stops/restarts **only that isolated MariaDB instance**. Node 22+ is optional for JavaScript tests, not application execution. In the development checkout, `node --test tests/*.test.mjs` also exercises historical fixtures; those fixtures are protected under tests and omitted from this release's production JavaScript/package.
 
-CSV/booking content tests pass, including formula-leading cells without data loss, quotes/newlines, cancelled/free values and historical snapshots. Authorized browser export handlers were clicked and prepared-file feedback verified. New OS download delivery and print output were not independently certified in this pass; the approved baseline had delivered-file verification. Safari/Firefox, complete WCAG/screen-reader certification and real database concurrency remain outside the executed checks.
+A clean allowlisted staging directory is used for packaging. The final ZIP is extracted into a new temporary renamed folder, configured independently on another port, and checked with a fresh schema/database and the real backend suites again. CRC, safe unique entries, extracted hashes, PHP syntax, relative HTML/CSS/JS dependencies, exactly 15 pages/four main documents and absence of secrets/data are verified. The adjacent final-release verification JSON records the artifact checksum, file count, size and independent-extraction results. Raw working evidence is kept in the private external development archive, not in the ZIP.
 
-**PASS — stable for the supplied Part 2 UI requirements.** The release-candidate extraction passed 15/15 page checks and 6/6 integration checks, with a clean console. Its runtime fingerprint is `0b2489c00e6684eaefbfc7e5b8d25bcccd50853184ec69b5522b431dc3edecb0`.
+## Cleanup and database presentation
 
-The new separately named archive is `submission/SessionSpot-Part2-Functional-v2.zip`. Its final CRC, safe/unique entries, exact allowlist, extraction, all file hashes and 452 HTML/CSS/module references are verified by the package script. Its runtime must match the independently browser-tested extraction byte for byte. The adjacent `SessionSpot-Part2-Functional-v2-verification.json` records the final checksum/file count. The approved `SessionSpot-Part2-Submission.zip` remains untouched. Backups, screenshots, reference copies, caches, request logs, temporary release-candidate pointers and nested ZIPs are excluded. No Moodle submission was made.
+A private recovery backup outside the active directory preserves the source, Git history/configuration and a consistent snapshot of only the configured SessionSpot development database. All four earlier ZIPs retain their original hashes. Redundant Markdown reports, generated QA images/reports, duplicate baseline copies, old backups and obsolete tools are archived externally. Important page/design/setup/security/testing information is consolidated into README, DATABASE_SETUP, INSTRUCTOR_TESTING_GUIDE and this report. The obsolete local-state module is a protected historical test fixture, never an application import. Confirmation exports always describe real reservations.
 
-Browser JSON files are actual observations, not a standalone browser runner. Use `tests/scenario_server.py` only as the loopback static QA harness. It injects fault conditions into responses without changing runtime files or adding an application backend.
+All five identified automated development events and every related source record were preserved; no genuine user record was deleted. A separate instructor database was initialized empty; subsequent non-fixture user accounts are preserved. No automated events or bookings are inserted there. Optional sample events are explicitly labeled educational examples, dated relative to seeding and use coherent CAD prices/capacities. No samples, users, passwords or bookings are inserted automatically. Tests use separate isolated databases and never instructor sample data.
+
+The six Figma-derived screens and nine consistent extensions retain their original styles, fonts, SVGs and components. Obsolete fixed demo dates were removed from decorative HTML ticket text without changing styles/dimensions. No Figma extraction or unnecessary pixel-comparison audit was repeated. Exact pixel equality is not claimed for live data/functional copy differences.
+
+## NOT TESTED / limits and readiness
+
+- Outbound reset/support email is **UNCONFIGURED / NOT TESTED**. The failure path is tested and truthful; private CLI/token recovery is documented. Configure/test a relay before enabling delivery.
+- Online payments are **OUT OF SCOPE**. CAD reservations remain due at venue; no booking is falsely marked paid.
+- Other browser engines, an OS browser-process restart, new OS print/download delivery and external HTTPS deployment are **NOT TESTED in this pass**. Fresh HTTP sessions, page refresh and actual database restart are tested. Export contents and existing handlers are preserved.
+- Full production security certification and exact Figma pixel parity are **NOT CLAIMED**. Public deployment requires HTTPS, backups, monitoring and correct host permissions.
+
+The supplied Part 2 technical requirements are met with these documented configuration/testing limits. The final ZIP is ready for manual Moodle upload after the final extraction checks complete successfully; no Moodle submission is performed. Git history remains intact with uncommitted local changes; no commit or GitHub push is performed automatically. The prior V1 results (57 backend, 33 browser, 30 responsive, 65 JavaScript) remain archived historical evidence rather than being substituted for this verification.

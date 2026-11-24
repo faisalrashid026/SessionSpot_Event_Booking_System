@@ -10,7 +10,7 @@
       event.stopImmediatePropagation();
       const feedback = form.querySelector("[data-feedback], #quantity-error");
       if (feedback) {
-        feedback.textContent = "The demo is not initialized. Reload this page before submitting. Nothing was sent or saved.";
+        feedback.textContent = "The service is not initialized. Reload this page before submitting. Nothing was sent or saved.";
         feedback.classList.remove("success");
       }
     }

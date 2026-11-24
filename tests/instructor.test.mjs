@@ -2,7 +2,7 @@ import test, { beforeEach } from "node:test";
 import assert from "node:assert/strict";
 const storage = new Map(); let failWrite = false;
 globalThis.localStorage = { getItem: (k) => storage.get(k) ?? null, setItem: (k, v) => { if (failWrite) throw Error("quota"); storage.set(k, v); } };
-const data = await import("../js/data.js");
+const data = await import("./fixtures/legacy-data.js");
 const { validatePoster, readPoster, MAX_POSTER_BYTES } = await import("../js/poster.js");
 const png = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+a7XQAAAAASUVORK5CYII=";
 const password = "DemoPass123", person = { name: "Instructor Attendee", email: "instructor@example.com" };

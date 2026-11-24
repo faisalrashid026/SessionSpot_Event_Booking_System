@@ -1,4 +1,7 @@
 Options -Indexes
+<If "%{REQUEST_FILENAME} =~ m#/(?:\.git|\.local|server|storage|tests|scripts|qa|checkpoints|submission|backups|design-reference)(?:/|$)#">
+  Require all denied
+</If>
 <FilesMatch "(^\.|\.(sql|log|zip)$)">
   Require all denied
 </FilesMatch>

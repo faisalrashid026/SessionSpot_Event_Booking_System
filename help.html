@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="SessionSpot — discover events and try a browser-local university ticket booking prototype."
+      content="SessionSpot — discover events and reserve tickets."
     />
     <title>Help & support | SessionSpot</title>
     <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
@@ -18,8 +18,8 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/figma.css?v=b4d6a79280" />
-    <script defer src="js/form-guard.js?v=d79fb3a354"></script>
-    <script type="module" src="js/app.js?v=08b46b5db8"></script>
+    <script defer src="js/form-guard.js?v=54ca397aae"></script>
+    <script type="module" src="js/app.js?v=defcacf091"></script>
   </head>
   <body data-figma-node="extension" data-page="help">
     <a class="skip" href="#main">Skip to main content</a>
@@ -71,7 +71,7 @@
             height="20"
             aria-hidden="true"
           /><span>My bookings</span
-          ><span class="badge" data-booking-count>2</span></a
+          ><span class="badge" data-booking-count>0</span></a
         ><a class="nav-link" href="index.html?view=saved"
           ><img
             class="icon figma-icon"
@@ -190,7 +190,7 @@
           ><a class="account" href="profile.html"
             ><span class="avatar" aria-hidden="true">AM</span
             ><span class="account-text"
-              ><strong data-profile-name>Alex Morgan</strong
+              ><strong data-profile-name>Guest</strong
               ><small>Personal account</small></span
             ><span class="sr-only">My profile</span></a
           >
@@ -210,65 +210,37 @@
             <h2>Good questions. Simple answers.</h2>
             <details open>
               <summary>How do I reserve tickets?</summary>
-              <p>
-                Find an event, choose your ticket quantities, enter sample
-                attendee details and confirm your demo reservation. You’ll see
-                the same reference in My bookings.
-              </p>
+              <p>Sign in, find a published event, choose ticket quantities and confirm your attendee details. Availability and prices are checked on the server before a booking reference is issued. View the same record in My Bookings.</p>
             </details>
             <details>
               <summary>Can I cancel a reservation?</summary>
-              <p>
-                Open My bookings, select a confirmed upcoming booking and choose
-                Cancel reservation. The sample availability updates locally.
-                Past bookings cannot be cancelled.
-              </p>
+              <p>Open My Bookings, select a confirmed upcoming booking and choose Cancel reservation. Availability is restored once. Past bookings cannot be cancelled.</p>
             </details>
             <details>
               <summary>Do I pay online?</summary>
-              <p>
-                No. This prototype does not collect payment or hold real
-                tickets. Prices are sample amounts in Canadian dollars.
-              </p>
+              <p>No online payment is collected. Priced tickets show payment due at the venue in Canadian dollars. Free tickets require no payment.</p>
             </details>
             <details>
               <summary>How do I create or manage an event?</summary>
-              <p>
-                Open Manage events or Create an event. Save a sample event, edit
-                its ticket categories and review local sample attendees. All
-                changes stay in your browser.
-              </p>
+              <p>Every individual account can create events and reserve tickets. Open Manage events to create drafts, publish events, configure tickets and review actual attendee records. Organization owners can select their organization when creating an event.</p>
             </details>
             <details>
-              <summary>Are login, SSO and email working services?</summary>
-              <p>
-                No. Account access, institution SSO, contact and password reset
-                are clearly labelled demonstrations. No real email is sent and
-                no password is stored.
-              </p>
+              <summary>How do account access and email work?</summary>
+              <p>Accounts and bookings are saved in the database. Sign in with your own password. There is no institution SSO. Password-reset and contact email require configured delivery; an unavailable email service reports an error rather than claiming a message was sent.</p>
             </details>
             <details id="terms">
-              <summary>Demo terms</summary>
-              <p>
-                This is a university UI prototype, not an event ticketing
-                service. Demo checkboxes are interaction examples, not a service
-                agreement. Use fictional details and do not rely on sample
-                availability.
-              </p>
+              <summary>Terms of Service</summary>
+              <p>Reservations follow the event details and may be cancelled before the event starts. Payment for priced tickets is due at the venue. Contact the organizer about event-specific conditions. Local instructor test events do not represent real-world events.</p>
             </details>
             <details id="privacy">
-              <summary>Demo privacy</summary>
-              <p>
-                Sample events, bookings, roles and profile data stay in this
-                browser’s local storage. Passwords are never stored. Use
-                Settings → Reset sample data to restore the fixtures.
-              </p>
+              <summary>Privacy Policy</summary>
+              <p>Your account, organizations, events and bookings are stored on the server. Passwords are stored as hashes. Session cookies identify signed-in users. Organizers can access attendees for their own events; administrators manage platform records. Contact the operator about data requests.</p>
             </details>
           </section>
           <aside class="card card-pad">
             <div class="card-heading">
               <h2>Let’s talk</h2>
-              <p>Try the contact form. No message leaves this prototype.</p>
+              <p>Contact support when email delivery is configured. An unavailable service reports an error.</p>
             </div>
             <form class="stack" id="contact-form" method="dialog" data-demo-form>
               <label class="field"
@@ -287,30 +259,27 @@
                   rows="5"
                   placeholder="Tell us a little more..."
                 ></textarea></label
-              ><button class="btn" type="submit">Preview message</button>
+              ><button class="btn" type="submit">Send message</button>
               <p class="feedback" role="alert" data-feedback></p>
             </form>
           </aside>
         </div>
         <footer class="page-footer">
           <div class="row between">
-            <span>SessionSpot · COMP 3540 · Team G13</span
+            <span>SessionSpot</span
             ><span
-              ><a href="admin.html">Demo admin</a
-              ><a href="login.html">Demo sign in</a
+              ><a href="admin.html">Administration</a
+              ><a href="login.html">Sign in</a
               ><a href="help.html">Help</a></span
             >
           </div>
-          <p class="prototype">
-            Part 2 prototype · Browser-local sample data · Demo date: November
-            10, 2026 · No real payments, email or authentication.
-          </p>
+          <p class="prototype">SessionSpot · Events and reservations · Prices in CAD · Payment due at venue for priced tickets.</p>
         </footer>
       </main>
     </div>
     <noscript
       ><p class="noscript">
-        Enable JavaScript to use the sample event and booking interactions. Page
+        Enable JavaScript to use accounts, events and reservations. Page
         navigation remains available.
       </p></noscript
     >

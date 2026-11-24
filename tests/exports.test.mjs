@@ -1,7 +1,5 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-// Match the browser storage adapter without using Node's experimental storage.
-globalThis.localStorage = { getItem: () => null };
 const { csvText, bookingText } = await import("../js/exports.js");
 
 test("CSV retains commas, quotes, Unicode and line breaks with quoted cells", () => {
@@ -24,9 +22,9 @@ const booking = {
   id: "SS-TEST", name: "Sample Attendee", status: "Confirmed",
   items: { general: 2, student: 1 }, prices: { general: 25, student: 15 },
 };
-test("confirmation includes demo disclosure, reference, details and historical booked prices", () => {
+test("confirmation includes venue-payment terms, reference, details and booked prices", () => {
   const text = bookingText(booking, event);
-  for (const expected of ["Not a valid event ticket.", "SS-TEST", "Sample Attendee", "Test Summit", "Sample Hall", "General × 2: $50.00", "Student × 1: $15.00", "Total: $65.00", "Status: Confirmed"])
+  for (const expected of ["Payment due at venue in CAD.", "SS-TEST", "Sample Attendee", "Test Summit", "Sample Hall", "General × 2: $50.00", "Student × 1: $15.00", "Total: $65.00", "Status: Confirmed"])
     assert.ok(text.includes(expected), expected);
   assert.ok(!text.includes("$198.00"));
 });

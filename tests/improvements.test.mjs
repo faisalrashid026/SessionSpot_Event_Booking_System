@@ -6,7 +6,7 @@ globalThis.localStorage = {
   getItem: (key) => { if (failRead) throw Error("denied"); return storage.get(key) ?? null; },
   setItem: (key, value) => { if (failWrite) throw Error("QuotaExceededError"); storage.set(key, value); },
 };
-const data = await import("../js/data.js");
+const data = await import("./fixtures/legacy-data.js");
 const validation = await import("../js/validation.js");
 const time = await import("../js/time.js");
 const { bookingText } = await import("../js/exports.js");

@@ -4,6 +4,7 @@ function reserve_tickets(array $d): string {
     $u=actor();$eventId=(string)($d['eventId']??'');$key=$d['submissionId']??'';
     if(!is_string($key)||!preg_match('/^[A-Za-z0-9_-]{16,100}$/D',$key))fail('A valid reservation request identifier is required.');
     $items=$d['items']??null;if(!is_array($items)||!$items||count($items)>5)fail('Choose ticket quantities.');
+    if(!is_array($d['details']??null))fail('Enter valid attendee details.');
     $name=text($d['details']['name']??null,2,80,'attendee name');$email=email($d['details']['email']??null);
     // Close the session lock so simultaneous requests really reach InnoDB concurrently.
     session_write_close();

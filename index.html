@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="SessionSpot — discover events and try a browser-local university ticket booking prototype."
+      content="SessionSpot — discover events and reserve tickets."
     />
     <title>Discover events | SessionSpot</title>
     <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
@@ -18,8 +18,8 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/figma.css?v=b4d6a79280" />
-    <script defer src="js/form-guard.js?v=d79fb3a354"></script>
-    <script type="module" src="js/app.js?v=08b46b5db8"></script>
+    <script defer src="js/form-guard.js?v=54ca397aae"></script>
+    <script type="module" src="js/app.js?v=defcacf091"></script>
   </head>
   <body data-figma-node="2:2" data-page="index">
     <a class="skip" href="#main">Skip to main content</a>
@@ -77,7 +77,7 @@
         ><a class="account" href="profile.html"
           ><span class="avatar" aria-hidden="true">AM</span
           ><span class="account-text"
-            ><strong data-profile-name>Alex Morgan</strong
+            ><strong data-profile-name>Guest</strong
             ><small>Personal account</small></span
           ><span class="sr-only">My profile</span></a
         >
@@ -105,7 +105,7 @@
           height="20"
           aria-hidden="true"
         /><span>My bookings</span
-        ><span class="badge" data-booking-count>2</span></a
+        ><span class="badge" data-booking-count>0</span></a
       ><a class="nav-link" href="index.html?view=saved"
         ><img
           class="icon figma-icon"
@@ -157,37 +157,36 @@
     <main id="main" tabindex="-1" class="discover-main">
       <div class="row between greeting">
         <div>
-          <h1>Good morning, <span data-first-name>Alex</span></h1>
+          <h1>Good morning, <span data-first-name>Guest</span></h1>
           <p class="subtitle">
             Find your next connection, big idea, or unforgettable experience.
           </p>
         </div>
-        <span class="greeting-date">Tuesday, November 10</span>
+        <span class="greeting-date">Discover what’s next</span>
       </div>
       <section class="feature" aria-labelledby="featured-heading">
         <div>
-          <div class="eyebrow">Featured event / Community & innovation</div>
-          <h2 id="featured-heading">Big ideas. Real connections.</h2>
+          <div class="eyebrow">Your next connection starts here</div>
+          <h2 id="featured-heading">Bring people together.</h2>
           <p>Join the people shaping what comes next.</p>
           <p class="feature-meta">
-            Nov 21, 2026 &nbsp; · &nbsp; 9:00 AM &nbsp; · &nbsp; City Convention
-            Center
+            Browse published events or create your own.
           </p>
           <div class="row">
-            <a class="btn" href="reserve.html?event=summit"
-              >Reserve a spot
+            <a class="btn" href="create-event.html"
+              >Create an event
               <span class="direction-arrow" aria-hidden="true">→</span></a
-            ><span class="small muted">From $15 / person</span>
+            ><span class="small muted">Explore events and experiences.</span>
           </div>
         </div>
         <div
           class="ticket-art"
           role="img"
-          aria-label="Illustrated Innovation Summit ticket, November 21"
+          aria-label="Decorative SessionSpot event ticket illustration"
         >
           <div class="art-label">SESSIONSPOT PRESENTS</div>
-          <h3>Innovation<br />Summit ’26</h3>
-          <div class="date-block">NOV<strong>21</strong></div>
+          <h3>Your next<br />experience</h3>
+          <div class="date-block">JOIN<strong>US</strong></div>
           <div class="art-footer">LEARN. CONNECT. BUILD.</div>
           <div class="admit">ADMIT<br />ONE</div>
         </div>
@@ -327,22 +326,19 @@
       </div>
       <footer class="page-footer">
         <div class="row between">
-          <span>SessionSpot · COMP 3540 · Team G13</span
+          <span>SessionSpot</span
           ><span
-            ><a href="admin.html">Demo admin</a
-            ><a href="login.html">Demo sign in</a
+            ><a href="admin.html">Administration</a
+            ><a href="login.html">Sign in</a
             ><a href="help.html">Help</a></span
           >
         </div>
-        <p class="prototype">
-          Part 2 prototype · Browser-local sample data · Demo date: November 10,
-          2026 · No real payments, email or authentication.
-        </p>
+        <p class="prototype">SessionSpot · Events and reservations · Prices in CAD · Payment due at venue for priced tickets.</p>
       </footer>
     </main>
     <noscript
       ><p class="noscript">
-        Enable JavaScript to use the sample event and booking interactions. Page
+        Enable JavaScript to use accounts, events and reservations. Page
         navigation remains available.
       </p></noscript
     >

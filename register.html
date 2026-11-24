@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="SessionSpot — discover events and try a browser-local university ticket booking prototype."
+      content="SessionSpot — discover events and reserve tickets."
     />
     <title>Create account | SessionSpot</title>
     <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
@@ -18,8 +18,8 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/figma.css?v=b4d6a79280" />
-    <script defer src="js/form-guard.js?v=d79fb3a354"></script>
-    <script type="module" src="js/app.js?v=08b46b5db8"></script>
+    <script defer src="js/form-guard.js?v=54ca397aae"></script>
+    <script type="module" src="js/app.js?v=defcacf091"></script>
   </head>
   <body data-figma-node="2:238" data-page="register">
     <a class="skip" href="#main">Skip to main content</a>
@@ -45,11 +45,11 @@
         <div
           class="ticket-art"
           role="img"
-          aria-label="Illustrated Innovation Summit ticket, November 21"
+          aria-label="Decorative SessionSpot event ticket illustration"
         >
           <div class="art-label">SESSIONSPOT PRESENTS</div>
-          <h3>Innovation<br />Summit ’26</h3>
-          <div class="date-block">NOV<strong>21</strong></div>
+          <h3>Your next<br />experience</h3>
+          <div class="date-block">JOIN<strong>US</strong></div>
           <div class="art-footer">LEARN. CONNECT. BUILD.</div>
           <div class="admit">ADMIT<br />ONE</div>
         </div>
@@ -66,23 +66,13 @@
           <h1>Create your account</h1>
           <p class="subtitle">One account. A world of experiences.</p>
           <form id="register-form" class="stack" method="dialog" data-demo-form>
-            <fieldset class="segmented-fieldset">
-              <legend>I’m here to</legend>
-              <div class="segmented">
-                <label
-                  ><input
-                    type="radio"
-                    name="role"
-                    value="Attendee"
-                    checked
-                  /><span>Attend events</span></label
-                ><label
-                  ><input type="radio" name="role" value="Organizer" /><span
-                    >Organize events</span
-                  ></label
-                >
-              </div>
-            </fieldset>
+            <fieldset class="segmented-fieldset"><legend>I'm signing up as</legend><div class="segmented"><label><input type="radio" name="accountType" value="individual" checked><span>An individual</span></label><label><input type="radio" name="accountType" value="organization"><span>A business or organization</span></label></div></fieldset>
+            <div id="organization-fields" class="stack" hidden>
+              <label class="field">Organization name<input name="organizationName" maxlength="120" disabled></label>
+              <label class="field">Organization category<select name="organizationCategory" disabled><option>Business / Company</option><option>University / Educational institution</option><option>Nonprofit / Charity</option><option>Community organization</option><option>Government / Public institution</option><option>Other</option></select></label>
+              <label class="field">Website (optional)<input name="organizationWebsite" type="url" maxlength="500" disabled></label>
+              <label class="field">Organization description (optional)<textarea name="organizationDescription" maxlength="2000" disabled></textarea></label>
+            </div>
             <label class="field"
               >Full name<input
                 type="text"
@@ -109,7 +99,7 @@
                 autocomplete="new-password"
                 aria-describedby="password-hint"
                maxlength="72" /><span class="hint" id="password-hint"
-                >Use 8 or more characters, including a number. Demo only.</span
+                >Use 8 or more characters, including a number. </span
               ></label
             ><label class="field"
               >Confirm password<input
@@ -123,18 +113,15 @@
             ><label class="check-label"
               ><input type="checkbox" name="terms" required /><span
                 >I agree to the
-                <a href="help.html#terms">demo Terms of Service</a> and
+                <a href="help.html#terms">Terms of Service</a> and
                 <a href="help.html#privacy">Privacy Policy</a>.</span
               ></label
             ><button class="btn wide" type="submit">
-              Create demo account
+              Create account
               <span class="direction-arrow" aria-hidden="true">→</span>
             </button>
             <p class="feedback" role="alert" data-feedback></p>
-            <p class="prototype">
-              Prototype only. Use sample details. No real account is created and
-              no password is stored.
-            </p>
+            <p class="prototype">SessionSpot · Events and reservations · Prices in CAD · Payment due at venue for priced tickets.</p>
           </form>
         </div>
         <footer class="auth-footer">
@@ -149,7 +136,7 @@
     </main>
     <noscript
       ><p class="noscript">
-        Enable JavaScript to use the sample event and booking interactions. Page
+        Enable JavaScript to use accounts, events and reservations. Page
         navigation remains available.
       </p></noscript
     >

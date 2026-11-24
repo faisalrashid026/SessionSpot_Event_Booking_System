@@ -5,7 +5,7 @@ globalThis.localStorage = {
   getItem: (k) => storage.get(k) || null,
   setItem: (k, v) => storage.set(k, v),
 };
-const data = await import("../js/data.js");
+const data = await import("./fixtures/legacy-data.js");
 const details = { name: "Alex Morgan", email: "alex@example.com" };
 test("seeded event capacities, registrations and booking totals agree", () => {
   data.resetState();

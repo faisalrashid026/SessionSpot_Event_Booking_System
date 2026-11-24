@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="SessionSpot — discover events and try a browser-local university ticket booking prototype."
+      content="SessionSpot — discover events and reserve tickets."
     />
     <title>Sign in | SessionSpot</title>
     <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
@@ -18,8 +18,8 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/figma.css?v=b4d6a79280" />
-    <script defer src="js/form-guard.js?v=d79fb3a354"></script>
-    <script type="module" src="js/app.js?v=08b46b5db8"></script>
+    <script defer src="js/form-guard.js?v=54ca397aae"></script>
+    <script type="module" src="js/app.js?v=defcacf091"></script>
   </head>
   <body data-figma-node="2:240" data-page="login">
     <a class="skip" href="#main">Skip to main content</a>
@@ -45,11 +45,11 @@
         <div
           class="ticket-art"
           role="img"
-          aria-label="Illustrated Innovation Summit ticket, November 21"
+          aria-label="Decorative SessionSpot event ticket illustration"
         >
           <div class="art-label">SESSIONSPOT PRESENTS</div>
-          <h3>Innovation<br />Summit ’26</h3>
-          <div class="date-block">NOV<strong>21</strong></div>
+          <h3>Your next<br />experience</h3>
+          <div class="date-block">JOIN<strong>US</strong></div>
           <div class="art-footer">LEARN. CONNECT. BUILD.</div>
           <div class="admit">ADMIT<br />ONE</div>
         </div>
@@ -82,33 +82,18 @@
                 name="password"
                 required
                 minlength="8"
-                placeholder="Enter your demo password"
+                placeholder="Enter your password"
                 autocomplete="current-password"
              maxlength="72" /></label>
             <div class="row between">
-              <label class="check-label"
-                ><input type="checkbox" name="remember" />Keep demo mode
-                selected</label
-              ><a href="forgot-password.html">Forgot password?</a>
+              <span>Welcome back</span><a href="forgot-password.html">Forgot password?</a>
             </div>
             <button class="btn wide" type="submit">
-              Sign in to demo
+              Sign in
               <span class="direction-arrow" aria-hidden="true">→</span>
             </button>
             <p class="feedback" role="alert" data-feedback></p>
-            <div class="auth-subsection">
-              <p class="auth-small">Using a campus or company account?</p>
-              <button class="btn secondary wide" type="button" data-sso>
-                Institution SSO · demo only
-              </button>
-              <p class="auth-small">
-                SSO is a preview. No institution connection is configured.
-              </p>
-            </div>
-            <p class="prototype">
-              Prototype only. Use sample details. No real account is created and
-              no password is stored.
-            </p>
+            <p class="prototype">SessionSpot · Events and reservations · Prices in CAD · Payment due at venue for priced tickets.</p>
           </form>
         </div>
         <footer class="auth-footer">
@@ -123,7 +108,7 @@
     </main>
     <noscript
       ><p class="noscript">
-        Enable JavaScript to use the sample event and booking interactions. Page
+        Enable JavaScript to use accounts, events and reservations. Page
         navigation remains available.
       </p></noscript
     >

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="SessionSpot — discover events and try a browser-local university ticket booking prototype."
+      content="SessionSpot — discover events and reserve tickets."
     />
     <title>Create or edit event | SessionSpot</title>
     <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
@@ -18,8 +18,8 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/figma.css?v=b4d6a79280" />
-    <script defer src="js/form-guard.js?v=d79fb3a354"></script>
-    <script type="module" src="js/app.js?v=08b46b5db8"></script>
+    <script defer src="js/form-guard.js?v=54ca397aae"></script>
+    <script type="module" src="js/app.js?v=defcacf091"></script>
   </head>
   <body data-figma-node="extension" data-page="create-event">
     <a class="skip" href="#main">Skip to main content</a>
@@ -71,7 +71,7 @@
             height="20"
             aria-hidden="true"
           /><span>My bookings</span
-          ><span class="badge" data-booking-count>2</span></a
+          ><span class="badge" data-booking-count>0</span></a
         ><a class="nav-link" href="index.html?view=saved"
           ><img
             class="icon figma-icon"
@@ -190,7 +190,7 @@
           ><a class="account" href="profile.html"
             ><span class="avatar" aria-hidden="true">AM</span
             ><span class="account-text"
-              ><strong data-profile-name>Alex Morgan</strong
+              ><strong data-profile-name>Guest</strong
               ><small>Organizer account</small></span
             ><span class="sr-only">My profile</span></a
           >
@@ -210,7 +210,7 @@
             <div class="card-heading">
               <h2>Event details</h2>
               <p>
-                <a href="#action-dialog" id="manage-poster">Choose an event poster</a>. Nothing is published to a server.
+                <a href="#action-dialog" id="manage-poster">Choose an event poster</a>. Save your event to keep the selected poster.
               </p>
             </div>
             <div class="form-grid">
@@ -246,6 +246,7 @@
                   placeholder="9:00 AM – 5:00 PM"
                   maxlength="80"
               /></label>
+              <label class="field full">Venue<input name="venue" required maxlength="160" placeholder="Venue or online platform"></label>
               <div class="full">
                 <label class="field"
                   >Location<input
@@ -269,13 +270,7 @@
                   <option>Draft</option>
                 </select></label
               ><label class="field"
-                >Organizer<input
-                  type="text"
-                  name="organizer"
-                  required
-                  maxlength="100"
-                  value="SessionSpot"
-              /></label>
+                >Organizer<select name="organizationId" aria-label="Organizer"></select></label>
               <div class="full">
                 <h2 style="margin-top: 8px">Ticket categories</h2>
                 <p class="small muted">
@@ -296,7 +291,7 @@
             <p class="feedback" role="alert" data-feedback></p>
             <div class="form-actions">
               <a class="btn secondary" href="dashboard.html">Cancel</a
-              ><button class="btn" type="submit">Save demo event</button>
+              ><button class="btn" type="submit">Save event</button>
             </div>
             <p class="small muted" id="event-save-message" role="status"></p>
           </section>
@@ -308,32 +303,28 @@
           style="margin-top: 24px"
         >
           <button class="text-button danger" type="button" id="delete-event">
-            Archive this demo event
+            Cancel this event
           </button>
           <p class="small muted">
-            Archiving removes the event from discovery and preserves existing
-            bookings.
+            Cancelling removes the event from discovery and cancels its reservations.
           </p>
         </div>
         <footer class="page-footer">
           <div class="row between">
-            <span>SessionSpot · COMP 3540 · Team G13</span
+            <span>SessionSpot</span
             ><span
-              ><a href="admin.html">Demo admin</a
-              ><a href="login.html">Demo sign in</a
+              ><a href="admin.html">Administration</a
+              ><a href="login.html">Sign in</a
               ><a href="help.html">Help</a></span
             >
           </div>
-          <p class="prototype">
-            Part 2 prototype · Browser-local sample data · Demo date: November
-            10, 2026 · No real payments, email or authentication.
-          </p>
+          <p class="prototype">SessionSpot · Events and reservations · Prices in CAD · Payment due at venue for priced tickets.</p>
         </footer>
       </main>
     </div>
     <noscript
       ><p class="noscript">
-        Enable JavaScript to use the sample event and booking interactions. Page
+        Enable JavaScript to use accounts, events and reservations. Page
         navigation remains available.
       </p></noscript
     >

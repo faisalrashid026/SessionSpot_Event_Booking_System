@@ -1,62 +1,20 @@
-# SessionSpot Part 2 — Instructor testing (Functional v3)
+# SessionSpot V1 — Instructor testing guide
 
-Preview: **http://localhost:8001/index.html**. If necessary, run `python3 -m http.server 8001` from the extracted project folder, then open that URL. Keep the same browser and origin throughout a workflow.
+Install the ZIP on **your own computer** using DATABASE_SETUP.md. Localhost refers to the machine running Apache, not a remotely accessible developer website. The database starts empty. Use your chosen local URL throughout a workflow; the optional Mac launcher prints it.
 
-## Roles and navigation
+1. **Individual registration:** Create account → An individual. Enter name, unique email and a password of 8–72 bytes including a number. Confirm it and accept the local terms. Registration saves a real database account and opens Sign in. Use the actual password; sign out and sign in again to verify persistence.
+2. **Organization registration:** Create account → A business or organization. Complete the owner fields, organization name and category. Website/description are optional. Categories include companies, universities/education, nonprofits, community, government/public institutions and Other. The owner can use the organization immediately; it remains unverified. Settings also allows organization creation/editing later.
+3. **Create an event:** Manage events → Create event. Select Personal event or an owned organization. Enter title, description, venue/address, a future date and a same-day time range such as `9:00 AM – 12:00 PM`, interpreted in America/Vancouver. Every regular account can both organize and book; attending/organizing does not permanently restrict capabilities.
+4. **Poster and tickets:** Choose an event poster → select PNG/JPEG/WebP up to 1 MB and 20 million pixels → Use this poster. Add distinct ticket categories (up to five), CAD prices and capacities. Price 0 supports free tickets. For example, General admission CAD 12.50/capacity 8 and Free student ticket CAD 0/capacity 4.
+5. **Draft and publish:** Save as Draft, find it under Drafts and reopen the editor to verify saved fields/poster. Change Status to Published and save. It becomes discoverable to other users when its owner/organization is active and its start is in the future. Use default poster and save to remove custom artwork; Cancel in the dialog discards that dialog's pending selection.
+6. **Another account:** Open a private browser session or sign out and register a second account. Search the new event's title, open it and select tickets. Check server-confirmed totals: two CAD 12.50 tickets plus a free ticket total CAD 25.00. Priced tickets say **Payment due at venue · CAD**; free selections require no payment. No online payment or paid-status claim is made.
+7. **History:** Confirm the reservation, note its reference and follow View my bookings. Check details/confirmation. Reload, sign out and sign in again: the record remains. Personal My Bookings is separate from organization-owned event management. Download/print uses the saved reference, quantities and booked prices.
+8. **Organizer:** Sign in as the event owner → Manage events → Attendees. Verify the actual reservation, count, reference and quantities; optionally export CSV. Dashboard values derive from the same records, not hardcoded fixture totals.
+9. **Cancel:** As attendee, open the upcoming confirmed booking → Cancel reservation → confirm. It remains under Cancelled, and each ticket category's availability is restored once. Past bookings cannot be cancelled. Cancelling an event cancels all confirmed reservations; restoring the event does not revive cancelled bookings.
+10. **Admin:** Provision an Admin privately through `scripts/manage.php create-admin`, as described in DATABASE_SETUP.md, and sign in normally. Review users, organizations, events and bookings; try suspension/reactivation or event moderation on disposable instructor records. Confirmation dialogs precede these operations. An ordinary user cannot invoke admin endpoints or edit someone else's event/booking by altering storage, URLs or forms.
+11. **Profile and organization:** Save a name change in Settings and reload. An email change requires the current password. Edit the owned organization and check that another account cannot manage it.
+12. **Recovery:** Forgot password requires configured outbound mail. If unavailable, it reports a genuine service error. Use the documented private CLI recovery; no fake reset link or delivery claim is provided.
 
-This is a browser-local UI simulation. Sign-in selects a sample identity; it does not verify a password. Use a made-up policy-valid password such as `DemoPass123`. Passwords are never saved. Roles and localStorage are not secure authorization or server persistence.
+Navigation preserves index, event, reserve, confirmation, my-bookings, login, register, forgot-password, reset-password, profile, dashboard, create-event, attendees, admin and help (`.html`). Empty states are normal in a fresh database. Notifications provides booking guidance; Help explains account/payment/cancellation behavior. There is no fake SSO or insecure remember-me control.
 
-| Identity | Role | Sign-in destination |
-| --- | --- | --- |
-| `alex@example.com` | Attendee | My Bookings |
-| `priya@example.com` | Organizer of the six reference events | Organizer dashboard |
-| `sam@example.com` | Admin | Separate admin interface |
-
-Registration offers Attend events and Organize events. Both create a sample **Attendee** initially. Attendee registration continues to My Bookings. Organizer interest explains the role requirement and links to sign-in: use Priya for immediate organizer testing, or use Sam's admin interface to explicitly assign Organizer to the newly registered sample user, then sign in again with that user's email. Registration never self-grants organizer/admin access.
-
-| Pages | Route through the UI |
-| --- | --- |
-| `index.html`, `event.html`, `reserve.html`, `confirmation.html` | Discover → event details → Reserve tickets → Confirm demo reservation |
-| `my-bookings.html` | My bookings → Upcoming / Past / Cancelled → booking details |
-| `login.html`, `register.html` | Demo sign in / Create an account |
-| `forgot-password.html`, `reset-password.html` | Forgot password → sample reset link; validation only |
-| `profile.html` | Settings / account link |
-| `dashboard.html`, `create-event.html`, `attendees.html` | Manage events → Create / Manage → Attendees |
-| `admin.html` | Demo admin footer link; mutation handlers require simulated Admin |
-| `help.html` | Help & support, terms, privacy and reset-sample-data control |
-
-## Complete instructor flow
-
-1. Register a unique sample email with **Organize events**. Confirm password and accept the demo terms. The success message explains that the initial role is Attendee.
-2. Follow **Sign in to organizer demo**. Sign in as Sam, find the new user's row in **Users & roles**, choose Organizer and click its Save button. Sign in again as the registered user. Alternatively sign in as Priya to use the existing organizer fixtures.
-3. Open **Create event**. Enter a title, description, venue, organizer, a date in the future and a valid same-day time range, interpreted in America/Vancouver. Choose Draft.
-4. Choose **Choose an event poster** in the existing Event details description. Select a PNG, JPEG or WebP up to 1 MB and 20 million pixels. Check the preview, choose **Use this poster**, then save the event. Cancel discards the dialog's changes. **Use default poster** followed by **Use this poster** and saving removes custom artwork. Nothing is uploaded to a server; browser storage limits still apply.
-5. Set General admission to **CAD 12.50**, capacity **8**. Add a Free student ticket at **CAD 0**, capacity **4**. Up to five distinct categories are supported. Capacity cannot fall below existing allocations. Save; select **Drafts** on the dashboard to find the event.
-6. Manage the draft, change Status to Published and save. The published future event becomes discoverable and reservable. Existing CSS poster frames are reused; no Figma frame or layout is replaced.
-7. Register another unique sample user with **Attend events**, then continue to My Bookings. Discover the event by its title. Reserve two General admission tickets and one Free student ticket. Check **CAD 25.00**, zero booking fee and **Pay at venue** messaging. With only free tickets selected, the payment note says no payment is required in the simulation. No online payment or real ticket allocation occurs.
-8. Confirm the demo reservation. Check its reference, quantities and total. Follow **View my bookings**. The reservation appears under Upcoming with the same reference; reload to check browser-local persistence.
-9. Choose **Cancel reservation**, confirm, and select Cancelled. History retains the reference and historical sample value. Reopen event details: all eight paid and four free places are available again. A second cancellation cannot release stock again.
-10. As an Attendee, open Demo admin and try saving a role: the action is denied. Organizer actions are limited to associated events. These are simulated handler checks, not a privacy/security boundary; demo administration remains inspectable.
-
-Use Help's **Reset sample data** only when you want to discard that origin's sample changes. The unchanged reference events use their existing relative eligibility window while displaying the approved November 2026 artwork dates; use a newly created future-dated event for unambiguous testing. The dashboard activity chart remains a seeded reference illustration, not live per-user analytics. Its event metrics and booking records are browser-local.
-
-## Initial audit and changes in this version
-
-| Feature | Initial status | Action |
-| --- | --- | --- |
-| Poster selection and preview | MISSING | Added dialog-based selection, validation, preview, save/reopen, cancellation and removal |
-| Ticket types, CAD prices, capacity, free support | WORKING | Preserved existing editor and booking logic |
-| Pay at venue messaging | PARTIAL | Clarified the existing payment note, updating for paid/free selections |
-| Registration and role navigation | PARTIAL | Replaced misleading dashboard continuation with explicit sign-in/approval guidance; account labels now show the current simulated role |
-| Separate admin and restrictions | WORKING | Preserved existing interface, approval and mutation checks |
-| Full instructor workflow | PARTIAL | Clarified the handoff and verified the complete registered-user workflow above |
-
-Modified runtime files: `js/app.js`, `js/data.js`, `create-event.html`; all 15 HTML pages also receive the new controller cache version. Added `js/poster.js` and `tests/instructor.test.mjs`. Updated `README.md` to point to this guide and `scripts/package_submission.py` to include the guide and compact verification evidence. Existing tests, both CSS files and all 21 asset/font/license files remain unchanged. The earlier audit documents and QA results describe the approved Functional v2 baseline; this guide and `qa/instructor/` describe v3. The exact modified baseline filenames are recorded in `qa/instructor/source-preservation.json`.
-
-## Verification and Part 3 boundary
-
-Results are recorded in `qa/instructor/results.json` and `qa/instructor/layout-regression.json`: **62 automated tests, 34 browser checks, six geometry pairs, nine JS syntax checks and the 15-page static audit pass, with no remaining failure or browser console warning/error**. The original 56 tests remain unchanged; six targeted tests were added. The static audit resolves 440 local HTML references. Desktop/mobile geometry of the affected editor, reservation and registration pages is compared at 1440 and 390 CSS pixels against the v2 archive; no full pixel rerun was needed because the CSS/assets are unchanged. Live browser checks cover both registration interests, explicit admin approval, role routes, poster preview/persistence/removal, draft/publication, paid/free selection, reservation, My Bookings, reload, cancellation and restricted admin actions.
-
-No required frontend workflow is left incomplete. Poster dimensions/size are deliberately bounded; storage denial/quota errors abort saving without partial changes. The browser-local demonstration has no real uploads, secure sessions, password storage, permanent server persistence, multi-user stock protection, online payment, email or institution SSO. PHP/MySQL, server-side authorization, durable file storage and validation, real reservation transactions, account verification/recovery and any payment integration are deferred to Part 3. Cross-browser and new OS-level print/download delivery were not repeated in this targeted pass.
-
-New submission: `submission/SessionSpot-Part2-Functional-v3.zip`; adjacent verification JSON records its checksum, CRC, extraction, hashes and portable relative references. Both previous verified ZIPs remain recovery copies.
+Optional sample events can be created explicitly after registering an owner; they are clearly labeled fictional educational examples, never actual third-party events. Automated acceptance fixtures are not instructor sample data. The fresh-release verification commands and PASS/FAIL/NOT TESTED limits are in TEST_REPORT.md.

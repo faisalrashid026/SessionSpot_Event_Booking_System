@@ -17,5 +17,7 @@ export function bookingText(booking, event) {
   const date = dateLabel(event.date, {
     weekday: "long", month: "long", day: "numeric", year: "numeric",
   });
-  return `SESSIONSPOT — DEMO CONFIRMATION\nNot a valid event ticket. No email or payment processed.\n\nBooking: ${booking.id}\nEvent: ${event.title}\nDate: ${date}\nTime: ${event.time}\nVenue: ${event.location}\nAttendee: ${booking.name}\nStatus: ${booking.status}\n${lines.map((line) => `${line.label}: ${money(line.total)}`).join("\n")}\nTotal: ${money(lines.reduce((sum, line) => sum + line.total, 0))}\n`;
+  const total = lines.reduce((sum, line) => sum + line.total, 0);
+  const payment = booking.status === 'Cancelled' ? 'Reservation cancelled. Historical value only; no payment due.' : total ? 'Payment due at venue in CAD. No online payment collected.' : 'Free reservation. No payment required.';
+  return `${'SESSIONSPOT — RESERVATION CONFIRMATION\n'+payment}\n\nBooking: ${booking.id}\nEvent: ${event.title}\nDate: ${date}\nTime: ${event.time}\nVenue: ${event.location}\nAttendee: ${booking.name}\nStatus: ${booking.status}\n${lines.map((line) => `${line.label}: ${money(line.total)}`).join("\n")}\nTotal: ${money(total)}\n`;
 }

@@ -38,6 +38,10 @@ function email(mixed $s): string {
     if (strlen($s)>254 || !filter_var($s,FILTER_VALIDATE_EMAIL)) fail('Enter a valid email address.');
     return $s;
 }
+function multiline(mixed $s, int $min, int $max, string $label): string {
+    if(!is_string($s))fail("Check $label.");$s=trim(str_replace(["\r\n","\r"],"\n",$s));
+    if(mb_strlen($s)<$min||mb_strlen($s)>$max||preg_match('/[\x00-\x08\x0B\x0C\x0E-\x1F]/',$s))fail("Check $label ($min–$max characters).");return $s;
+}
 function password(mixed $s): string {
     if (!is_string($s) || strlen($s)<8 || strlen($s)>72 || !preg_match('/[0-9]/',$s) || preg_match('/[\x00-\x1F\x7F]/',$s)) fail('Use 8–72 bytes, including a number, for your password.');
     return $s;
